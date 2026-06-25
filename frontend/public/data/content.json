@@ -1,0 +1,1621 @@
+{
+  "tagLabels": {
+    "alinhamento": "Alinhamento",
+    "cultura": "Cultura GL",
+    "metas": "Metas",
+    "ritmo_diario": "Ritmo diario",
+    "recrutamento": "Recrutamento",
+    "sourcing": "Sourcing",
+    "perfil_comercial": "Perfil comercial",
+    "recrutador": "Recrutador",
+    "vaga": "Venda da vaga",
+    "comissao": "Comissao",
+    "pitch": "Pitch",
+    "triagem": "Triagem",
+    "entrevista": "Entrevista",
+    "score": "Score",
+    "vendedor_ativo": "Vendedor ativo",
+    "prospeccao": "Prospecao",
+    "lista": "Lista",
+    "volume": "Volume",
+    "script": "Script",
+    "diagnostico": "Diagnostico",
+    "qualificacao": "Qualificacao",
+    "follow_up": "Follow-up",
+    "crm": "CRM",
+    "vendedor_tecnico": "Vendedor tecnico",
+    "produto": "Produto",
+    "preco": "Preco",
+    "beneficios": "Beneficios",
+    "objecoes": "Objecoes",
+    "prova": "Prova",
+    "fechamento": "Fechamento",
+    "checkout": "Checkout",
+    "lead_quente": "Lead quente",
+    "gestao": "Gestao",
+    "relatorio": "Relatorio",
+    "desempenho": "Desempenho",
+    "compliance": "Compliance",
+    "comunidade": "Comunidade",
+    "mercado": "Mercado"
+  },
+  "layerTags": {
+    "Cultura": [
+      "alinhamento",
+      "cultura",
+      "compliance",
+      "comunidade"
+    ],
+    "Recrutamento": [
+      "recrutamento",
+      "sourcing",
+      "vaga",
+      "triagem",
+      "entrevista"
+    ],
+    "Vendas": [
+      "vendedor_ativo",
+      "prospeccao",
+      "script",
+      "follow_up",
+      "crm"
+    ],
+    "Produto": [
+      "vendedor_tecnico",
+      "produto",
+      "preco",
+      "objecoes",
+      "fechamento"
+    ],
+    "Gestao": [
+      "metas",
+      "relatorio",
+      "desempenho",
+      "gestao"
+    ]
+  },
+  "journeyStages": [
+    {
+      "id": "comece",
+      "title": "Comece",
+      "modules": [
+        "m00_alinhamento_diario"
+      ],
+      "promise": "Alinhar foco diario, metas por cargo e cultura de prestacao de contas."
+    },
+    {
+      "id": "recrutador",
+      "title": "Recrutador",
+      "modules": [
+        "m01_recrutador_funcoes_colaboradores",
+        "m02_recrutador_comissao_abordagem",
+        "m03_recrutador_papel_gestao_remuneracao",
+        "m04_recrutador_treinamento_vendedores_gl_model",
+        "m12_recrutador_triagem"
+      ],
+      "promise": "Encontrar, vender a vaga e filtrar vendedores com padrao."
+    },
+    {
+      "id": "vendedor_ativo",
+      "title": "Vendedor Ativo",
+      "modules": [
+        "m01_ativo_funcoes_colaboradores",
+        "m20_ativo_prospeccao_fria",
+        "m21_ativo_script_diagnostico",
+        "m22_ativo_resposta_objecoes"
+      ],
+      "promise": "Gerar volume, diagnosticar leads e manter pipeline vivo."
+    },
+    {
+      "id": "vendedor_tecnico",
+      "title": "Vendedor Tecnico",
+      "modules": [
+        "m01_tecnico_funcoes_colaboradores",
+        "m02_tecnico_call_consultiva_gl_model",
+        "m03_tecnico_demonstracao_ao_vivo_gl_model",
+        "m31_tecnico_objecoes"
+      ],
+      "promise": "Dominar produto, responder objecoes e fechar leads quentes."
+    },
+    {
+      "id": "gestao",
+      "title": "Evoluir",
+      "modules": [
+        "m40_gestao_metas_relatorio",
+        "m41_cultura_gl"
+      ],
+      "promise": "Medir desempenho, prestar contas e proteger a cultura GL."
+    }
+  ],
+  "knowledgePages": [
+    {
+      "id": "dicionario-trader",
+      "moduleId": "m30_tecnico_raio_x_produtos",
+      "title": "Dicionario do Trader para vendas",
+      "subtitle": "Termos que a equipe precisa dominar para falar a lingua do cliente.",
+      "source": "Enciclopedia GL",
+      "tags": [
+        "produto",
+        "mercado",
+        "vendedor_tecnico"
+      ],
+      "promise": "Evitar conversa rasa com leads que ja operam ou estudam mercado.",
+      "cards": [
+        {
+          "title": "Stop Loss",
+          "body": "Ponto de perda planejada para limitar risco.",
+          "cue": "Use para falar de disciplina e controle."
+        },
+        {
+          "title": "Take Profit",
+          "body": "Regiao de realizacao planejada.",
+          "cue": "Conecte com plano e nao promessa."
+        },
+        {
+          "title": "Bullish / Bearish",
+          "body": "Visao de alta ou baixa.",
+          "cue": "Mostre que a equipe entende linguagem do cliente."
+        },
+        {
+          "title": "Volatilidade",
+          "body": "Tamanho e velocidade das oscilacoes.",
+          "cue": "Bom gancho para briefing de mercado."
+        }
+      ],
+      "practice": "Escolha 10 termos e crie uma frase comercial simples para cada um.",
+      "questions": [
+        "q_m30_001"
+      ],
+      "materials": [
+        {
+          "title": "Raio-X de produtos GL",
+          "description": "Resumo de ofertas, dores e encaixes.",
+          "href": "/materials/equipe/Raio_X_Produtos_GL_Academy.md"
+        }
+      ]
+    },
+    {
+      "id": "banco-objecoes",
+      "moduleId": "m31_tecnico_objecoes",
+      "title": "Banco de Objecoes",
+      "subtitle": "Respostas para preco, confianca, tempo, comparacao e medo.",
+      "source": "Playbook Comercial",
+      "tags": [
+        "objecoes",
+        "fechamento",
+        "vendedor_tecnico"
+      ],
+      "promise": "Dar ao vendedor uma resposta treinavel para cada trava comum.",
+      "cards": [
+        {
+          "title": "Esta caro",
+          "body": "Compare custo com problema resolvido e caminho de acompanhamento.",
+          "cue": "Clarifique antes de defender."
+        },
+        {
+          "title": "Vou pensar",
+          "body": "Descubra se falta informacao, dinheiro, confianca ou prioridade.",
+          "cue": "Pergunta antes de argumento."
+        },
+        {
+          "title": "Ja tenho indicador",
+          "body": "Investigue se ele tem leitura, processo e suporte.",
+          "cue": "Diferencie ferramenta de metodo."
+        },
+        {
+          "title": "Tenho medo de nao usar",
+          "body": "Explique onboarding, suporte e rotina de estudo.",
+          "cue": "Reduza risco percebido."
+        }
+      ],
+      "practice": "Escreva uma resposta usando ACR para cada objecao do dia.",
+      "questions": [
+        "q_m31_001"
+      ],
+      "materials": [
+        {
+          "title": "Banco de objecoes GL",
+          "description": "Respostas treinaveis para atualizar sempre.",
+          "href": "/materials/equipe/Banco_de_Objecoes_GL.md"
+        }
+      ]
+    },
+    {
+      "id": "regras-cultura",
+      "moduleId": "m41_cultura_gl",
+      "title": "Regras de Ouro e Cultura GL",
+      "subtitle": "Padroes de postura, promessa e comunicacao.",
+      "source": "Cultura GL",
+      "tags": [
+        "cultura",
+        "compliance",
+        "comunidade"
+      ],
+      "promise": "Vender com energia sem colocar a marca em risco.",
+      "cards": [
+        {
+          "title": "Sem promessa de lucro",
+          "body": "A empresa vende educacao, tecnologia e processo.",
+          "cue": "Nunca prometa resultado financeiro."
+        },
+        {
+          "title": "Numero honesto",
+          "body": "Relatorio ruim e melhor que numero inventado.",
+          "cue": "Dado real vira melhoria."
+        },
+        {
+          "title": "Time aprende junto",
+          "body": "Objecao nova deve virar conteudo para todos.",
+          "cue": "Compartilhe no Discord."
+        },
+        {
+          "title": "Cliente bem orientado",
+          "body": "Venda termina quando o aluno entra no caminho correto.",
+          "cue": "Handoff pos-venda importa."
+        }
+      ],
+      "practice": "Liste 3 frases permitidas e 3 proibidas para abordagem comercial.",
+      "questions": [
+        "q_m41_001"
+      ],
+      "materials": [
+        {
+          "title": "Guia do colaborador",
+          "description": "Regras e rotina minima.",
+          "href": "/materials/equipe/Guia_Colaborador_GL_Sales_Training.md"
+        }
+      ]
+    },
+    {
+      "id": "playbook-recrutador",
+      "moduleId": "m12_recrutador_triagem",
+      "title": "Playbook do Recrutador",
+      "subtitle": "Canais, perguntas, score e encaminhamento.",
+      "source": "Trilha do Recrutador",
+      "tags": [
+        "recrutamento",
+        "sourcing",
+        "triagem"
+      ],
+      "promise": "Criar uma esteira de candidatos com perfil comercial real.",
+      "cards": [
+        {
+          "title": "Fonte",
+          "body": "Registre de onde veio cada candidato.",
+          "cue": "Origem mostra o que escala."
+        },
+        {
+          "title": "Energia",
+          "body": "Venda exige resposta, postura e velocidade.",
+          "cue": "Baixa energia nao escala."
+        },
+        {
+          "title": "Score",
+          "body": "Use nota objetiva antes de aprovar.",
+          "cue": "Padrao vence simpatia."
+        },
+        {
+          "title": "Handoff",
+          "body": "Encaminhe com resumo e motivo.",
+          "cue": "Gestao decide mais rapido."
+        }
+      ],
+      "practice": "Monte um scorecard de 5 criterios para a proxima entrevista.",
+      "questions": [
+        "q_m10_001",
+        "q_m12_001"
+      ],
+      "materials": [
+        {
+          "title": "Playbook do Recrutador",
+          "description": "Script e score de triagem.",
+          "href": "/materials/equipe/Playbook_Recrutador_GL.md"
+        },
+        {
+          "title": "Proposta e Fun??o do Recrutador",
+          "description": "Documento de refer?ncia sobre a proposta, o papel e as responsabilidades da fun??o.",
+          "href": "/materials/recrutadores/Documento_Recrutador_Proposta_Funcao.pdf"
+        },
+        {
+          "title": "Manual: Como Recrutar e Gerir a Equipe",
+          "description": "Orienta??es pr?ticas para selecionar, treinar, acompanhar e desenvolver vendedores.",
+          "href": "/materials/recrutadores/Manual_Recrutador_Como_Recrutar_Gerir_Equipe.pdf"
+        },
+        {
+          "title": "Checklist de Libera??o do Captador e Recrutador",
+          "description": "Processo de vendas e pontos de confer?ncia antes da libera??o operacional.",
+          "href": "/materials/recrutadores/Checklist_Liberacao_Captador_Recrutador.pdf"
+        },
+        {
+          "title": "Regras de Comiss?o e Conduta",
+          "description": "Regras oficiais de comiss?o, registro, postura e conduta do recrutador.",
+          "href": "/materials/recrutadores/Regras_Comissao_Conduta_Recrutador.pdf"
+        },
+        {
+          "title": "Estrutura Global de Vendas e Recrutamento",
+          "description": "Vis?o geral da organiza??o comercial, do recrutamento e do fluxo entre as fun??es.",
+          "href": "/materials/recrutadores/Estrutura_Global_Vendas_Recrutamento_Recrutadores.pdf"
+        }
+      ]
+    },
+    {
+      "id": "playbook-ativo",
+      "moduleId": "m20_ativo_prospeccao_fria",
+      "title": "Playbook do Vendedor Ativo",
+      "subtitle": "Prospecao, script, CRM e follow-up.",
+      "source": "Trilha do Vendedor Ativo",
+      "tags": [
+        "vendedor_ativo",
+        "prospeccao",
+        "follow_up",
+        "crm"
+      ],
+      "promise": "Transformar lista fria em conversas e leads qualificados.",
+      "cards": [
+        {
+          "title": "50 contatos",
+          "body": "Volume diario cria chance estatistica.",
+          "cue": "Nao negocie com a meta."
+        },
+        {
+          "title": "Pergunta curta",
+          "body": "Abra conversa, nao palestra.",
+          "cue": "Diagnostico primeiro."
+        },
+        {
+          "title": "Status",
+          "body": "Todo lead precisa de proxima acao.",
+          "cue": "Pipeline sem status morre."
+        },
+        {
+          "title": "Follow-up",
+          "body": "Retorne com contexto.",
+          "cue": "Nao cobre sem motivo."
+        }
+      ],
+      "practice": "Escreva 3 aberturas curtas e 3 follow-ups com contexto.",
+      "questions": [
+        "q_m20_001",
+        "q_m21_001"
+      ],
+      "materials": [
+        {
+          "title": "Playbook do Vendedor Ativo",
+          "description": "Scripts e cadencia.",
+          "href": "/materials/equipe/Playbook_Vendedor_Ativo_GL.md"
+        },
+        {
+          "title": "Como Ganhar com a GL Academy",
+          "description": "Função, oportunidades e regras de remuneração do captador.",
+          "href": "/materials/vendedor-ativo/Documento_Captador_Como_Ganhar_GL_Academy.pdf"
+        },
+        {
+          "title": "Gestão de Objeções para Vendedores",
+          "description": "Orientações comerciais para responder dúvidas e resistências.",
+          "href": "/materials/vendedor-ativo/Gestao_Objecoes_Vendedores.pdf"
+        },
+        {
+          "title": "Formas de Pagamento",
+          "description": "Meios e informações de pagamento disponíveis.",
+          "href": "/materials/vendedor-ativo/Formas_de_Pagamento.pdf"
+        },
+        {
+          "title": "Scripts de Captação por DM e WhatsApp",
+          "description": "Modelos de mensagens para abordagem comercial.",
+          "href": "/materials/vendedor-ativo/Scripts_DM_WhatsApp_Captacao.pdf"
+        },
+        {
+          "title": "Checklist do Lead Qualificado, CRM e Handoff",
+          "description": "Campos e verificações para entregar um lead completo.",
+          "href": "/materials/vendedor-ativo/Checklist_Lead_Qualificado_CRM_Handoff.pdf"
+        }
+      ]
+    },
+    {
+      "id": "playbook-tecnico",
+      "moduleId": "m30_tecnico_raio_x_produtos",
+      "title": "Playbook do Vendedor Tecnico",
+      "subtitle": "Produto, objecao e fechamento de lead quente.",
+      "source": "Trilha do Vendedor Tecnico",
+      "tags": [
+        "vendedor_tecnico",
+        "produto",
+        "objecoes",
+        "fechamento"
+      ],
+      "promise": "Conduzir o cliente com clareza tecnica e postura comercial.",
+      "cards": [
+        {
+          "title": "Encaixe",
+          "body": "Produto certo para dor certa.",
+          "cue": "Nao venda catalogo."
+        },
+        {
+          "title": "Valor antes de preco",
+          "body": "Explique o problema resolvido.",
+          "cue": "Numero sem valor vira caro."
+        },
+        {
+          "title": "ACR",
+          "body": "Acolher, Clarificar, Responder.",
+          "cue": "Objecao precisa de causa."
+        },
+        {
+          "title": "Handoff",
+          "body": "Fechamento inclui orientacao pos-venda.",
+          "cue": "Cliente entra melhor."
+        }
+      ],
+      "practice": "Monte um pitch tecnico para cada produto principal.",
+      "questions": [
+        "q_m30_001",
+        "q_m31_001",
+        "q_m32_001"
+      ],
+      "materials": [
+        {
+          "title": "Playbook do Vendedor Tecnico",
+          "description": "Produto, objeções e fechamento.",
+          "href": "/materials/equipe/Playbook_Vendedor_Tecnico_GL.md"
+        }
+      ]
+    },
+    {
+      "id": "mercado-argumentos",
+      "moduleId": "m21_ativo_script_diagnostico",
+      "title": "Mercado como argumento comercial",
+      "subtitle": "Como usar noticia, volatilidade e calendario economico sem prometer resultado.",
+      "source": "Briefing Matinal",
+      "tags": [
+        "mercado",
+        "script",
+        "diagnostico"
+      ],
+      "promise": "Usar contexto de mercado para abrir conversa relevante.",
+      "cards": [
+        {
+          "title": "Dolar forte",
+          "body": "Pode abrir conversa sobre volatilidade e leitura.",
+          "cue": "Pergunte se o lead esta acompanhando."
+        },
+        {
+          "title": "Payroll",
+          "body": "Dia de noticia exige risco e processo.",
+          "cue": "Bom gancho para mentoria."
+        },
+        {
+          "title": "VIX alto",
+          "body": "Medo e oportunidade aparecem juntos.",
+          "cue": "Fale de disciplina."
+        },
+        {
+          "title": "Sem call",
+          "body": "Briefing nao e recomendacao.",
+          "cue": "Use como contexto educacional."
+        }
+      ],
+      "practice": "Transforme uma noticia de hoje em uma pergunta comercial sem promessa.",
+      "questions": [
+        "q_m21_001"
+      ],
+      "materials": []
+    }
+  ],
+  "learningDrills": [
+    {
+      "id": "pulso_meta",
+      "title": "Pulso 1: Meta",
+      "level": "beginner",
+      "body": "Qual numero voce precisa entregar hoje?",
+      "prompt": "Meta diaria clara?"
+    },
+    {
+      "id": "pulso_lista",
+      "title": "Pulso 2: Lista",
+      "level": "beginner",
+      "body": "Quem sera abordado, entrevistado ou fechado?",
+      "prompt": "Lista pronta antes da execucao?"
+    },
+    {
+      "id": "pulso_script",
+      "title": "Pulso 3: Script",
+      "level": "intermediate",
+      "body": "Qual abordagem sera usada?",
+      "prompt": "Mensagem curta e consultiva?"
+    },
+    {
+      "id": "pulso_objecao",
+      "title": "Pulso 4: Objecao",
+      "level": "intermediate",
+      "body": "Qual trava apareceu e como responder?",
+      "prompt": "Acolheu, clarificou e respondeu?"
+    },
+    {
+      "id": "pulso_proxima_acao",
+      "title": "Pulso 5: Proxima acao",
+      "level": "advanced",
+      "body": "O lead ou candidato saiu com caminho definido?",
+      "prompt": "Ha data, status e responsavel?"
+    },
+    {
+      "id": "pulso_relatorio",
+      "title": "Pulso 6: Relatorio",
+      "level": "advanced",
+      "body": "O que sera reportado para a Bia?",
+      "prompt": "Numero real ou sensacao?"
+    }
+  ],
+  "moduleEnrichment": {
+    "m00_alinhamento_diario": {
+      "stage": "Comece",
+      "lessonPage": {
+        "headline": "Alinhamento Diario GL Academy",
+        "subtitle": "Entrar no app sabendo o foco do dia, a cultura da empresa e a meta do seu cargo.",
+        "sections": [
+          {
+            "title": "Como usar o app todo dia",
+            "body": "O colaborador abre Hoje, confirma o foco do cargo, estuda a proxima aula e registra a execucao no fim do expediente.",
+            "bullets": [
+              "Recrutador acompanha entrevistas, triagens e candidatos aprovados.",
+              "Vendedor Ativo acompanha prospeccoes, conversas e leads qualificados.",
+              "Vendedor Tecnico acompanha diagnosticos, propostas e fechamentos."
+            ]
+          },
+          {
+            "title": "Ritual de equipe",
+            "body": "A GL Academy precisa de velocidade com padrao. O app organiza playbooks, scripts, objecoes, produtos e relatorios para reduzir improviso.",
+            "bullets": [
+              "Comece pelo foco do dia.",
+              "Estude apenas a proxima aula da sua trilha.",
+              "Use o relatorio para prestar contas para a Bia."
+            ]
+          }
+        ],
+        "checklist": [
+          "Sei onde ver minha meta do dia.",
+          "Sei qual trilha pertence ao meu cargo.",
+          "Sei que o relatorio diario e obrigatorio para medir evolucao."
+        ],
+        "mistakes": [
+          "Entrar no dia sem meta numerica.",
+          "Vender sem saber produto, preco e garantia.",
+          "Nao registrar numeros no fim do expediente."
+        ],
+        "mission": "Escolha sua trilha de cargo e registre no Diario Disciplinar qual meta voce vai cumprir hoje.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Primeiro compromisso",
+        "context": "O time comercial cresce quando todos sabem o alvo do dia antes de abrir WhatsApp, CRM ou Discord.",
+        "goal": "Definir uma meta numerica e uma prioridade comportamental para hoje.",
+        "lens": [
+          "foco",
+          "meta",
+          "ritmo"
+        ]
+      }
+    },
+    "m01_recrutador_funcoes_colaboradores": {
+      "stage": "Trilha do Recrutador",
+      "lessonPage": {
+        "headline": "Funções dos nossos colaboradores",
+        "subtitle": "Entender a esteira comercial completa e assumir o papel do recrutador com clareza, ética e acompanhamento.",
+        "sections": [
+          {
+            "title": "Resumo da aula",
+            "body": "A GL Academy trabalha com tecnologia e educação para traders. A esteira comercial é formada por recrutador, vendedor ativo e vendedor técnico. O recrutador encontra talentos, monta e acompanha a equipe; o ativo capta e qualifica leads; o técnico demonstra o produto e finaliza a venda.",
+            "bullets": [
+              "Selecione vendedores por comunicação, postura, reputação e vontade real de vender.",
+              "Acompanhe a equipe e realize reuniões de orientação.",
+              "Explique vaga, empresa e produto sem promessas falsas."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao vídeo completo.",
+          "Entendi minhas responsabilidades como recrutador.",
+          "Sei quais critérios usar para indicar um vendedor.",
+          "Sei que não posso prometer renda ou resultado."
+        ],
+        "mistakes": [
+          "Recrutar qualquer pessoa sem avaliar o perfil.",
+          "Abandonar o vendedor depois da contratação.",
+          "Prometer ganhos, facilidade ou resultados garantidos."
+        ],
+        "mission": "Revisar a esteira completa e estar preparado para explicar como as três funções trabalham juntas.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Base do recrutador",
+        "context": "A qualidade da equipe começa na seleção e continua no acompanhamento.",
+        "goal": "Formar vendedores alinhados à cultura e à operação da GL Academy.",
+        "lens": [
+          "talento",
+          "acompanhamento",
+          "etica"
+        ]
+      }
+    },
+    "m02_recrutador_comissao_abordagem": {
+      "stage": "Trilha do Recrutador",
+      "lessonPage": {
+        "headline": "Comissão, abordagem e controle do recrutador",
+        "subtitle": "Aprofundar a seleção, a abordagem, o acompanhamento da equipe e as regras de comissão.",
+        "sections": [
+          {
+            "title": "Resumo da aula",
+            "body": "O recrutador encontra e seleciona vendedores ativos, apresenta a oportunidade com verdade, participa da entrevista e acompanha o desempenho da equipe. Cada venda precisa percorrer o fluxo oficial e estar registrada para gerar comissão.",
+            "bullets": [
+              "Procure candidatos em redes sociais, comunidades, indicações e canais profissionais.",
+              "Avalie comunicação, postura, disciplina, organização e reputação digital.",
+              "Não prometa lucro rápido nem remuneração sem explicar as condições."
+            ]
+          },
+          {
+            "title": "Comissão e controle",
+            "body": "O vendedor ativo recebe R$ 200 e o recrutador recebe R$ 100 por venda finalizada pelo vendedor técnico. Se a venda não for concluída, não há comissão. Mercado Pago e Stripe seguem prazo de 30 dias; PIX e cripto/USDT seguem prazo de 7 dias.",
+            "bullets": [
+              "Registre o lead, o vendedor ativo e o vendedor técnico responsável.",
+              "Acompanhe calls, vendas, pessoas paradas e necessidades de treinamento.",
+              "Mantenha a planilha e o relatório mensal alinhados com a liderança."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao vídeo completo.",
+          "Sei abordar candidatos sem criar promessas falsas.",
+          "Entendi quando o vendedor ativo e o recrutador recebem comissão.",
+          "Sei quais dados precisam ser registrados para comprovar uma venda."
+        ],
+        "mistakes": [
+          "Contratar sem verificar reputação, postura e comunicação.",
+          "Prometer lucro rápido ou comissão garantida.",
+          "Deixar leads e resultados fora do controle oficial.",
+          "Considerar uma abordagem como venda antes do fechamento técnico."
+        ],
+        "mission": "Revisar o fluxo completo e preparar uma abordagem profissional para um candidato a vendedor ativo.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Abordagem e comissão sem ruído",
+        "context": "A confiança da equipe depende de uma vaga bem explicada e de um controle que conecte cada venda aos responsáveis corretos.",
+        "goal": "Selecionar, abordar e acompanhar vendedores com clareza e registro.",
+        "lens": [
+          "abordagem",
+          "comissao",
+          "controle"
+        ]
+      }
+    },
+    "m03_recrutador_papel_gestao_remuneracao": {
+      "stage": "Trilha do Recrutador",
+      "lessonPage": {
+        "headline": "Papel, gestão e remuneração do recrutador",
+        "subtitle": "Proteger a marca, desenvolver vendedores e manter a operação registrada.",
+        "sections": [
+          {
+            "title": "Resumo da aula",
+            "body": "O recrutador atrai e filtra vendedores, protege a reputação da GL Academy e acompanha a equipe depois da contratação. Comunicação, postura, ética, iniciativa comercial e reputação digital fazem parte da seleção.",
+            "bullets": [
+              "Não basta a pessoa precisar de trabalho: ela precisa gostar de vendas e de lidar com o público.",
+              "Reuniões gravadas, correção de rota e incentivo fazem parte da gestão.",
+              "Dúvidas que não forem resolvidas devem ser encaminhadas à liderança."
+            ]
+          },
+          {
+            "title": "Remuneração e responsabilidade",
+            "body": "O recrutador recebe R$ 100 por venda concluída por cada vendedor de sua equipe. Com autorização e preparo, também pode captar um lead diretamente e receber R$ 200 quando o vendedor técnico finalizar a venda.",
+            "bullets": [
+              "Toda atividade precisa estar registrada no CRM.",
+              "Promessas de lucro, spam e abordagem agressiva são proibidos.",
+              "Abandono da equipe e dano reputacional podem gerar suspensão ou desligamento."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao vídeo completo.",
+          "Entendi os critérios de seleção e proteção da marca.",
+          "Sei como acompanhar e treinar minha equipe.",
+          "Entendi a comissão e o bônus de captação direta.",
+          "Conheço as condutas proibidas e suas consequências."
+        ],
+        "mistakes": [
+          "Indicar alguém apenas por amizade ou necessidade de emprego.",
+          "Não acompanhar atividades e leads no CRM.",
+          "Prometer resultados ou usar abordagem agressiva.",
+          "Montar uma equipe e depois deixá-la sem apoio."
+        ],
+        "mission": "Revisar sua rotina de gestão e preparar um checklist de acompanhamento dos vendedores ativos.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Gestão com ética e registro",
+        "context": "A equipe só cresce quando o recrutador protege a marca, ensina com paciência e mantém a liderança informada.",
+        "goal": "Gerir vendedores ativos com clareza, apoio e rastreabilidade.",
+        "lens": [
+          "gestao",
+          "crm",
+          "etica"
+        ]
+      }
+    },
+    "m04_recrutador_treinamento_vendedores_gl_model": {
+      "stage": "Trilha do Recrutador",
+      "lessonPage": {
+        "headline": "Treinamento dos vendedores ativos no GL Model",
+        "subtitle": "Ensinar vendedores ativos a explicar o produto, usar o app e vender com clareza, ética e acompanhamento.",
+        "sections": [
+          {
+            "title": "Resumo da aula",
+            "body": "A aula mostra que o recrutador não treina apenas a vaga: ele prepara o vendedor ativo para entender o GL Model, explicar o produto com segurança e conduzir leads sem promessas mágicas. O produto deve ser apresentado como um mapa de decisão, não como robô de sinais ou garantia de lucro.",
+            "bullets": [
+              "Venda processo, tecnologia e suporte, não dinheiro fácil.",
+              "Mostre o GL Model como GPS profissional para leitura do mercado.",
+              "Treine o vendedor a explicar com simplicidade, prova técnica e responsabilidade."
+            ]
+          },
+          {
+            "title": "Como explicar o GL Model",
+            "body": "O recrutador deve ensinar o vendedor ativo a traduzir conceitos técnicos para benefícios práticos. POC pode ser explicada como centro de gravidade, HVN como região de defesa e LVN como vazio de aceleração. A demonstração deve conectar a dor do lead à solução visual que o software entrega.",
+            "bullets": [
+              "Evite jargões excessivos e adapte a linguagem ao nível do cliente.",
+              "Use a dor diagnosticada para mostrar o benefício certo.",
+              "Reforce risco calculado, invalidação, alvo e proteção de capital."
+            ]
+          },
+          {
+            "title": "Treinamento pelo app e acompanhamento",
+            "body": "O app é a principal fonte de treinamento da equipe. O recrutador deve concluir a trilha de recrutador e estudar a trilha de vendedor ativo para saber orientar sua equipe. Depois, precisa acompanhar com calls, entrevistas, mensagens simuladas, revisão de dúvidas e direcionamento constante.",
+            "bullets": [
+              "O vendedor ativo também precisa assistir aulas, responder questionários e baixar materiais.",
+              "O recrutador deve ensinar abordagem, diferenciais, objeções e uso correto do app.",
+              "Acompanhamento mínimo mensal, testes de comunicação e registro do que acontece na equipe fazem parte da função."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao vídeo completo.",
+          "Entendi que o GL Model deve ser apresentado como mapa de decisão, não como sinal automático.",
+          "Sei treinar o vendedor ativo a explicar o produto com linguagem simples e responsável.",
+          "Entendi que o app é a base principal de treinamento dos vendedores ativos.",
+          "Sei que preciso acompanhar a equipe com calls, entrevistas, mensagens de treino e orientação contínua."
+        ],
+        "mistakes": [
+          "Prometer lucro, resultado garantido ou dinheiro fácil.",
+          "Ensinar o vendedor a vender o GL Model como robô de sinais.",
+          "Usar linguagem técnica demais sem traduzir para benefício prático.",
+          "Achar que o app substitui totalmente o acompanhamento do recrutador.",
+          "Contratar e deixar o vendedor ativo sem calls, feedback ou teste de comunicação."
+        ],
+        "mission": "Preparar um roteiro curto para treinar um vendedor ativo: explique o GL Model como mapa de decisão, mostre como usar o app e crie uma mensagem simulada de abordagem para avaliar clareza e objeções.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Treinar vendedores ativos com processo",
+        "context": "O recrutador precisa formar vendedores capazes de explicar o produto, usar o app e abordar leads com confiança e ética.",
+        "goal": "Garantir que cada vendedor ativo entenda o GL Model, conclua o treinamento e saiba gerar curiosidade sem promessas falsas.",
+        "lens": [
+          "treinamento",
+          "gl_model",
+          "vendedor_ativo"
+        ]
+      }
+    },
+    "m12_recrutador_triagem": {
+      "stage": "Trilha do Recrutador",
+      "lessonPage": {
+        "headline": "Filtro, triagem e encaminhamento",
+        "subtitle": "Padronizar entrevistas, perguntas de corte e envio dos melhores candidatos para decisao.",
+        "sections": [
+          {
+            "title": "Perguntas de corte",
+            "body": "A entrevista precisa descobrir disponibilidade, experiencia com vendas, tolerancia a meta, comunicacao e capacidade de aprender produto tecnico.",
+            "bullets": [
+              "Qual foi sua meta mais dificil?",
+              "Como voce reage a nao?",
+              "Quanto tempo por dia consegue executar?"
+            ]
+          },
+          {
+            "title": "Score simples",
+            "body": "Classifique Energia, Clareza, Experiencia, Disponibilidade e Coachability de 1 a 5. So encaminhe quem tem base minima.",
+            "bullets": [
+              "Menos de 3 em energia nao avanca.",
+              "Sem disponibilidade nao avanca.",
+              "Sem vontade de aprender produto tecnico nao avanca."
+            ]
+          }
+        ],
+        "checklist": [
+          "Usei perguntas padrao.",
+          "Atribui score.",
+          "Registrei motivo de aprovar ou recusar."
+        ],
+        "mistakes": [
+          "Aprovar por simpatia.",
+          "Nao confirmar horario.",
+          "Nao registrar motivo de corte."
+        ],
+        "mission": "Crie 5 entrevistas simuladas e classifique cada candidato com score de 1 a 5.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Triagem com padrao",
+        "context": "A qualidade da equipe comeca na triagem. O recrutador protege o funil comercial.",
+        "goal": "Encaminhar apenas candidatos com chance real de performar.",
+        "lens": [
+          "entrevista",
+          "score",
+          "handoff"
+        ]
+      }
+    },
+    "m01_ativo_funcoes_colaboradores": {
+      "stage": "Trilha do Vendedor Ativo",
+      "lessonPage": {
+        "headline": "Funções dos nossos colaboradores",
+        "subtitle": "Entender a esteira comercial completa e assumir o papel do vendedor ativo na captação, qualificação e passagem do lead.",
+        "sections": [
+          {
+            "title": "Resumo da aula",
+            "body": "A GL Academy trabalha com tecnologia e educação para traders. A esteira comercial é formada por recrutador, vendedor ativo e vendedor técnico. O ativo ocupa o meio do funil: encontra oportunidades, aquece o contato, identifica dores, registra o lead e passa o contexto ao técnico.",
+            "bullets": [
+              "Use diferentes canais para encontrar pessoas interessadas em trade e investimentos.",
+              "Não assuste o lead com uma oferta agressiva no primeiro contato.",
+              "Registre origem, responsável, contexto e próxima ação no CRM."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao vídeo completo.",
+          "Entendi meu lugar no funil comercial.",
+          "Sei como qualificar e encaminhar um lead.",
+          "Sei que não posso prometer lucro ou resultado."
+        ],
+        "mistakes": [
+          "Abordar sem comunicar ou registrar o contato.",
+          "Fazer spam ou pressionar o lead no primeiro contato.",
+          "Passar um lead ao técnico sem contexto e sem identificar a origem."
+        ],
+        "mission": "Revisar a esteira completa e estar preparado para explicar como um contato se transforma em lead qualificado.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Base do vendedor ativo",
+        "context": "O técnico só consegue fechar bem quando recebe um lead organizado e qualificado.",
+        "goal": "Transformar contatos em oportunidades com confiança, diagnóstico e CRM.",
+        "lens": [
+          "captacao",
+          "diagnostico",
+          "handoff"
+        ]
+      }
+    },
+    "m20_ativo_prospeccao_fria": {
+      "stage": "Trilha do Vendedor Ativo",
+      "lessonPage": {
+        "headline": "Papel, prospecção e rotina do vendedor ativo",
+        "subtitle": "Criar oportunidades com diagnóstico, ética, CRM e passagem organizada para o técnico.",
+        "sections": [
+          {
+            "title": "Função e prospecção",
+            "body": "O vendedor ativo encontra, aquece e qualifica leads. Pode trabalhar contatos enviados pela equipe ou buscar oportunidades próprias em redes, grupos e comunidades de mercado financeiro, desde que registre a origem antes da abordagem.",
+            "bullets": [
+              "Informe leads próprios antes de entrar em contato.",
+              "Descubra nível, plataforma e dor do trader.",
+              "Agende a call técnica antes do handoff."
+            ]
+          },
+          {
+            "title": "Ética, CRM e remuneração",
+            "body": "A venda deve apresentar educação e metodologia, nunca lucro garantido, sinais ou aprovação automática. O CRM precisa preparar a equipe técnica e comprovar a participação do vendedor.",
+            "bullets": [
+              "Registre origem, contexto, dor, plataforma e horário.",
+              "Respeite os horários e os prazos de contato.",
+              "A comissão de R$ 200 depende da venda concluída."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao vídeo completo.",
+          "Sei registrar um lead próprio antes da abordagem.",
+          "Entendi as promessas proibidas.",
+          "Sei agendar e entregar um CRM completo."
+        ],
+        "mistakes": [
+          "Abordar um lead próprio sem registro.",
+          "Prometer lucro, sinal ou consistência.",
+          "Encaminhar o lead sem contexto ou horário.",
+          "Desrespeitar os prazos de atendimento."
+        ],
+        "mission": "Monte um exemplo de CRM com origem, dor, plataforma, contexto e horário de uma call técnica.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Oportunidade organizada",
+        "context": "O técnico fecha melhor quando recebe um lead autorizado, diagnosticado e bem registrado.",
+        "goal": "Transformar prospecção em uma passagem completa para fechamento.",
+        "lens": [
+          "prospeccao",
+          "crm",
+          "handoff"
+        ]
+      }
+    },
+    "m21_ativo_script_diagnostico": {
+      "stage": "Trilha do Vendedor Ativo",
+      "lessonPage": {
+        "headline": "Abordagem, diagnóstico e CRM do lead",
+        "subtitle": "Adaptar o script, despertar interesse, acompanhar o lead e preparar a etapa técnica.",
+        "sections": [
+          {
+            "title": "Abordagem e produto",
+            "body": "O script é uma base. O vendedor precisa conhecer a GL Academy e o GL Model para adaptar a linguagem sem apresentar a ferramenta como botão automático, sala de sinais ou promessa de lucro.",
+            "bullets": [
+              "Apresente empresa, metodologia e convite gratuito.",
+              "Use mensagem curta e adequada ao perfil do lead.",
+              "Explique processo, educação e leitura de mercado."
+            ]
+          },
+          {
+            "title": "Diagnóstico, follow-up e CRM",
+            "body": "Depois do interesse, faça perguntas objetivas, agende a call e registre tudo. Se houver silêncio, aguarde aproximadamente 24 horas e retome com cuidado, sem pressão.",
+            "bullets": [
+              "Descubra dor e plataforma.",
+              "Classifique o lead como frio, morno ou quente.",
+              "Envie à recrutadora origem, contexto, horário e observações."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao vídeo completo.",
+          "Sei adaptar a abordagem sem criar promessas.",
+          "Sei fazer o diagnóstico rápido.",
+          "Sei fazer follow-up e preencher todos os campos do CRM."
+        ],
+        "mistakes": [
+          "Copiar o script sem ouvir o lead.",
+          "Enviar informações demais na primeira mensagem.",
+          "Pressionar quem deixou de responder.",
+          "Passar o lead sem dor, temperatura ou horário."
+        ],
+        "mission": "Escreva uma abordagem inicial, duas perguntas de diagnóstico e um follow-up de 24 horas.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Conversa que prepara o fechamento",
+        "context": "A qualidade da abordagem define o interesse do lead e a qualidade da call técnica.",
+        "goal": "Gerar curiosidade, diagnosticar e entregar contexto acionável.",
+        "lens": [
+          "abordagem",
+          "dor",
+          "follow-up",
+          "crm"
+        ]
+      }
+    },
+    "m22_ativo_resposta_objecoes": {
+      "stage": "Trilha do Vendedor Ativo",
+      "lessonPage": {
+        "headline": "Resposta de objeções e condução do lead",
+        "subtitle": "Responder dúvidas, silêncio e resistência sem perder postura, sem prometer resultado e sem inventar resposta técnica.",
+        "sections": [
+          {
+            "title": "Resumo da aula",
+            "body": "Esta aula ensina como lidar com objeções antes de o lead enxergar o valor real do GL Model. Bia reforça que objeção não é motivo para discutir: é uma chance de entender medo, dúvida, experiência ruim ou dificuldade financeira. O vendedor ativo deve acolher, responder com segurança e conduzir para o próximo passo, sempre sem prometer lucro, consistência, ausência de risco ou entrada exata no mercado.",
+            "bullets": [
+              "Se não souber responder, chame a Bia ou a recrutadora responsável.",
+              "Toda resposta precisa proteger o cliente, a empresa e a venda.",
+              "O objetivo é manter a conversa viva e levar o lead para a etapa certa."
+            ]
+          },
+          {
+            "title": "Objeções principais",
+            "body": "A aula mostra respostas para dúvidas como golpe, experiências ruins com gurus, preço alto, vou pensar, preciso falar com parceiro, e se não funcionar, falta de tempo, uso pelo celular e mercado volátil. Em todas elas, o vendedor precisa mostrar prova, valor e cuidado. Quando o lead fala de preço, por exemplo, a resposta deve comparar preço com função, acesso ao sistema, mentoria e estrutura, sem forçar o bolso do cliente.",
+            "bullets": [
+              "Golpe ou desconfiança: valide a preocupação e envie canais oficiais.",
+              "Preço ou tempo: descubra a dúvida real antes de encerrar a conversa.",
+              "Mercado volátil: explique risco e oportunidade sem vender garantia."
+            ]
+          },
+          {
+            "title": "Limite do vendedor ativo",
+            "body": "O vendedor ativo precisa saber o suficiente para conduzir o lead, mas não deve inventar respostas técnicas profundas. Quando a dúvida envolve cálculo do indicador, orderflow, integrações, licença, ativos específicos ou diferença técnica entre plataformas, o melhor caminho é acionar a Bia, a recrutadora ou transformar a dúvida em gancho para a mentoria gratuita com o vendedor técnico.",
+            "bullets": [
+              "Não adivinhe respostas técnicas.",
+              "Use a frase: essa dúvida fica melhor vendo o gráfico ao vivo.",
+              "Estude PDFs, anote objeções e participe das calls de ensaio."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao vídeo completo.",
+          "Sei quais promessas são proibidas.",
+          "Sei responder objeções de confiança, preço, tempo e mercado volátil.",
+          "Sei quando chamar Bia, recrutadora ou vendedor técnico.",
+          "Sei usar a objeção como ponte para a call técnica."
+        ],
+        "mistakes": [
+          "Responder sem saber só para parecer preparado.",
+          "Prometer que o sistema funciona para qualquer pessoa sem esforço.",
+          "Dizer que o lead vai recuperar investimento rapidamente.",
+          "Encerrar a conversa quando o lead diz que vai pensar.",
+          "Discutir com lead cético em vez de acolher e provar."
+        ],
+        "mission": "Monte três respostas curtas para leads: uma para 'isso é golpe?', uma para 'está caro' e uma para 'vou pensar'. Em cada resposta, inclua acolhimento e próximo passo.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Objeção que vira próximo passo",
+        "context": "O vendedor ativo não precisa ganhar discussão; precisa abrir clareza e conduzir o lead.",
+        "goal": "Responder objeções comuns sem promessa e sem perder oportunidade.",
+        "lens": [
+          "objecao",
+          "prova",
+          "call_tecnica"
+        ]
+      }
+    },
+    "m01_tecnico_funcoes_colaboradores": {
+      "stage": "Trilha do Vendedor Tecnico",
+      "lessonPage": {
+        "headline": "Funções dos nossos colaboradores",
+        "subtitle": "Entender a esteira comercial completa e assumir o papel do vendedor técnico na demonstração, no fechamento e no registro da venda.",
+        "sections": [
+          {
+            "title": "Resumo da aula",
+            "body": "A GL Academy trabalha com tecnologia e educação para traders. A esteira comercial é formada por recrutador, vendedor ativo e vendedor técnico. O técnico recebe um lead qualificado, demonstra o GL Model, explica processo e mentoria, conduz o fechamento e confirma a venda no sistema.",
+            "bullets": [
+              "Receba e use o contexto enviado pelo vendedor ativo.",
+              "Demonstre o GL Model ao vivo com domínio do gráfico e do processo.",
+              "Envie apenas links oficiais e confirme o pagamento no CRM."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao vídeo completo.",
+          "Entendi como recebo o handoff do vendedor ativo.",
+          "Sei o objetivo da call consultiva.",
+          "Sei como registrar e confirmar o fechamento."
+        ],
+        "mistakes": [
+          "Fazer a call sem entender produto, gráfico ou mercado.",
+          "Prometer resultado financeiro para fechar a venda.",
+          "Usar checkout não oficial ou deixar de confirmar o pagamento."
+        ],
+        "mission": "Revisar a esteira completa e estar preparado para explicar o caminho do handoff até o fechamento.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Base do vendedor técnico",
+        "context": "O fechamento consultivo depende de contexto, demonstração real e organização.",
+        "goal": "Conduzir o lead com clareza técnica até o pagamento oficial.",
+        "lens": [
+          "demonstracao",
+          "fechamento",
+          "registro"
+        ]
+      }
+    },
+    "m02_tecnico_call_consultiva_gl_model": {
+      "stage": "Trilha do Vendedor Tecnico",
+      "lessonPage": {
+        "headline": "Call tecnica e demonstracao do GL Model",
+        "subtitle": "Conduzir a mentoria gratuita com autoridade, diagnostico, demonstracao clara, prova etica e fechamento organizado.",
+        "sections": [
+          {
+            "title": "Resumo da aula",
+            "body": "Esta aula mostra como o vendedor tecnico deve conduzir a call de mentoria gratuita, que pode durar ate 2 horas. O objetivo e criar conexao, entender a dor do lead, explicar o GL Model com seguranca e transformar a demonstracao em uma decisao clara de compra. A aula reforca que a confianca do cliente vem da postura do vendedor: ele precisa parecer preparado, dominar o processo e nunca depender de promessas de lucro para vender.",
+            "bullets": [
+              "Receba o lead, confirme disponibilidade real e respeite o horario combinado.",
+              "Abra a call perguntando dor, experiencia, plataforma usada e principal dificuldade operacional.",
+              "Use o diagnostico para conectar o GL Model a uma solucao logica para aquele lead."
+            ]
+          },
+          {
+            "title": "Como apresentar o GL Model",
+            "body": "O vendedor tecnico deve explicar que a GL Academy vende clareza no processo, tecnologia de ponta, metodologia estruturada e suporte tecnico/operacional. O GL Model organiza leitura macro, micro, zonas de liquidez, contexto, fluxo, invalidacao e alvo para ajudar o trader a tomar decisoes com mais criterio. A apresentacao precisa ser simples o suficiente para um iniciante entender e forte o suficiente para um trader mais experiente perceber valor.",
+            "bullets": [
+              "TradingView: foco em estudo, visao macro, desenho das zonas e acessibilidade em varias telas.",
+              "NinjaTrader: foco em execucao avancada, orderflow, leitura profunda e GL Mentor.",
+              "As quatro familias operacionais ajudam a explicar como o GL Model pode ser usado na pratica."
+            ]
+          },
+          {
+            "title": "Etica, objecoes e fechamento",
+            "body": "A venda tecnica precisa ser firme, mas sempre etica. E proibido prometer lucro, renda garantida, sinais automaticos, setup infalivel ou aprovacao em mesa proprietaria. Quando o lead trouxer objecoes de preco, tempo ou confianca, o vendedor deve voltar ao valor, ao parcelamento, aos canais oficiais, a comunidade e a seriedade da marca. O fechamento acontece quando a dor diagnosticada fica claramente ligada ao plano indicado.",
+            "bullets": [
+              "Apresente preco sem pedir desculpas: primeiro mostre valor e depois condicao.",
+              "Se faltar confianca, mostre canais oficiais, comunidade e prova de seriedade.",
+              "Registre o resultado corretamente para proteger comissao, historico e gestao."
+            ]
+          },
+          {
+            "title": "Comissao e prazos",
+            "body": "Quando o lead foi agendado por um captador ou vendedor ativo, o vendedor tecnico recebe R$ 600 pela venda concluida. Quando o proprio vendedor tecnico encontra o lead, conduz a captacao e fecha a venda, ele recebe R$ 800. Pagamentos por Mercado Pago e Stripe seguem prazo de 30 dias uteis. Pix e cripto/Bybit seguem prazo de ate 7 dias, respeitando o periodo de possivel reembolso do cliente.",
+            "bullets": [
+              "Venda tecnica feita sobre lead de captador: R$ 600 para o tecnico.",
+              "Venda em que o tecnico tambem captou o lead: R$ 800 para o tecnico.",
+              "Comissao depende de venda concluida, registro correto e prazo operacional."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao video completo.",
+          "Sei abrir a call com conexao e diagnostico.",
+          "Sei explicar TradingView, NinjaTrader e GL Model sem prometer resultado.",
+          "Sei responder objecoes de preco, tempo e confianca com valor e prova.",
+          "Sei quando o vendedor tecnico recebe R$ 600 ou R$ 800 e quais sao os prazos."
+        ],
+        "mistakes": [
+          "Fazer call sem treino e sem seguranca para explicar o produto.",
+          "Prometer lucro, renda garantida, setup infalivel, sinais automaticos ou aprovacao em mesa.",
+          "Comecar pelo preco antes de diagnosticar a dor do lead.",
+          "Dizer que o GL Model funciona em qualquer plataforma sem explicar os limites.",
+          "Nao registrar corretamente a venda, origem do lead e responsaveis."
+        ],
+        "mission": "Prepare um roteiro de abertura para uma call tecnica: uma pergunta de conexao, tres perguntas de diagnostico, uma explicacao curta do GL Model e uma resposta para objecao de preco.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Call tecnica com autoridade",
+        "context": "O lead compra quando sente que o vendedor entende sua dor e sabe demonstrar o caminho com clareza.",
+        "goal": "Conduzir a call do diagnostico ao fechamento sem promessas proibidas.",
+        "lens": [
+          "diagnostico",
+          "demonstracao",
+          "objecoes",
+          "fechamento"
+        ]
+      }
+    },
+    "m30_tecnico_raio_x_produtos": {
+      "stage": "Trilha do Vendedor Tecnico",
+      "lessonPage": {
+        "headline": "Raio-X dos produtos GL Academy",
+        "subtitle": "Dominar produtos, precos, garantia, beneficios e encaixe por perfil de cliente.",
+        "sections": [
+          {
+            "title": "Produto certo para dor certa",
+            "body": "Venda tecnica nao despeja catalogo. Ela conecta dor do cliente com indicador, mentoria, sala, complemento ou combo.",
+            "bullets": [
+              "TradingView para mapa e leitura.",
+              "NinjaTrader para execucao e fluxo.",
+              "Mentoria para processo, rotina e acompanhamento."
+            ]
+          },
+          {
+            "title": "Preco e garantia",
+            "body": "O vendedor tecnico deve saber explicar preco, parcelamento, garantia, o que inclui e o que nao inclui.",
+            "bullets": [
+              "Nunca invente condicao.",
+              "Confirme campanha vigente.",
+              "Mostre valor antes do numero final."
+            ]
+          }
+        ],
+        "checklist": [
+          "Sei explicar cada produto.",
+          "Sei qual dor cada oferta resolve.",
+          "Sei confirmar preco e condicao atual."
+        ],
+        "mistakes": [
+          "Falar preco sem valor.",
+          "Prometer resultado financeiro.",
+          "Misturar produto com mentoria sem clareza."
+        ],
+        "mission": "Crie um pitch de 60 segundos para TradingView, NinjaTrader e Mentoria GL.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Prateleira consultiva",
+        "context": "O cliente compra quando entende o encaixe entre problema e solucao.",
+        "goal": "Apresentar a oferta certa sem confundir o lead.",
+        "lens": [
+          "produto",
+          "valor",
+          "encaixe"
+        ]
+      }
+    },
+    "m03_tecnico_demonstracao_ao_vivo_gl_model": {
+      "stage": "Trilha do Vendedor Tecnico",
+      "lessonPage": {
+        "headline": "Demonstração ao vivo do GL Model",
+        "subtitle": "Observar uma call real para aprender conexão, demonstração técnica, leitura de contexto e fechamento consultivo sem promessas.",
+        "sections": [
+          {
+            "title": "Resumo da aula",
+            "body": "Esta aula mostra uma demonstração real do GL Model conduzida por Giovane com um cliente. A abertura reforça que o conteúdo é confidencial e que os dados do cliente não devem ser expostos. Durante a call, o vendedor técnico observa como criar conexão, explicar o produto de forma segura e transformar conceitos complexos em uma demonstração clara, prática e consultiva.",
+            "bullets": [
+              "A aula é uma call real, não uma encenação.",
+              "O vendedor técnico deve observar postura, linguagem e condução.",
+              "A confidencialidade do cliente faz parte da responsabilidade da equipe."
+            ]
+          },
+          {
+            "title": "Demonstração técnica",
+            "body": "Giovane apresenta o GL Model como uma leitura quantitativa e um mapa de decisão. Ele mostra expansões e retornos do preço, nuvens macro e micro, regiões de decisão, uso de alertas no TradingView, replay de mercado, stop abaixo da nuvem e proteção de lucro. A aula também mostra como explicar leilão, defesa de extremidades, falha de leilão, agressão, breakout, reteste e o papel do GL Mentor/playbook para organizar contexto e decisão.",
+            "bullets": [
+              "O GL Model não é vendido como sinal automático, mas como clareza de contexto.",
+              "Nuvens macro e micro ajudam a explicar continuidade, correção e pontos de decisão.",
+              "Leilão, fluxo, invalidação e alvo precisam ser explicados com exemplos visuais."
+            ]
+          },
+          {
+            "title": "Postura comercial",
+            "body": "A venda consultiva aparece quando o vendedor traduz a tecnologia em benefício prático. A aula reforça que não se promete lucro, resultado financeiro ou aprovação; o valor está na estrutura, mentoria, suporte e leitura profissional. No final, Giovane diferencia TradingView e NinjaTrader, apresenta as soluções da GL Academy e fecha abrindo espaço para dúvidas, com tranquilidade e transparência.",
+            "bullets": [
+              "TradingView: estudos, cenários, níveis, alertas e acesso em várias telas.",
+              "NinjaTrader: execução avançada, orderflow, leitura profunda e recursos profissionais.",
+              "Fechamento consultivo é clareza, pergunta final e próximo passo, não pressão cega."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao vídeo completo.",
+          "Entendi por que a aula é confidencial e não deve expor dados do cliente.",
+          "Sei explicar o GL Model como mapa de decisão e leitura quantitativa, não como promessa.",
+          "Sei citar nuvens macro/micro, alertas, stop e proteção de lucro.",
+          "Sei diferenciar TradingView e NinjaTrader de forma simples.",
+          "Sei conduzir perguntas finais com transparência e postura consultiva."
+        ],
+        "mistakes": [
+          "Expor dados, dúvidas ou informações do cliente da call real.",
+          "Prometer lucro, sinais automáticos ou resultado financeiro.",
+          "Vender o GL Model como robô em vez de mapa de decisão.",
+          "Explicar leilão e fluxo sem contexto visual ou sem exemplos simples.",
+          "Confundir TradingView e NinjaTrader na recomendação ao cliente.",
+          "Pressionar fechamento sem abrir espaço para dúvidas."
+        ],
+        "mission": "Escreva um roteiro de 90 segundos explicando o GL Model para um lead. Inclua: mapa de decisão, leitura de risco, diferença entre TradingView e NinjaTrader e uma pergunta final para descobrir se ficou alguma dúvida.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Demonstração consultiva real",
+        "context": "O lead confia quando percebe domínio técnico, clareza visual e transparência sobre risco.",
+        "goal": "Usar a call real como referência para demonstrar o GL Model sem promessa e com segurança.",
+        "lens": [
+          "call real",
+          "demonstracao",
+          "leilao",
+          "fechamento"
+        ]
+      }
+    },
+    "m31_tecnico_objecoes": {
+      "stage": "Trilha do Vendedor Tecnico",
+      "lessonPage": {
+        "headline": "Banco de objeções e respostas",
+        "subtitle": "Acolher, clarificar e responder objeções com prova, valor, compliance e próximo passo.",
+        "sections": [
+          {
+            "title": "Regra ACR",
+            "body": "A base continua sendo Acolher, Clarificar e Responder. Primeiro mostre que ouviu a preocupação do lead, depois descubra se a objeção é preço, confiança, tempo, medo técnico ou prioridade. Só depois responda com prova, valor e próximo passo.",
+            "bullets": [
+              "Acolher: entendo sua preocupação.",
+              "Clarificar: o ponto maior é confiança, investimento, tempo ou parte técnica?",
+              "Responder: conectar prova, valor e próximo passo."
+            ]
+          },
+          {
+            "title": "Compliance e promessas proibidas",
+            "body": "A aula reforça que o vendedor técnico não pode transformar força comercial em promessa perigosa. Frases como o sistema funciona para qualquer pessoa, você vai recuperar rápido, o indicador mostra exatamente onde entrar, é sem risco ou é só seguir que dá certo podem criar expectativa falsa, pedido de reembolso e risco para a empresa.",
+            "bullets": [
+              "Venda clareza, tecnologia, mentoria, suporte e processo.",
+              "Nunca prometa lucro, consistência, entrada exata ou risco zero.",
+              "Explique que resultado depende de estudo, disciplina e protocolo."
+            ]
+          },
+          {
+            "title": "Objeções comerciais",
+            "body": "Para objeções como golpe, gurus, preço, vou pensar, parceiro, tempo e mercado volátil, o caminho é acolher e provar. Mostre canais oficiais, CNPJ, comunidade, materiais, página validada e estrutura de suporte. Se o problema for preço, compare com função e valor. Se o lead disser que vai pensar, descubra qual ponto ficou aberto antes de encerrar a conversa.",
+            "bullets": [
+              "Golpe: valide a desconfiança e envie provas oficiais.",
+              "Caro: compare preço com sistema, mentoria, estrutura e suporte.",
+              "Vou pensar: pergunte se a dúvida é técnica, financeira ou de decisão."
+            ]
+          },
+          {
+            "title": "Dúvida técnica vira demonstração",
+            "body": "No caso do vendedor técnico, muitas objeções devem virar demonstração no gráfico. Quando o lead pergunta sobre cálculo, orderflow, integração, licença, ativos específicos, TradingView ou NinjaTrader, a melhor resposta pode ser mostrar ao vivo. Isso evita resposta solta, reduz confusão e fortalece a confiança pela prova visual.",
+            "bullets": [
+              "Use a call para provar no gráfico, não para prometer resultado.",
+              "Explique TradingView, NinjaTrader e limites com clareza.",
+              "Estude PDFs, anote objeções e participe dos ensaios."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao vídeo completo.",
+          "Sei usar a regra ACR sem discutir com o lead.",
+          "Sei quais promessas são proibidas.",
+          "Sei responder objeções de confiança, preço, tempo e mercado volátil.",
+          "Sei quando transformar a dúvida em demonstração técnica."
+        ],
+        "mistakes": [
+          "Dar desconto antes de entender.",
+          "Responder defensivo.",
+          "Prometer resultado para vencer medo.",
+          "Dizer que o indicador mostra exatamente onde entrar.",
+          "Responder dúvida técnica profunda sem mostrar prova ou sem ter segurança."
+        ],
+        "mission": "Escreva respostas para cinco objeções: golpe, caro, vou pensar, não tenho tempo e mercado volátil. Em pelo menos uma delas, transforme a dúvida em convite para demonstração no gráfico.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Resposta com postura",
+        "context": "Objeção é sinal de interesse ou insegurança. O vendedor técnico precisa descobrir qual e provar com clareza.",
+        "goal": "Transformar objeção em decisão clara sem promessa proibida.",
+        "lens": [
+          "objecao",
+          "prova",
+          "valor",
+          "compliance"
+        ]
+      }
+    },
+    "m32_tecnico_fechamento": {
+      "stage": "Trilha do Vendedor Tecnico",
+      "lessonPage": {
+        "headline": "Fechamento de leads quentes",
+        "subtitle": "Conduzir proposta, urgencia, decisao e pagamento com seguranca e compliance.",
+        "sections": [
+          {
+            "title": "Sinais de lead quente",
+            "body": "Lead quente tem dor clara, entende valor, perguntou preco/garantia e aceita falar do proximo passo.",
+            "bullets": [
+              "Pergunta como funciona.",
+              "Pede condicao ou link.",
+              "Compara opcoes e quer seguranca."
+            ]
+          },
+          {
+            "title": "Fechamento limpo",
+            "body": "Recapitule dor, solucao, condicao, garantia e proximo passo. Depois acompanhe ate pagamento e entrada na comunidade.",
+            "bullets": [
+              "Resumo antes do link.",
+              "Checkout correto.",
+              "Boas-vindas e orientacao pos-venda."
+            ]
+          }
+        ],
+        "checklist": [
+          "Recapitulei dor e oferta.",
+          "Enviei checkout correto.",
+          "Acompanhei ate confirmacao."
+        ],
+        "mistakes": [
+          "Fechar com pressao falsa.",
+          "Enviar link errado.",
+          "Sumir depois do pagamento."
+        ],
+        "mission": "Monte um roteiro de fechamento para um lead que quer NinjaTrader mas tem medo de nao conseguir usar.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Fechamento com seguranca",
+        "context": "Lead quente precisa de clareza e condução, nao pressao cega.",
+        "goal": "Fechar 2 leads quentes por dia com processo limpo.",
+        "lens": [
+          "lead quente",
+          "checkout",
+          "pos-venda"
+        ]
+      }
+    },
+    "m40_gestao_metas_relatorio": {
+      "stage": "Evoluir",
+      "lessonPage": {
+        "headline": "Metas, desempenho e relatorio para a Bia",
+        "subtitle": "Transformar atividade diaria em numeros que mostram evolucao, gargalo e prioridade.",
+        "sections": [
+          {
+            "title": "Numeros minimos",
+            "body": "Cada cargo deve reportar os indicadores que controla. Sem numero, nao existe gestao.",
+            "bullets": [
+              "Recrutador: abordagens, entrevistas, aprovados.",
+              "Ativo: prospeccoes, conversas, leads qualificados.",
+              "Tecnico: propostas, vendas, receita e objeções."
+            ]
+          },
+          {
+            "title": "Leitura de gargalo",
+            "body": "Se ha volume e pouca conversa, o problema e abordagem. Se ha conversa e pouca venda, o problema e diagnostico, proposta ou objecao.",
+            "bullets": [
+              "Meça antes de opinar.",
+              "Compare diario e semanal.",
+              "Ajuste o script com base no gargalo."
+            ]
+          }
+        ],
+        "checklist": [
+          "Preenchi numeros.",
+          "Identifiquei gargalo.",
+          "Defini foco de melhoria."
+        ],
+        "mistakes": [
+          "Reportar sensacao.",
+          "Esconder numero ruim.",
+          "Nao separar atividade de resultado."
+        ],
+        "mission": "Preencha um relatorio simulado com numeros do dia e escreva o gargalo principal.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Prestacao de contas",
+        "context": "A gestao precisa enxergar o funil sem depender de memoria ou percepcao solta.",
+        "goal": "Registrar atividade, resultado e gargalo todos os dias.",
+        "lens": [
+          "metricas",
+          "funil",
+          "gargalo"
+        ]
+      }
+    },
+    "m41_cultura_gl": {
+      "stage": "Evoluir",
+      "lessonPage": {
+        "headline": "Regras de ouro e cultura GL",
+        "subtitle": "Manter postura, compliance, comunicacao e energia comercial da equipe.",
+        "sections": [
+          {
+            "title": "Promessas proibidas",
+            "body": "A GL vende educacao, tecnologia e acompanhamento. Ninguem promete lucro, aprovacao em mesa ou resultado garantido.",
+            "bullets": [
+              "Fale de processo, ferramenta e suporte.",
+              "Nao fale como sinal automatico.",
+              "Nao use print como promessa individual."
+            ]
+          },
+          {
+            "title": "Energia de equipe",
+            "body": "WhatsApp e Discord servem para tirar duvidas, acelerar vendas e comemorar resultados com responsabilidade.",
+            "bullets": [
+              "Compartilhe aprendizados.",
+              "Avise objeções novas.",
+              "Comemore venda e reconheca processo."
+            ]
+          }
+        ],
+        "checklist": [
+          "Sei o que nao prometer.",
+          "Uso linguagem profissional.",
+          "Ajudo o time com informacoes uteis."
+        ],
+        "mistakes": [
+          "Prometer lucro.",
+          "Falar mal de lead ou colega.",
+          "Esconder uma objecao que todos precisam aprender."
+        ],
+        "mission": "Escreva tres frases permitidas e tres frases proibidas para usar com leads.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Padrao GL",
+        "context": "Cultura forte protege marca, cliente e time comercial.",
+        "goal": "Vender com energia sem quebrar confianca.",
+        "lens": [
+          "compliance",
+          "postura",
+          "time"
+        ]
+      }
+    }
+  },
+  "extraQuestions": {},
+  "studentMaterials": [
+    {
+      "id": "guia-colaborador",
+      "title": "Guia do Colaborador GL Sales Training",
+      "description": "Acesso, rotina diaria, metas e cultura.",
+      "href": "/materials/equipe/Guia_Colaborador_GL_Sales_Training.md",
+      "stage": "Comece aqui"
+    },
+    {
+      "id": "playbook-recrutador",
+      "title": "Playbook do Recrutador",
+      "description": "Canais, pitch da vaga, score e triagem.",
+      "href": "/materials/equipe/Playbook_Recrutador_GL.md",
+      "stage": "Recrutador"
+    },
+    {
+      "id": "recrutador-proposta-funcao",
+      "title": "Proposta e Fun??o do Recrutador",
+      "description": "Documento de refer?ncia sobre a proposta, o papel e as responsabilidades da fun??o.",
+      "href": "/materials/recrutadores/Documento_Recrutador_Proposta_Funcao.pdf",
+      "stage": "Recrutador"
+    },
+    {
+      "id": "recrutador-manual-gestao",
+      "title": "Manual: Como Recrutar e Gerir a Equipe",
+      "description": "Orienta??es pr?ticas para selecionar, treinar, acompanhar e desenvolver vendedores.",
+      "href": "/materials/recrutadores/Manual_Recrutador_Como_Recrutar_Gerir_Equipe.pdf",
+      "stage": "Recrutador"
+    },
+    {
+      "id": "recrutador-checklist-liberacao",
+      "title": "Checklist de Libera??o do Captador e Recrutador",
+      "description": "Processo de vendas e pontos de confer?ncia antes da libera??o operacional.",
+      "href": "/materials/recrutadores/Checklist_Liberacao_Captador_Recrutador.pdf",
+      "stage": "Recrutador"
+    },
+    {
+      "id": "recrutador-regras-comissao",
+      "title": "Regras de Comiss?o e Conduta",
+      "description": "Regras oficiais de comiss?o, registro, postura e conduta do recrutador.",
+      "href": "/materials/recrutadores/Regras_Comissao_Conduta_Recrutador.pdf",
+      "stage": "Recrutador"
+    },
+    {
+      "id": "recrutador-estrutura-global",
+      "title": "Estrutura Global de Vendas e Recrutamento",
+      "description": "Vis?o geral da organiza??o comercial, do recrutamento e do fluxo entre as fun??es.",
+      "href": "/materials/recrutadores/Estrutura_Global_Vendas_Recrutamento_Recrutadores.pdf",
+      "stage": "Recrutador"
+    },
+    {
+      "id": "playbook-ativo",
+      "title": "Playbook do Vendedor Ativo",
+      "description": "Prospecao, script, CRM e follow-up.",
+      "href": "/materials/equipe/Playbook_Vendedor_Ativo_GL.md",
+      "stage": "Vendedor Ativo"
+    },
+    {
+      "id": "ativo-como-ganhar",
+      "title": "Como Ganhar com a GL Academy",
+      "description": "Documento para o captador sobre função, oportunidades e regras de remuneração.",
+      "href": "/materials/vendedor-ativo/Documento_Captador_Como_Ganhar_GL_Academy.pdf",
+      "stage": "Vendedor Ativo"
+    },
+    {
+      "id": "ativo-gestao-objecoes",
+      "title": "Gestão de Objeções para Vendedores",
+      "description": "Processo comercial com orientações para responder dúvidas, resistência e objeções.",
+      "href": "/materials/vendedor-ativo/Gestao_Objecoes_Vendedores.pdf",
+      "stage": "Vendedor Ativo"
+    },
+    {
+      "id": "ativo-formas-pagamento",
+      "title": "Formas de Pagamento",
+      "description": "Referência sobre os meios, condições e informações de pagamento disponíveis.",
+      "href": "/materials/vendedor-ativo/Formas_de_Pagamento.pdf",
+      "stage": "Vendedor Ativo"
+    },
+    {
+      "id": "ativo-scripts-captacao",
+      "title": "Scripts de Captação por DM e WhatsApp",
+      "description": "Modelos de mensagens para iniciar conversas e conduzir a abordagem comercial.",
+      "href": "/materials/vendedor-ativo/Scripts_DM_WhatsApp_Captacao.pdf",
+      "stage": "Vendedor Ativo"
+    },
+    {
+      "id": "ativo-checklist-handoff",
+      "title": "Checklist do Lead Qualificado, CRM e Handoff",
+      "description": "Campos e verificações para entregar um lead completo à próxima etapa da venda.",
+      "href": "/materials/vendedor-ativo/Checklist_Lead_Qualificado_CRM_Handoff.pdf",
+      "stage": "Vendedor Ativo"
+    },
+    {
+      "id": "playbook-tecnico",
+      "title": "Playbook do Vendedor Tecnico",
+      "description": "Produtos, objecoes e fechamento.",
+      "href": "/materials/equipe/Playbook_Vendedor_Tecnico_GL.md",
+      "stage": "Vendedor Tecnico"
+    },
+    {
+      "id": "objecoes",
+      "title": "Banco de Objecoes GL",
+      "description": "Respostas atualizaveis para as travas mais comuns.",
+      "href": "/materials/equipe/Banco_de_Objecoes_GL.md",
+      "stage": "Consulta rapida"
+    },
+    {
+      "id": "produtos",
+      "title": "Raio-X de Produtos GL Academy",
+      "description": "Precos, beneficios, garantias e encaixe por perfil.",
+      "href": "/materials/equipe/Raio_X_Produtos_GL_Academy.md",
+      "stage": "GL Academy"
+    }
+  ]
+}

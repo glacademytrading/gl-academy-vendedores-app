@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+frontend/node_modules/
+
+# generated builds and caches
+build/
+frontend/build/
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+*.pyc
+*.log
+
+# local environment and secrets
+.env
+.env.*
+!.env.example
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local Netlify folder
+.netlify

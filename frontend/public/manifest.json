@@ -1,0 +1,18 @@
+{
+  "short_name": "GL Sales",
+  "name": "GL Academy Sales Training",
+  "description": "Treinamento interno para recrutadores, vendedores ativos e vendedores tecnicos.",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#050a09",
+  "background_color": "#050a09",
+  "icons": [
+    {
+      "src": "assets/gl-academy-logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
