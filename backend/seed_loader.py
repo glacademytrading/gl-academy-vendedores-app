@@ -6,6 +6,7 @@ A flag `_admin_edited` blocks future re-seeding so admin edits stick.
 import json
 import logging
 import base64
+import re
 from pathlib import Path
 from datetime import datetime, timezone
 from auth import hash_password, verify_password
@@ -79,6 +80,7 @@ async def seed_admin(db) -> None:
         if not verify_password(password, existing.get("password_hash", "")):
             update["password_hash"] = hash_password(password)
         await db.users.update_one({"email": email}, {"$set": update})
+    await db.login_attempts.delete_many({"identifier": {"$regex": f":{re.escape(email)}$"}})
 
 
 async def seed_content(db) -> None:
