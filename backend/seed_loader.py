@@ -41,6 +41,8 @@ async def seed_admin(db) -> None:
         logging.warning("ADMIN_EMAIL/ADMIN_PASSWORD ausentes; admin seed ignorado.")
         return
     existing = await db.users.find_one({"email": email})
+    if existing is None:
+        existing = await db.users.find_one({"id": "admin-seed-001"})
     now_iso = datetime.now(timezone.utc).isoformat()
     if existing is None:
         await db.users.insert_one({
@@ -56,6 +58,7 @@ async def seed_admin(db) -> None:
         })
     else:
         update = {
+            "email": email,
             "name": existing.get("name") or "Gestao GL",
             "role": "admin",
             "account_status": "active",
