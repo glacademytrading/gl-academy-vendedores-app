@@ -5,6 +5,7 @@ A flag `_admin_edited` blocks future re-seeding so admin edits stick.
 """
 import json
 import logging
+import base64
 from pathlib import Path
 from datetime import datetime, timezone
 from auth import hash_password, verify_password
@@ -37,6 +38,14 @@ def resolve_video_url(existing_video_url: str, seed_video_url: str) -> str:
 async def seed_admin(db) -> None:
     email = (os.environ.get("ADMIN_EMAIL") or "").lower().strip()
     password = os.environ.get("ADMIN_PASSWORD")
+    if not password:
+        password_b64 = (os.environ.get("ADMIN_PASSWORD_B64") or "").strip()
+        if password_b64:
+            try:
+                password = base64.b64decode(password_b64).decode("utf-8")
+            except Exception:
+                logging.warning("ADMIN_PASSWORD_B64 invalido; admin seed ignorado.")
+                password = None
     if not email or not password:
         logging.warning("ADMIN_EMAIL/ADMIN_PASSWORD ausentes; admin seed ignorado.")
         return
