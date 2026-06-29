@@ -269,9 +269,9 @@
     {
       "id": "playbook-recrutador",
       "moduleId": "m12_recrutador_triagem",
-      "title": "Playbook do Recrutador",
-      "subtitle": "Canais, perguntas, score e encaminhamento.",
-      "source": "Trilha do Recrutador",
+      "title": "Playbook do Recrutador Técnico",
+      "subtitle": "Roteiro prático de entrevista, perguntas, score técnico e encaminhamento.",
+      "source": "Trilha do Recrutador Técnico",
       "tags": [
         "recrutamento",
         "sourcing",
@@ -307,8 +307,8 @@
       ],
       "materials": [
         {
-          "title": "Playbook do Recrutador",
-          "description": "Script e score de triagem.",
+          "title": "Playbook do Recrutador Técnico",
+          "description": "Roteiro de entrevista técnica, perguntas e critérios de avaliação.",
           "href": "/materials/equipe/Playbook_Recrutador_GL.md"
         },
         {
@@ -541,7 +541,7 @@
       "id": "pulso_relatorio",
       "title": "Pulso 6: Relatorio",
       "level": "advanced",
-      "body": "O que sera reportado para a Bia?",
+      "body": "O que sera reportado para a Gestora de equipes?",
       "prompt": "Numero real ou sensacao?"
     }
   ],
@@ -567,7 +567,7 @@
             "bullets": [
               "Comece pelo foco do dia.",
               "Estude apenas a proxima aula da sua trilha.",
-              "Use o relatorio para prestar contas para a Bia."
+              "Use o relatorio para prestar contas para a Gestora de equipes."
             ]
           }
         ],
@@ -804,49 +804,75 @@
     "m12_recrutador_triagem": {
       "stage": "Trilha do Recrutador",
       "lessonPage": {
-        "headline": "Filtro, triagem e encaminhamento",
-        "subtitle": "Padronizar entrevistas, perguntas de corte e envio dos melhores candidatos para decisao.",
+        "headline": "Como entrevistar candidatos",
+        "subtitle": "Conduzir a pre-entrevista, usar o formulario da GL e encaminhar candidatos alinhados para a entrevista final.",
         "sections": [
           {
-            "title": "Perguntas de corte",
-            "body": "A entrevista precisa descobrir disponibilidade, experiencia com vendas, tolerancia a meta, comunicacao e capacidade de aprender produto tecnico.",
+            "title": "Antes da entrevista",
+            "body": "Quando encontrar um perfil interessante, envie primeiro o formulario de participacao da GL: https://forms.gle/bbdVKEonHWGJJYgB9. O formulario registra origem da indicacao, experiencia, forma de trabalho, preferencia de feedback e ajuda a gestao a avaliar o candidato antes da conversa.",
             "bullets": [
-              "Qual foi sua meta mais dificil?",
-              "Como voce reage a nao?",
-              "Quanto tempo por dia consegue executar?"
+              "Avise a gestao/recrutadora responsavel sobre a indicacao.",
+              "Confira se o candidato colocou corretamente quem indicou a vaga.",
+              "Use as respostas do formulario como base para a pre-entrevista."
             ]
           },
           {
-            "title": "Score simples",
-            "body": "Classifique Energia, Clareza, Experiencia, Disponibilidade e Coachability de 1 a 5. So encaminhe quem tem base minima.",
+            "title": "Conduza como pre-entrevista",
+            "body": "A conversa do recrutador e a primeira etapa, nao a contratacao final. Ela deve ser gravada, conduzida com respeito e usada para observar comunicacao, sinceridade, disponibilidade e encaixe para vendedor ativo ou tecnico. A aprovacao final vem somente depois da entrevista com a gestao.",
             "bullets": [
-              "Menos de 3 em energia nao avanca.",
-              "Sem disponibilidade nao avanca.",
-              "Sem vontade de aprender produto tecnico nao avanca."
+              "Apresente-se, acolha o candidato e explique que e uma primeira etapa.",
+              "Nao prometa contratacao antes da entrevista final.",
+              "Compare as respostas da entrevista com o formulario preenchido."
+            ]
+          },
+          {
+            "title": "Perguntas que revelam perfil",
+            "body": "A entrevista precisa descobrir se a pessoa tem tempo, postura, comunicacao e vontade real de vender. O foco principal e contratar vendedores ativos, mas um candidato com forte interesse em grafico, trading e mercado pode ser encaminhado para avaliacao tecnica.",
+            "bullets": [
+              "Como voce organiza sua rotina e quais horarios tem livres?",
+              "Qual sua experiencia com vendas e como voce vendia um produto?",
+              "Como voce lida com publico digital, chamadas, mensagens e recusas?",
+              "Como esta sua postura profissional em WhatsApp, Instagram e redes sociais?"
+            ]
+          },
+          {
+            "title": "Explique funcao, comissao e regras",
+            "body": "Depois de avaliar o perfil, explique que o vendedor ativo gera leads, identifica dores, desperta curiosidade sobre o GL Model e passa o lead para o vendedor tecnico finalizar. A comissao so existe quando a venda e finalizada e respeita os prazos oficiais. A venda deve ser feita com etica, sem promessa de lucro, renda garantida, sinais garantidos, spam ou agressividade.",
+            "bullets": [
+              "Vendedor ativo inicia a venda; vendedor tecnico finaliza.",
+              "Comissao do ativo: R$ 200 por venda concluida, conforme regras e prazos.",
+              "Pagamentos por cartao/Stripe/Mercado Pago seguem prazo maior; PIX/USDT seguem prazo de 7 dias.",
+              "A GL vende metodologia, processo, prova e suporte — nao promessa facil."
             ]
           }
         ],
         "checklist": [
-          "Usei perguntas padrao.",
-          "Atribui score.",
-          "Registrei motivo de aprovar ou recusar."
+          "Enviei o formulario de participacao da GL antes da entrevista.",
+          "Analisei as respostas do formulario antes da call.",
+          "Gravei a pre-entrevista.",
+          "Avaliei disponibilidade, comunicacao, experiencia e postura digital.",
+          "Expliquei que a contratacao depende da entrevista final com a gestao.",
+          "Registrei os pontos positivos, pontos de atencao e minha recomendacao."
         ],
         "mistakes": [
-          "Aprovar por simpatia.",
-          "Nao confirmar horario.",
-          "Nao registrar motivo de corte."
+          "Prometer contratacao antes da aprovacao final.",
+          "Ignorar o formulario e entrevistar sem contexto.",
+          "Aprovar por simpatia sem avaliar disponibilidade e postura.",
+          "Nao gravar a entrevista.",
+          "Contratar pessoa sem vontade real de vender ou sem tempo minimo para atuar.",
+          "Apresentar comissao como renda garantida."
         ],
-        "mission": "Crie 5 entrevistas simuladas e classifique cada candidato com score de 1 a 5.",
+        "mission": "Simule uma entrevista usando o formulario como base e anote: disponibilidade, experiencia, postura digital, interesse na funcao e recomendacao final.",
         "materials": []
       },
       "practical": {
-        "title": "Triagem com padrao",
-        "context": "A qualidade da equipe comeca na triagem. O recrutador protege o funil comercial.",
-        "goal": "Encaminhar apenas candidatos com chance real de performar.",
+        "title": "Entrevista com criterio",
+        "context": "A qualidade da equipe comeca antes da contratacao. O recrutador protege a GL quando filtra com respeito, clareza e criterio.",
+        "goal": "Encaminhar para a gestao apenas candidatos com tempo, postura, comunicacao e vontade real de atuar.",
         "lens": [
           "entrevista",
-          "score",
-          "handoff"
+          "formulario",
+          "pre-contratacao"
         ]
       }
     },
@@ -1002,9 +1028,9 @@
         "sections": [
           {
             "title": "Resumo da aula",
-            "body": "Esta aula ensina como lidar com objeções antes de o lead enxergar o valor real do GL Model. Bia reforça que objeção não é motivo para discutir: é uma chance de entender medo, dúvida, experiência ruim ou dificuldade financeira. O vendedor ativo deve acolher, responder com segurança e conduzir para o próximo passo, sempre sem prometer lucro, consistência, ausência de risco ou entrada exata no mercado.",
+            "body": "Esta aula ensina como lidar com objeções antes de o lead enxergar o valor real do GL Model. Gestora de equipes reforça que objeção não é motivo para discutir: é uma chance de entender medo, dúvida, experiência ruim ou dificuldade financeira. O vendedor ativo deve acolher, responder com segurança e conduzir para o próximo passo, sempre sem prometer lucro, consistência, ausência de risco ou entrada exata no mercado.",
             "bullets": [
-              "Se não souber responder, chame a Bia ou a recrutadora responsável.",
+              "Se não souber responder, chame a Gestora de equipes ou a recrutadora responsável.",
               "Toda resposta precisa proteger o cliente, a empresa e a venda.",
               "O objetivo é manter a conversa viva e levar o lead para a etapa certa."
             ]
@@ -1020,7 +1046,7 @@
           },
           {
             "title": "Limite do vendedor ativo",
-            "body": "O vendedor ativo precisa saber o suficiente para conduzir o lead, mas não deve inventar respostas técnicas profundas. Quando a dúvida envolve cálculo do indicador, orderflow, integrações, licença, ativos específicos ou diferença técnica entre plataformas, o melhor caminho é acionar a Bia, a recrutadora ou transformar a dúvida em gancho para a mentoria gratuita com o vendedor técnico.",
+            "body": "O vendedor ativo precisa saber o suficiente para conduzir o lead, mas não deve inventar respostas técnicas profundas. Quando a dúvida envolve cálculo do indicador, orderflow, integrações, licença, ativos específicos ou diferença técnica entre plataformas, o melhor caminho é acionar a Gestora de equipes, a recrutadora ou transformar a dúvida em gancho para a mentoria gratuita com o vendedor técnico.",
             "bullets": [
               "Não adivinhe respostas técnicas.",
               "Use a frase: essa dúvida fica melhor vendo o gráfico ao vivo.",
@@ -1032,7 +1058,7 @@
           "Assisti ao vídeo completo.",
           "Sei quais promessas são proibidas.",
           "Sei responder objeções de confiança, preço, tempo e mercado volátil.",
-          "Sei quando chamar Bia, recrutadora ou vendedor técnico.",
+          "Sei quando chamar Gestora de equipes, recrutadora ou vendedor técnico.",
           "Sei usar a objeção como ponte para a call técnica."
         ],
         "mistakes": [
@@ -1407,7 +1433,7 @@
     "m40_gestao_metas_relatorio": {
       "stage": "Evoluir",
       "lessonPage": {
-        "headline": "Metas, desempenho e relatorio para a Bia",
+        "headline": "Metas, desempenho e relatorio para a Gestora de equipes",
         "subtitle": "Transformar atividade diaria em numeros que mostram evolucao, gargalo e prioridade.",
         "sections": [
           {
@@ -1514,45 +1540,45 @@
     },
     {
       "id": "playbook-recrutador",
-      "title": "Playbook do Recrutador",
-      "description": "Canais, pitch da vaga, score e triagem.",
+      "title": "Playbook do Recrutador Técnico",
+      "description": "Roteiro prático de entrevista, perguntas, pontos de observação e limites de promessa.",
       "href": "/materials/equipe/Playbook_Recrutador_GL.md",
-      "stage": "Recrutador"
+      "stage": "Recrutador Técnico"
     },
     {
       "id": "recrutador-proposta-funcao",
       "title": "Proposta e Fun??o do Recrutador",
       "description": "Documento de refer?ncia sobre a proposta, o papel e as responsabilidades da fun??o.",
       "href": "/materials/recrutadores/Documento_Recrutador_Proposta_Funcao.pdf",
-      "stage": "Recrutador"
+      "stage": "Recrutador Técnico"
     },
     {
       "id": "recrutador-manual-gestao",
       "title": "Manual: Como Recrutar e Gerir a Equipe",
       "description": "Orienta??es pr?ticas para selecionar, treinar, acompanhar e desenvolver vendedores.",
       "href": "/materials/recrutadores/Manual_Recrutador_Como_Recrutar_Gerir_Equipe.pdf",
-      "stage": "Recrutador"
+      "stage": "Recrutador Técnico"
     },
     {
       "id": "recrutador-checklist-liberacao",
       "title": "Checklist de Libera??o do Captador e Recrutador",
       "description": "Processo de vendas e pontos de confer?ncia antes da libera??o operacional.",
       "href": "/materials/recrutadores/Checklist_Liberacao_Captador_Recrutador.pdf",
-      "stage": "Recrutador"
+      "stage": "Recrutador Técnico"
     },
     {
       "id": "recrutador-regras-comissao",
       "title": "Regras de Comiss?o e Conduta",
       "description": "Regras oficiais de comiss?o, registro, postura e conduta do recrutador.",
       "href": "/materials/recrutadores/Regras_Comissao_Conduta_Recrutador.pdf",
-      "stage": "Recrutador"
+      "stage": "Recrutador Técnico"
     },
     {
       "id": "recrutador-estrutura-global",
       "title": "Estrutura Global de Vendas e Recrutamento",
       "description": "Vis?o geral da organiza??o comercial, do recrutamento e do fluxo entre as fun??es.",
       "href": "/materials/recrutadores/Estrutura_Global_Vendas_Recrutamento_Recrutadores.pdf",
-      "stage": "Recrutador"
+      "stage": "Recrutador Técnico"
     },
     {
       "id": "playbook-ativo",
