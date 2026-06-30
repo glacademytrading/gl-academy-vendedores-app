@@ -27,6 +27,12 @@ export const IMPORTANT_LINKS = {
       url: "https://glacademytrading.com/",
     },
     {
+      id: "youtube-gl-academy",
+      title: "Canal GL Academy no YouTube",
+      description: "Canal oficial para estudar, buscar referencias e criar cortes autorizados.",
+      url: "https://www.youtube.com/@giovanelazaro",
+    },
+    {
       id: "comunidade-whatsapp",
       title: "Comunidade gratuita no WhatsApp",
       description: "Grupo oficial da comunidade GL Academy.",
@@ -51,8 +57,8 @@ export const IMPORTANT_LINKS = {
       url: "https://www.instagram.com/lazarotrades/",
     },
     {
-      id: "whatsapp-bia",
-      title: "Falar com a Bia",
+      id: "whatsapp-gestora-equipes",
+      title: "Falar com a Gestora de equipes",
       description: "Recrutadora oficial e suporte da equipe.",
       url: SUPPORT_LINKS.whatsapp,
     },
@@ -192,19 +198,27 @@ export const IMPORTANT_LINKS = {
 export const ROLE_TRACKS = {
   recrutador: {
     route: "/recrutadores",
-    navLabel: "Recrutadores",
-    title: "Trilha do Recrutador",
-    shortTitle: "Recrutador",
+    navLabel: "Recrutador Ativo",
+    title: "Trilha do Recrutador Ativo",
+    shortTitle: "Recrutador Ativo",
     track: "recrutador",
     dailyGoal: "3 entrevistas qualificadas",
-    secondaryGoal: "15 abordagens e 1 candidato aprovado para a Bia",
+    secondaryGoal: "15 abordagens e 1 candidato aprovado para a Gestora de equipes",
     monthlyGoals: [
       "Entrevistas qualificadas",
       "Abordagens realizadas",
       "Candidatos aprovados pela gestão",
     ],
     playbookPageId: "playbook-recrutador",
-    materialId: "playbook-recrutador",
+    materialId: "recrutador-proposta-funcao",
+    materialIds: [
+      "recrutador-guia-app",
+      "recrutador-proposta-funcao",
+      "recrutador-manual-gestao",
+      "recrutador-checklist-liberacao",
+      "recrutador-regras-comissao",
+      "recrutador-estrutura-global",
+    ],
     accent: "var(--gl-cyan)",
     responsibilities: [
       "Encontrar pessoas com energia comercial.",
@@ -213,6 +227,35 @@ export const ROLE_TRACKS = {
       "Encaminhar candidatos com score e motivo claro.",
     ],
     metrics: ["Abordagens", "Entrevistas", "Aprovados", "Canal de origem"],
+  },
+  recrutador_tecnico: {
+    route: "/recrutador-tecnico",
+    navLabel: "Recrutador Técnico",
+    title: "Trilha do Recrutador Técnico",
+    shortTitle: "Recrutador Técnico",
+    track: "recrutador_tecnico",
+    dailyGoal: "2 entrevistas técnicas qualificadas",
+    secondaryGoal: "Mapear candidatos com comunicação, ética e potencial técnico",
+    monthlyGoals: [
+      "Candidatos técnicos triados",
+      "Entrevistas técnicas realizadas",
+      "Perfis aprovados para treinamento",
+      "Comissões previstas registradas",
+    ],
+    playbookPageId: "playbook-recrutador",
+    materialId: "playbook-recrutador",
+    materialIds: [
+      "recrutador-tecnico-guia-app",
+      "playbook-recrutador",
+    ],
+    accent: "var(--gl-violet)",
+    responsibilities: [
+      "Identificar candidatos com perfil para venda consultiva e demonstração técnica.",
+      "Avaliar comunicação, postura, ética e disposição para estudar produto.",
+      "Validar se o candidato entende limites de promessa no mercado financeiro.",
+      "Registrar possíveis comissões e contexto para controle da gestão.",
+    ],
+    metrics: ["Triagens técnicas", "Entrevistas", "Aprovados", "Comissões previstas"],
   },
   ativo: {
     route: "/vendedor-ativo",
@@ -230,6 +273,15 @@ export const ROLE_TRACKS = {
     ],
     playbookPageId: "playbook-ativo",
     materialId: "playbook-ativo",
+    materialIds: [
+      "ativo-guia-app",
+      "playbook-ativo",
+      "ativo-como-ganhar",
+      "ativo-gestao-objecoes",
+      "ativo-formas-pagamento",
+      "ativo-scripts-captacao",
+      "ativo-checklist-handoff",
+    ],
     accent: "var(--gl-green)",
     responsibilities: [
       "Gerar volume diario sem perder criterio.",
@@ -255,6 +307,12 @@ export const ROLE_TRACKS = {
     ],
     playbookPageId: "playbook-tecnico",
     materialId: "playbook-tecnico",
+    materialIds: [
+      "tecnico-guia-app",
+      "playbook-tecnico",
+      "tecnico-formas-pagamento",
+      "tecnico-gestao-objecoes",
+    ],
     accent: "var(--gl-gold-2)",
     responsibilities: [
       "Dominar produtos, precos, garantias e beneficios.",
@@ -294,6 +352,11 @@ export function getRoleTracks(user) {
   return getUserRoleKeys(user).map((roleKey) => ROLE_TRACKS[roleKey]).filter(Boolean);
 }
 
+export function getRoleMaterialIds(role) {
+  if (!role) return [];
+  return role.materialIds || [role.materialId].filter(Boolean);
+}
+
 export function isModuleForUser(module, user) {
   if (!module || user?.role === "admin" || user?.onboarding?.role === "gestao") return true;
   const roleTracks = getRoleTracks(user).map((role) => role.track);
@@ -303,10 +366,16 @@ export function isModuleForUser(module, user) {
 
 export const DAILY_FOCUS = [
   {
-    role: "Recrutador",
+    role: "Recrutador Ativo",
     goal: "3 entrevistas",
     body: "Prioridade: buscar vendedores com energia, vender a vaga com comissao por performance e registrar score.",
     route: "/recrutadores",
+  },
+  {
+    role: "Recrutador Técnico",
+    goal: "2 triagens técnicas",
+    body: "Prioridade: avaliar comunicação, ética, interesse técnico e registrar possíveis comissões.",
+    route: "/recrutador-tecnico",
   },
   {
     role: "Vendedor Ativo",
@@ -331,52 +400,73 @@ export const STUDENT_MATERIALS = [
     stage: "Comece aqui",
   },
   {
+    id: "recrutador-guia-app",
+    title: "Guia do App - Recrutador Ativo",
+    description: "Como usar abas, aulas, materiais, relatórios, comissões e rotina do cargo.",
+    href: "/materials/recrutadores/Guia_App_Recrutador_Ativo.pdf",
+    stage: "Recrutador Ativo",
+  },
+  {
     id: "playbook-recrutador",
-    title: "Playbook do Recrutador",
-    description: "Canais, pitch da vaga, score e triagem.",
+    title: "Playbook do Recrutador Técnico",
+    description: "Roteiro prático de entrevista, perguntas, pontos de observação e limites de promessa.",
     href: "/materials/equipe/Playbook_Recrutador_GL.md",
-    stage: "Recrutador",
+    stage: "Recrutador Técnico",
+  },
+  {
+    id: "recrutador-tecnico-guia-app",
+    title: "Guia do App - Recrutador Técnico",
+    description: "Como usar o app para entrevistas técnicas, aulas, registros e validação de possíveis comissões.",
+    href: "/materials/recrutador-tecnico/Guia_App_Recrutador_Tecnico.pdf",
+    stage: "Recrutador Técnico",
   },
   {
     id: "recrutador-proposta-funcao",
     title: "Proposta e Função do Recrutador",
     description: "Documento de referência sobre a proposta, o papel e as responsabilidades da função.",
     href: "/materials/recrutadores/Documento_Recrutador_Proposta_Funcao.pdf",
-    stage: "Recrutador",
+    stage: "Recrutador Ativo",
   },
   {
     id: "recrutador-manual-gestao",
     title: "Manual: Como Recrutar e Gerir a Equipe",
     description: "Orientações práticas para selecionar, treinar, acompanhar e desenvolver vendedores.",
     href: "/materials/recrutadores/Manual_Recrutador_Como_Recrutar_Gerir_Equipe.pdf",
-    stage: "Recrutador",
+    stage: "Recrutador Ativo",
   },
   {
     id: "recrutador-checklist-liberacao",
     title: "Checklist de Liberação do Captador e Recrutador",
     description: "Processo de vendas e pontos de conferência antes da liberação operacional.",
     href: "/materials/recrutadores/Checklist_Liberacao_Captador_Recrutador.pdf",
-    stage: "Recrutador",
+    stage: "Recrutador Ativo",
   },
   {
     id: "recrutador-regras-comissao",
     title: "Regras de Comissão e Conduta",
     description: "Regras oficiais de comissão, registro, postura e conduta do recrutador.",
     href: "/materials/recrutadores/Regras_Comissao_Conduta_Recrutador.pdf",
-    stage: "Recrutador",
+    stage: "Recrutador Ativo",
   },
   {
     id: "recrutador-estrutura-global",
     title: "Estrutura Global de Vendas e Recrutamento",
     description: "Visão geral da organização comercial, do recrutamento e do fluxo entre as funções.",
     href: "/materials/recrutadores/Estrutura_Global_Vendas_Recrutamento_Recrutadores.pdf",
-    stage: "Recrutador",
+    stage: "Recrutador Ativo",
   },
   {
     id: "playbook-ativo",
     title: "Playbook do Vendedor Ativo",
     description: "Prospecao, script, CRM e follow-up.",
     href: "/materials/equipe/Playbook_Vendedor_Ativo_GL.md",
+    stage: "Vendedor Ativo",
+  },
+  {
+    id: "ativo-guia-app",
+    title: "Guia do App - Vendedor Ativo",
+    description: "Como usar o app para prospectar, acompanhar aulas, registrar leads e controlar comissões.",
+    href: "/materials/vendedor-ativo/Guia_App_Vendedor_Ativo.pdf",
     stage: "Vendedor Ativo",
   },
   {
@@ -420,6 +510,13 @@ export const STUDENT_MATERIALS = [
     description: "Produtos, objecoes e fechamento consultivo.",
     href: "/materials/equipe/Playbook_Vendedor_Tecnico_GL.md",
     stage: "Vendedor Tecnico",
+  },
+  {
+    id: "tecnico-guia-app",
+    title: "Guia do App - Vendedor Técnico",
+    description: "Como usar o app para calls técnicas, materiais, registros, pagamentos e validação da gestão.",
+    href: "/materials/vendedor-tecnico/Guia_App_Vendedor_Tecnico.pdf",
+    stage: "Vendedor Técnico",
   },
   {
     id: "tecnico-formas-pagamento",
@@ -714,7 +811,7 @@ export const NEWS_UPDATES = [
     tag: "Alinhamento",
     title: "Novo app interno de treinamento comercial GL Academy",
     body:
-      "As trilhas de Recrutador, Vendedor Ativo e Vendedor Tecnico entram como base para onboarding, aulas, quizzes e prestacao de contas.",
+      "As trilhas de Recrutador Ativo, Recrutador Técnico, Vendedor Ativo e Vendedor Tecnico entram como base para onboarding, aulas, quizzes e prestacao de contas.",
     created_at: "2026-06-18T08:00:00-03:00",
     action_url: "/trilha",
   },
@@ -775,7 +872,7 @@ export const MARKET_REPORTS = [
     bullets: [
       "Confirme preco e condicao antes de enviar checkout.",
       "Vendedor Ativo gera conversa; Vendedor Tecnico fecha com dominio de produto.",
-      "Recrutador deve abastecer equipe quando a campanha exigir mais volume.",
+      "Recrutador Ativo deve abastecer equipe quando a campanha exigir mais volume.",
     ],
     watchlist: ["Oferta vigente", "Checkout", "Script", "Objecoes", "Leads quentes"],
   },
@@ -786,7 +883,7 @@ export const UPGRADE_IDEAS = [
     id: "role-tracks",
     title: "Trilhas por cargo",
     status: "done",
-    note: "Recrutador, Vendedor Ativo e Vendedor Tecnico com metas, aulas e quizzes separados.",
+    note: "Recrutador Ativo, Recrutador Técnico, Vendedor Ativo e Vendedor Tecnico com metas, aulas e quizzes separados.",
   },
   {
     id: "sales-report",

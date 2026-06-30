@@ -1964,6 +1964,117 @@
       ]
     },
     {
+      "id": "m23_ativo_renda_extra_videos_gl",
+      "order": 5,
+      "track": "ativo",
+      "sequence_group": "ativo",
+      "role_label": "Vendedor Ativo",
+      "title": "Como ter renda extra com videos da GL Academy",
+      "objective": "Aprender como o vendedor ativo pode usar videos oficiais da GL Academy para criar cortes, shorts e conteudos autorizados, gerando renda extra sem deixar a captacao de leads de lado.",
+      "summary": "Nesta aula, Gestora de equipes explica que a funcao principal do vendedor ativo continua sendo procurar leads, chamar contatos e gerar curiosidade para a call tecnica. Como oportunidade adicional, o vendedor ativo pode criar canais e postar edicoes, cortes e shorts a partir dos videos oficiais da GL Academy. A aula apresenta o canal oficial, explica que todo conteudo precisa ser revisado antes da postagem, mostra as regras de pagamento por videos e shorts que baterem meta de visualizacao e reforca que a divulgacao deve parecer natural, sem spam e sem expor a marca de forma amadora.",
+      "tags": [
+        "aula_5",
+        "vendedor_ativo",
+        "renda_extra",
+        "youtube",
+        "divulgacao"
+      ],
+      "lesson": {
+        "video_placeholder": "videos/m23_ativo_renda_extra_videos_gl.mp4",
+        "text": "Aula sobre como ter renda extra criando videos, cortes e shorts para divulgar a GL Academy. Canal oficial para estudar e buscar referencias: https://www.youtube.com/@giovanelazaro. Para o vendedor ativo, a regra e usar videos ja publicados no canal oficial da GL, criar edites de qualidade, enviar para a gestao revisar antes de postar e seguir a legenda orientada pela equipe.",
+        "video_url": "https://youtu.be/ni1BepMszoc",
+        "chapters": [
+          {"seconds": 0, "time": "00:00", "title": "Objetivo da aula"},
+          {"seconds": 35, "time": "00:35", "title": "Funcao principal do vendedor ativo"},
+          {"seconds": 73, "time": "01:13", "title": "Canal oficial da GL Academy"},
+          {"seconds": 139, "time": "02:19", "title": "Videos e shorts como renda extra"},
+          {"seconds": 194, "time": "03:14", "title": "Revisao e legenda antes da postagem"},
+          {"seconds": 315, "time": "05:15", "title": "Exemplo de escala de ganhos"},
+          {"seconds": 365, "time": "06:05", "title": "Exemplo de video sobre GL Risk Auto e GamePad"},
+          {"seconds": 484, "time": "08:04", "title": "Sistema, atalho e gerenciamento de risco"},
+          {"seconds": 570, "time": "09:30", "title": "TradingView e NinjaTrader"},
+          {"seconds": 710, "time": "11:50", "title": "Diferenciais do Ninja e order flow"},
+          {"seconds": 867, "time": "14:27", "title": "Demonstracao pratica pelo controle"},
+          {"seconds": 1110, "time": "18:30", "title": "Break even, alvo e risco automatico"},
+          {"seconds": 1430, "time": "23:50", "title": "Parte dos vendedores tecnicos"},
+          {"seconds": 1532, "time": "25:32", "title": "Cortes das calls tecnicas"},
+          {"seconds": 1687, "time": "28:07", "title": "Resumo do processo"}
+        ],
+        "require_full_video": true
+      },
+      "require_all_correct": true,
+      "require_decision": false,
+      "role_focus_time": "01:13",
+      "role_focus_seconds": 73,
+      "role_focus_label": "como o ativo usa videos oficiais do canal da GL",
+      "questions": [
+        {
+          "id": "q_m23_ativo_renda_extra_001",
+          "type": "multi_select",
+          "checkpoint_seconds": 150,
+          "prompt": "Qual e a ideia correta da renda extra para vendedores ativos?",
+          "correct_option_ids": ["a", "c", "d"],
+          "options": [
+            {"id": "a", "text": "A funcao principal do ativo continua sendo captar leads e gerar curiosidade para a call tecnica.", "is_correct": true},
+            {"id": "b", "text": "O ativo pode abandonar a captacao de leads e trabalhar apenas com cortes.", "is_correct": false},
+            {"id": "c", "text": "O ativo pode usar videos oficiais da GL Academy para criar cortes, shorts e edicoes.", "is_correct": true},
+            {"id": "d", "text": "O canal oficial da GL Academy deve ser usado como fonte de estudo e conteudo.", "is_correct": true},
+            {"id": "e", "text": "Qualquer video de terceiros pode ser usado como se fosse material oficial da GL.", "is_correct": false}
+          ],
+          "feedback_correct": "Perfeito. A renda extra soma com a funcao principal do ativo, nao substitui a captacao.",
+          "feedback_incorrect": "Revise o inicio da aula: o ativo segue responsavel por leads; os cortes sao uma oportunidade adicional."
+        },
+        {
+          "id": "q_m23_ativo_renda_extra_002",
+          "type": "multi_select",
+          "checkpoint_seconds": 300,
+          "prompt": "Quais metas de conteudo geram pagamento extra?",
+          "correct_option_ids": ["a", "b", "d"],
+          "options": [
+            {"id": "a", "text": "Video com mais de 5 minutos e mais de 500 visualizacoes gera R$ 25.", "is_correct": true},
+            {"id": "b", "text": "Short com mais de 30 segundos e mais de 1.000 visualizacoes gera R$ 25.", "is_correct": true},
+            {"id": "c", "text": "Qualquer postagem, mesmo sem visualizacao, gera pagamento automatico.", "is_correct": false},
+            {"id": "d", "text": "Quanto mais conteudos aprovados baterem meta, maior pode ser a renda extra.", "is_correct": true},
+            {"id": "e", "text": "O pagamento depende apenas de postar, sem precisar respeitar qualidade ou regra.", "is_correct": false}
+          ],
+          "feedback_correct": "Certo. A regra combina formato, duracao minima e visualizacoes.",
+          "feedback_incorrect": "Revise as metas: video longo e short tem regras diferentes, e ambos precisam bater visualizacao."
+        },
+        {
+          "id": "q_m23_ativo_renda_extra_003",
+          "type": "multi_select",
+          "checkpoint_seconds": 260,
+          "prompt": "Antes de postar um corte ou short, o vendedor ativo deve fazer o que?",
+          "correct_option_ids": ["a", "b", "c", "e"],
+          "options": [
+            {"id": "a", "text": "Assistir ao video original e entender o contexto antes de editar.", "is_correct": true},
+            {"id": "b", "text": "Criar um edit de qualidade e enviar para a gestao revisar.", "is_correct": true},
+            {"id": "c", "text": "Aguardar a orientacao da legenda ou direcao de postagem.", "is_correct": true},
+            {"id": "d", "text": "Postar imediatamente sem revisao para ganhar velocidade.", "is_correct": false},
+            {"id": "e", "text": "Divulgar de forma natural, sem parecer spam ou propaganda amadora.", "is_correct": true}
+          ],
+          "feedback_correct": "Boa. A revisao protege a marca e aumenta a chance de o conteudo performar.",
+          "feedback_incorrect": "Revise a parte da revisao: antes de postar, o conteudo precisa passar pela gestao."
+        },
+        {
+          "id": "q_m23_ativo_renda_extra_004",
+          "type": "multi_select",
+          "checkpoint_seconds": 1660,
+          "prompt": "Qual e o objetivo estrategico de espalhar bons cortes da GL Academy?",
+          "correct_option_ids": ["a", "c", "d", "e"],
+          "options": [
+            {"id": "a", "text": "Fazer a GL aparecer naturalmente quando pessoas pesquisarem temas de mercado financeiro.", "is_correct": true},
+            {"id": "b", "text": "Prometer lucro rapido para viralizar mais facil.", "is_correct": false},
+            {"id": "c", "text": "Aumentar autoridade e visibilidade da empresa.", "is_correct": true},
+            {"id": "d", "text": "Atrair bons leads e bons colaboradores.", "is_correct": true},
+            {"id": "e", "text": "Divulgar a grandeza do GL Model sem transformar a comunicacao em spam.", "is_correct": true}
+          ],
+          "feedback_correct": "Perfeito. Bons cortes constroem autoridade e abrem portas para leads e equipe.",
+          "feedback_incorrect": "Revise o objetivo da aula: divulgacao boa gera presenca e autoridade, sem promessa e sem spam."
+        }
+      ]
+    },
+    {
       "id": "m01_tecnico_funcoes_colaboradores",
       "order": 1,
       "track": "tecnico",
@@ -2976,6 +3087,117 @@
           ],
           "feedback_correct": "Perfeito. O vendedor técnico usa a demonstração para provar valor com clareza.",
           "feedback_incorrect": "Revise a separação entre dúvida simples e dúvida técnica que pede gráfico ao vivo."
+        }
+      ]
+    },
+    {
+      "id": "m33_tecnico_renda_extra_videos_gl",
+      "order": 5,
+      "track": "tecnico",
+      "sequence_group": "tecnico",
+      "role_label": "Vendedor Tecnico",
+      "title": "Como ter renda extra com videos da GL Academy",
+      "objective": "Aprender como o vendedor tecnico pode transformar trechos autorizados das proprias calls gravadas em conteudos, shorts e videos que divulgam o GL Model sem expor o cliente.",
+      "summary": "Nesta aula, Gestora de equipes explica a oportunidade de renda extra com conteudos da GL Academy. Para o vendedor tecnico, o foco e aproveitar as calls tecnicas gravadas: selecionar trechos em que aparece apenas o grafico ou a explicacao, preservar totalmente a imagem e os dados do cliente, manter a mentoria gratuita como algo exclusivo e criar cortes que respondam duvidas reais sobre o GL Model. A aula tambem reforca as regras de pagamento por visualizacao, a necessidade de revisar os cortes com a gestao e o objetivo de aumentar a autoridade da GL Academy no YouTube.",
+      "tags": [
+        "aula_5",
+        "vendedor_tecnico",
+        "renda_extra",
+        "youtube",
+        "calls_tecnicas"
+      ],
+      "lesson": {
+        "video_placeholder": "videos/m33_tecnico_renda_extra_videos_gl.mp4",
+        "text": "Aula sobre como ter renda extra criando videos, cortes e shorts para divulgar a GL Academy. Canal oficial para estudar e buscar referencias: https://www.youtube.com/@giovanelazaro. Para o vendedor tecnico, a regra e aproveitar trechos das proprias calls gravadas, sem expor o cliente e sem postar a mentoria gratuita inteira, criando cortes que mostram explicacoes, duvidas e provas do GL Model.",
+        "video_url": "https://youtu.be/ni1BepMszoc",
+        "chapters": [
+          {"seconds": 0, "time": "00:00", "title": "Objetivo da aula"},
+          {"seconds": 35, "time": "00:35", "title": "Funcao principal do vendedor ativo"},
+          {"seconds": 73, "time": "01:13", "title": "Canal oficial da GL Academy"},
+          {"seconds": 139, "time": "02:19", "title": "Videos e shorts como renda extra"},
+          {"seconds": 194, "time": "03:14", "title": "Revisao e legenda antes da postagem"},
+          {"seconds": 315, "time": "05:15", "title": "Exemplo de escala de ganhos"},
+          {"seconds": 365, "time": "06:05", "title": "Exemplo de video sobre GL Risk Auto e GamePad"},
+          {"seconds": 484, "time": "08:04", "title": "Sistema, atalho e gerenciamento de risco"},
+          {"seconds": 570, "time": "09:30", "title": "TradingView e NinjaTrader"},
+          {"seconds": 710, "time": "11:50", "title": "Diferenciais do Ninja e order flow"},
+          {"seconds": 867, "time": "14:27", "title": "Demonstracao pratica pelo controle"},
+          {"seconds": 1110, "time": "18:30", "title": "Break even, alvo e risco automatico"},
+          {"seconds": 1430, "time": "23:50", "title": "Parte dos vendedores tecnicos"},
+          {"seconds": 1532, "time": "25:32", "title": "Cortes das calls tecnicas"},
+          {"seconds": 1687, "time": "28:07", "title": "Resumo do processo"}
+        ],
+        "require_full_video": true
+      },
+      "require_all_correct": true,
+      "require_decision": false,
+      "role_focus_time": "23:50",
+      "role_focus_seconds": 1430,
+      "role_focus_label": "como o tecnico usa as proprias calls gravadas",
+      "questions": [
+        {
+          "id": "q_m33_tecnico_renda_extra_001",
+          "type": "multi_select",
+          "checkpoint_seconds": 1460,
+          "prompt": "Qual e a principal diferenca da renda extra para o vendedor tecnico?",
+          "correct_option_ids": ["a", "c", "d"],
+          "options": [
+            {"id": "a", "text": "O tecnico pode usar trechos das proprias calls tecnicas gravadas.", "is_correct": true},
+            {"id": "b", "text": "O tecnico deve postar a call inteira para mostrar tudo ao publico.", "is_correct": false},
+            {"id": "c", "text": "O tecnico pode transformar boas explicacoes e respostas de duvidas em cortes.", "is_correct": true},
+            {"id": "d", "text": "A call gravada vira fonte de conteudo recorrente, porque cada lead traz duvidas diferentes.", "is_correct": true},
+            {"id": "e", "text": "O tecnico nao precisa revisar nem cuidar da privacidade se o conteudo for bom.", "is_correct": false}
+          ],
+          "feedback_correct": "Certo. A call tecnica e uma fonte forte de conteudo, desde que seja editada com cuidado.",
+          "feedback_incorrect": "Revise a parte dos tecnicos: o conteudo vem das calls, mas com privacidade e criterio."
+        },
+        {
+          "id": "q_m33_tecnico_renda_extra_002",
+          "type": "multi_select",
+          "checkpoint_seconds": 1510,
+          "prompt": "Quais cuidados sao obrigatorios ao usar uma call tecnica como conteudo?",
+          "correct_option_ids": ["a", "b", "d", "e"],
+          "options": [
+            {"id": "a", "text": "Nao expor imagem, nome, dados, voz sensivel ou informacoes do cliente.", "is_correct": true},
+            {"id": "b", "text": "Preferir trechos em que aparece o grafico, a tela ou a explicacao do tecnico.", "is_correct": true},
+            {"id": "c", "text": "Publicar a mentoria gratuita completa para gerar mais visualizacao.", "is_correct": false},
+            {"id": "d", "text": "Manter a mentoria gratuita como algo exclusivo para leads e clientes.", "is_correct": true},
+            {"id": "e", "text": "Enviar o corte para revisao antes de postar.", "is_correct": true}
+          ],
+          "feedback_correct": "Perfeito. Conteudo bom nao pode comprometer privacidade nem tirar a exclusividade da call.",
+          "feedback_incorrect": "Revise os limites: nao poste a call inteira e nunca exponha o cliente."
+        },
+        {
+          "id": "q_m33_tecnico_renda_extra_003",
+          "type": "multi_select",
+          "checkpoint_seconds": 1650,
+          "prompt": "Por que cortes feitos a partir de duvidas dos leads podem funcionar bem?",
+          "correct_option_ids": ["a", "c", "d", "e"],
+          "options": [
+            {"id": "a", "text": "Porque a duvida de um lead pode ser a mesma de outra pessoa pesquisando no YouTube.", "is_correct": true},
+            {"id": "b", "text": "Porque permite prometer resultado para quem assistir.", "is_correct": false},
+            {"id": "c", "text": "Porque mostra que a GL tem equipe, metodo, suporte e conhecimento tecnico.", "is_correct": true},
+            {"id": "d", "text": "Porque aumenta a confianca na empresa e no GL Model.", "is_correct": true},
+            {"id": "e", "text": "Porque cria conteudo infinito a partir de calls diferentes.", "is_correct": true}
+          ],
+          "feedback_correct": "Boa. Duvidas reais viram conteudo forte quando sao respondidas com clareza e etica.",
+          "feedback_incorrect": "Revise o objetivo: cortes de call mostram autoridade e resolvem duvidas, sem promessa."
+        },
+        {
+          "id": "q_m33_tecnico_renda_extra_004",
+          "type": "multi_select",
+          "checkpoint_seconds": 1680,
+          "prompt": "Quais metas de conteudo geram pagamento extra?",
+          "correct_option_ids": ["a", "b", "d"],
+          "options": [
+            {"id": "a", "text": "Video com mais de 5 minutos e mais de 500 visualizacoes gera R$ 25.", "is_correct": true},
+            {"id": "b", "text": "Short com mais de 30 segundos e mais de 1.000 visualizacoes gera R$ 25.", "is_correct": true},
+            {"id": "c", "text": "Qualquer trecho de call, mesmo sem visualizacao, gera pagamento automatico.", "is_correct": false},
+            {"id": "d", "text": "Quanto mais cortes aprovados baterem meta, maior pode ser a renda extra.", "is_correct": true},
+            {"id": "e", "text": "A regra de pagamento dispensa revisao da gestao.", "is_correct": false}
+          ],
+          "feedback_correct": "Certo. A renda extra depende de formato, duracao, visualizacao e aprovacao.",
+          "feedback_incorrect": "Revise a regra de pagamento: cada formato tem meta minima e precisa seguir o processo."
         }
       ]
     },

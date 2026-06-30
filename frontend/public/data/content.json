@@ -37,7 +37,11 @@
     "desempenho": "Desempenho",
     "compliance": "Compliance",
     "comunidade": "Comunidade",
-    "mercado": "Mercado"
+    "mercado": "Mercado",
+    "renda_extra": "Renda extra",
+    "youtube": "YouTube",
+    "divulgacao": "Divulgacao",
+    "calls_tecnicas": "Calls tecnicas"
   },
   "layerTags": {
     "Cultura": [
@@ -58,14 +62,19 @@
       "prospeccao",
       "script",
       "follow_up",
-      "crm"
+      "crm",
+      "renda_extra",
+      "youtube",
+      "divulgacao"
     ],
     "Produto": [
       "vendedor_tecnico",
       "produto",
       "preco",
       "objecoes",
-      "fechamento"
+      "fechamento",
+      "renda_extra",
+      "calls_tecnicas"
     ],
     "Gestao": [
       "metas",
@@ -102,7 +111,8 @@
         "m01_ativo_funcoes_colaboradores",
         "m20_ativo_prospeccao_fria",
         "m21_ativo_script_diagnostico",
-        "m22_ativo_resposta_objecoes"
+        "m22_ativo_resposta_objecoes",
+        "m23_ativo_renda_extra_videos_gl"
       ],
       "promise": "Gerar volume, diagnosticar leads e manter pipeline vivo."
     },
@@ -113,7 +123,8 @@
         "m01_tecnico_funcoes_colaboradores",
         "m02_tecnico_call_consultiva_gl_model",
         "m03_tecnico_demonstracao_ao_vivo_gl_model",
-        "m31_tecnico_objecoes"
+        "m31_tecnico_objecoes",
+        "m33_tecnico_renda_extra_videos_gl"
       ],
       "promise": "Dominar produto, responder objecoes e fechar leads quentes."
     },
@@ -1082,6 +1093,81 @@
         ]
       }
     },
+    "m23_ativo_renda_extra_videos_gl": {
+      "stage": "Trilha do Vendedor Ativo",
+      "lessonPage": {
+        "headline": "Renda extra com videos da GL Academy",
+        "subtitle": "Usar videos oficiais do canal da GL para criar cortes e shorts aprovados, sem abandonar a captacao de leads.",
+        "sections": [
+          {
+            "title": "Oportunidade para o vendedor ativo",
+            "body": "A renda extra com videos e uma possibilidade adicional. O vendedor ativo continua responsavel por procurar leads, chamar contatos, gerar curiosidade e entregar oportunidades para o vendedor tecnico finalizar. Nos tempos livres, ele pode usar videos oficiais do canal da GL Academy para criar cortes, shorts e edicoes que divulguem a marca.",
+            "bullets": [
+              "Canal oficial da GL Academy: https://www.youtube.com/@giovanelazaro",
+              "Use videos ja publicados pela GL Academy como fonte.",
+              "Transforme trechos bons em shorts ou videos editados.",
+              "Nao use a renda extra como desculpa para abandonar a rotina comercial."
+            ]
+          },
+          {
+            "title": "Processo antes de postar",
+            "body": "Todo conteudo precisa ser feito com qualidade e enviado para revisao antes da postagem. A gestao valida se o corte esta correto e orienta a legenda ou direcao do post. A intencao e fazer a GL aparecer naturalmente para quem pesquisa trading, mercado financeiro, Nasdaq, indicadores e temas parecidos, sem parecer spam.",
+            "bullets": [
+              "Assista ao video original e entenda o contexto.",
+              "Faca um edit limpo, com boa comunicacao visual.",
+              "Envie para revisao antes de postar.",
+              "Aguarde a legenda/direcao indicada pela gestao."
+            ]
+          },
+          {
+            "title": "Regras de pagamento",
+            "body": "A aula explica duas metas de renda extra. Video com mais de 5 minutos e mais de 500 visualizacoes gera R$ 25. Short com mais de 30 segundos e mais de 1.000 visualizacoes tambem gera R$ 25. Quanto mais conteudos aprovados baterem meta, maior pode ser a renda extra.",
+            "bullets": [
+              "Video: mais de 5 minutos + mais de 500 visualizacoes = R$ 25.",
+              "Short: mais de 30 segundos + mais de 1.000 visualizacoes = R$ 25.",
+              "Conteudos podem ser escalados em mais de um canal, desde que aprovados.",
+              "Qualidade, constancia e revisao sao obrigatorias."
+            ]
+          },
+          {
+            "title": "Objetivo estrategico",
+            "body": "A estrategia aumenta a presenca da GL no YouTube, ajuda a atrair leads, reforca autoridade e mostra que a empresa tem tecnologia, produto, comunidade e equipe. A comunicacao precisa ser natural, profissional e sem promessas de lucro ou ganhos garantidos.",
+            "bullets": [
+              "Divulgue a grandeza da GL sem prometer resultado financeiro.",
+              "Evite spam, exagero e qualquer comunicacao amadora.",
+              "Use conteudo para gerar curiosidade e autoridade.",
+              "Bons cortes podem atrair leads e tambem bons colaboradores."
+            ]
+          }
+        ],
+        "checklist": [
+          "Entendi que renda extra nao substitui minha captacao de leads.",
+          "Acessei o canal oficial da GL Academy.",
+          "Sei a diferenca entre video longo e short.",
+          "Sei que preciso enviar o conteudo para revisao antes de postar.",
+          "Sei que a comunicacao deve ser natural, sem spam e sem promessa."
+        ],
+        "mistakes": [
+          "Postar sem revisao.",
+          "Usar conteudo de terceiros como se fosse oficial da GL.",
+          "Fazer edicoes ruins que prejudiquem a marca.",
+          "Prometer lucro, renda garantida ou resultado facil.",
+          "Trocar a captacao de leads por cortes sem autorizacao."
+        ],
+        "mission": "Escolha um video do canal oficial da GL Academy e anote tres ideias de cortes: um short educativo, um video com mais de 5 minutos e uma legenda possivel para enviar a gestao revisar.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Conteudo que gera autoridade",
+        "context": "O vendedor ativo pode transformar videos oficiais em pontos de entrada para novos leads.",
+        "goal": "Criar cortes aprovados que divulguem a GL de forma natural e profissional.",
+        "lens": [
+          "renda_extra",
+          "youtube",
+          "divulgacao"
+        ]
+      }
+    },
     "m01_tecnico_funcoes_colaboradores": {
       "stage": "Trilha do Vendedor Tecnico",
       "lessonPage": {
@@ -1378,6 +1464,80 @@
           "prova",
           "valor",
           "compliance"
+        ]
+      }
+    },
+    "m33_tecnico_renda_extra_videos_gl": {
+      "stage": "Trilha do Vendedor Tecnico",
+      "lessonPage": {
+        "headline": "Renda extra com cortes de calls tecnicas",
+        "subtitle": "Transformar trechos autorizados das calls em conteudos que divulgam o GL Model sem expor o cliente.",
+        "sections": [
+          {
+            "title": "Oportunidade para o vendedor tecnico",
+            "body": "Para o tecnico, a fonte principal de conteudo sao as proprias calls gravadas. Em vez de usar apenas os videos do canal, ele pode cortar trechos em que explicou bem uma duvida, mostrou o grafico ou demonstrou uma parte do GL Model.",
+            "bullets": [
+              "Canal oficial da GL Academy para referencia: https://www.youtube.com/@giovanelazaro",
+              "Use apenas trechos em que o cliente nao aparece e nao e exposto.",
+              "Aproveite explicacoes claras, duvidas recorrentes e provas visuais do grafico.",
+              "A call inteira nao deve ser postada."
+            ]
+          },
+          {
+            "title": "Privacidade e exclusividade",
+            "body": "A mentoria gratuita precisa continuar sendo exclusiva para o lead. O tecnico pode criar cortes, mas nao pode publicar a call completa nem expor nome, imagem, dados, voz sensivel ou informacoes do cliente.",
+            "bullets": [
+              "Corte apenas momentos educativos e autorizados para divulgacao.",
+              "Se aparecer dado do cliente, apague, cubra ou nao use o trecho.",
+              "O objetivo e gerar curiosidade e autoridade, nao entregar toda a mentoria gratis."
+            ]
+          },
+          {
+            "title": "Regras de pagamento",
+            "body": "As metas sao as mesmas da aula: video com mais de 5 minutos e mais de 500 visualizacoes gera R$ 25; short com mais de 30 segundos e mais de 1.000 visualizacoes gera R$ 25.",
+            "bullets": [
+              "Video longo: acima de 5 minutos + acima de 500 visualizacoes.",
+              "Short: acima de 30 segundos + acima de 1.000 visualizacoes.",
+              "O material deve ser enviado para revisao antes da postagem.",
+              "A postagem precisa seguir a direcao de legenda, corte e posicionamento da GL."
+            ]
+          },
+          {
+            "title": "Por que isso fortalece a GL",
+            "body": "Duvidas reais dos leads costumam ser as mesmas duvidas de quem pesquisa sobre trading no YouTube. Quando o tecnico transforma uma explicacao boa em conteudo, ele ajuda a GL Academy a aparecer com mais autoridade e tambem cria uma renda extra sem fugir da funcao principal.",
+            "bullets": [
+              "Use explicacoes que mostrem clareza tecnica.",
+              "Prefira trechos que gerem vontade de marcar uma mentoria gratuita.",
+              "Nunca transforme a divulgacao em promessa de lucro ou resultado."
+            ]
+          }
+        ],
+        "checklist": [
+          "Assisti ao video completo.",
+          "Entendi que a renda extra nao substitui a funcao principal de fechar calls.",
+          "Sei que posso usar trechos das minhas calls tecnicas, mas nunca expor o cliente.",
+          "Sei que a call completa nao deve ser publicada.",
+          "Sei as regras de visualizacao e duracao para receber pelos cortes.",
+          "Sei que todo corte precisa passar por revisao antes de postar."
+        ],
+        "mistakes": [
+          "Postar a call completa.",
+          "Mostrar nome, imagem, voz sensivel, dados ou informacoes do cliente.",
+          "Publicar sem revisao da gestao.",
+          "Usar trechos que prometem lucro, entrada exata ou resultado garantido.",
+          "Fazer conteudo que entrega toda a mentoria e tira a curiosidade do lead."
+        ],
+        "mission": "Revise uma call gravada e marque tres trechos que poderiam virar conteudo: um corte educativo, um short de duvida e uma demonstracao visual sem cliente exposto.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Call que vira conteudo",
+        "context": "Cada call tecnica pode gerar cortes que provam autoridade sem revelar a mentoria completa.",
+        "goal": "Criar conteudos aprovados a partir de calls gravadas, preservando cliente e exclusividade.",
+        "lens": [
+          "renda_extra",
+          "calls_tecnicas",
+          "youtube"
         ]
       }
     },
