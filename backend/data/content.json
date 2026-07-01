@@ -41,14 +41,24 @@
     "renda_extra": "Renda extra",
     "youtube": "YouTube",
     "divulgacao": "Divulgacao",
-    "calls_tecnicas": "Calls tecnicas"
+    "calls_tecnicas": "Calls tecnicas",
+    "tutorial_app": "Tutorial do app",
+    "cadastro": "Cadastro",
+    "trilha": "Trilha",
+    "questionario": "Questionario",
+    "materiais": "Materiais",
+    "links_importantes": "Links importantes"
   },
   "layerTags": {
     "Cultura": [
       "alinhamento",
       "cultura",
       "compliance",
-      "comunidade"
+      "comunidade",
+      "tutorial_app",
+      "cadastro",
+      "trilha",
+      "questionario"
     ],
     "Recrutamento": [
       "recrutamento",
@@ -96,6 +106,7 @@
       "id": "recrutador",
       "title": "Recrutador",
       "modules": [
+        "m00_recrutador_app_treinamento_funciona",
         "m01_recrutador_funcoes_colaboradores",
         "m02_recrutador_comissao_abordagem",
         "m03_recrutador_papel_gestao_remuneracao",
@@ -105,9 +116,18 @@
       "promise": "Encontrar, vender a vaga e filtrar vendedores com padrao."
     },
     {
+      "id": "recrutador_tecnico",
+      "title": "Recrutador Tecnico",
+      "modules": [
+        "m00_recrutador_tecnico_app_treinamento_funciona"
+      ],
+      "promise": "Triar candidatos tecnicos e registrar oportunidades com padrao."
+    },
+    {
       "id": "vendedor_ativo",
       "title": "Vendedor Ativo",
       "modules": [
+        "m00_ativo_app_treinamento_funciona",
         "m01_ativo_funcoes_colaboradores",
         "m20_ativo_prospeccao_fria",
         "m21_ativo_script_diagnostico",
@@ -120,6 +140,7 @@
       "id": "vendedor_tecnico",
       "title": "Vendedor Tecnico",
       "modules": [
+        "m00_tecnico_app_treinamento_funciona",
         "m01_tecnico_funcoes_colaboradores",
         "m02_tecnico_call_consultiva_gl_model",
         "m03_tecnico_demonstracao_ao_vivo_gl_model",
@@ -1685,6 +1706,306 @@
           "compliance",
           "postura",
           "time"
+        ]
+      }
+    },
+    "m00_recrutador_app_treinamento_funciona": {
+      "stage": "Trilha do Recrutador Ativo",
+      "lessonPage": {
+        "headline": "Primeiro passo: entender o app de treinamento",
+        "subtitle": "Cadastro correto, trilha certa, aulas em sequencia, materiais, links e relatorios de comissao.",
+        "sections": [
+          {
+            "title": "Cadastro e liberacao de acesso",
+            "body": "A aula explica que o app nao e aberto para qualquer pessoa. O colaborador precisa criar conta com nome completo, email, codigo de acesso e cargos corretos. A gestao usa essas informacoes para aprovar o acesso e liberar somente as trilhas que fazem sentido para aquela funcao.",
+            "bullets": [
+              "Use o codigo recebido pela equipe.",
+              "Selecione apenas os cargos que foram combinados com a gestao.",
+              "Se escolher cargo errado, o acesso pode nao ser aprovado."
+            ]
+          },
+          {
+            "title": "Trilhas, aulas e questionarios",
+            "body": "Cada aba mostra metas, responsabilidades, aulas e materiais da funcao. O colaborador deve assistir as aulas na ordem, usar a minutagem para se localizar, ler o resumo e responder o questionario. A proxima aula so e liberada quando o video for concluido e as respostas obrigatorias estiverem corretas.",
+            "bullets": [
+              "A ordem das aulas existe para evitar confusao.",
+              "A minutagem ajuda a revisar, mas nao substitui o video.",
+              "Questionario errado bloqueia o avanco ate a correcao."
+            ]
+          },
+          {
+            "title": "Materiais, produtos e links importantes",
+            "body": "O app tambem centraliza PDFs de apoio, links de produtos, checkouts de pagamento, formulario de entrevista, canais oficiais e contato com a gestora. A ideia e evitar que os colaboradores percam links no WhatsApp e tenham tudo reunido no mesmo portal.",
+            "bullets": [
+              "Baixe os PDFs da sua area para estudar e anotar.",
+              "Use os links de produtos/checkout corretos quando for necessario.",
+              "Procure suporte pela area de links importantes quando tiver duvida."
+            ]
+          },
+          {
+            "title": "Desempenho, relatorio e comissao",
+            "body": "A gestao acompanha o progresso das aulas e questionarios. Ja os relatorios devem ser preenchidos quando houver atividade, contato, lead, venda iniciada ou comissao para analise. Quem tiver mais de uma funcao precisa registrar cada area separadamente para evitar confusao nos valores e aprovacoes.",
+            "bullets": [
+              "Nao misture comissoes de funcoes diferentes.",
+              "Registre leads e vendas individualmente.",
+              "Acompanhe o historico para saber se esta aguardando fechamento, aprovado ou nao finalizado."
+            ]
+          }
+        ],
+        "checklist": [
+          "Criei a conta com dados verdadeiros.",
+          "Selecionei apenas os cargos autorizados pela gestao.",
+          "Entendi que preciso assistir as aulas na ordem.",
+          "Entendi que o questionario correto libera a proxima aula.",
+          "Sei onde encontrar PDFs, produtos, links importantes e suporte.",
+          "Sei quando preencher relatorio e como separar por funcao."
+        ],
+        "mistakes": [
+          "Selecionar cargos que nao foram combinados.",
+          "Tentar pular aulas ou responder sem assistir.",
+          "Usar a minutagem como substituta do video.",
+          "Nao baixar ou estudar os materiais de apoio.",
+          "Misturar relatorios e comissoes de funcoes diferentes.",
+          "Deixar de registrar lead, venda iniciada ou comissao para analise."
+        ],
+        "mission": "Antes de avancar para a proxima aula, confira se seu cadastro, cargos liberados, aba da funcao, materiais e area de relatorio estao claros. Anote uma duvida para enviar a gestao caso algo ainda esteja confuso.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Usar o app sem se perder",
+        "context": "O app e o centro do treinamento, da liberacao das aulas e do registro de atividades da equipe.",
+        "goal": "Entrar na trilha correta, cumprir aulas em sequencia e registrar atividades/comissoes com organizacao.",
+        "lens": [
+          "tutorial_app",
+          "cadastro",
+          "trilha",
+          "questionario",
+          "relatorio"
+        ]
+      }
+    },
+    "m00_recrutador_tecnico_app_treinamento_funciona": {
+      "stage": "Trilha do Recrutador Tecnico",
+      "lessonPage": {
+        "headline": "Primeiro passo: entender o app de treinamento",
+        "subtitle": "Cadastro correto, trilha certa, aulas em sequencia, materiais, links e relatorios de comissao.",
+        "sections": [
+          {
+            "title": "Cadastro e liberacao de acesso",
+            "body": "A aula explica que o app nao e aberto para qualquer pessoa. O colaborador precisa criar conta com nome completo, email, codigo de acesso e cargos corretos. A gestao usa essas informacoes para aprovar o acesso e liberar somente as trilhas que fazem sentido para aquela funcao.",
+            "bullets": [
+              "Use o codigo recebido pela equipe.",
+              "Selecione apenas os cargos que foram combinados com a gestao.",
+              "Se escolher cargo errado, o acesso pode nao ser aprovado."
+            ]
+          },
+          {
+            "title": "Trilhas, aulas e questionarios",
+            "body": "Cada aba mostra metas, responsabilidades, aulas e materiais da funcao. O colaborador deve assistir as aulas na ordem, usar a minutagem para se localizar, ler o resumo e responder o questionario. A proxima aula so e liberada quando o video for concluido e as respostas obrigatorias estiverem corretas.",
+            "bullets": [
+              "A ordem das aulas existe para evitar confusao.",
+              "A minutagem ajuda a revisar, mas nao substitui o video.",
+              "Questionario errado bloqueia o avanco ate a correcao."
+            ]
+          },
+          {
+            "title": "Materiais, produtos e links importantes",
+            "body": "O app tambem centraliza PDFs de apoio, links de produtos, checkouts de pagamento, formulario de entrevista, canais oficiais e contato com a gestora. A ideia e evitar que os colaboradores percam links no WhatsApp e tenham tudo reunido no mesmo portal.",
+            "bullets": [
+              "Baixe os PDFs da sua area para estudar e anotar.",
+              "Use os links de produtos/checkout corretos quando for necessario.",
+              "Procure suporte pela area de links importantes quando tiver duvida."
+            ]
+          },
+          {
+            "title": "Desempenho, relatorio e comissao",
+            "body": "A gestao acompanha o progresso das aulas e questionarios. Ja os relatorios devem ser preenchidos quando houver atividade, contato, lead, venda iniciada ou comissao para analise. Quem tiver mais de uma funcao precisa registrar cada area separadamente para evitar confusao nos valores e aprovacoes.",
+            "bullets": [
+              "Nao misture comissoes de funcoes diferentes.",
+              "Registre leads e vendas individualmente.",
+              "Acompanhe o historico para saber se esta aguardando fechamento, aprovado ou nao finalizado."
+            ]
+          }
+        ],
+        "checklist": [
+          "Criei a conta com dados verdadeiros.",
+          "Selecionei apenas os cargos autorizados pela gestao.",
+          "Entendi que preciso assistir as aulas na ordem.",
+          "Entendi que o questionario correto libera a proxima aula.",
+          "Sei onde encontrar PDFs, produtos, links importantes e suporte.",
+          "Sei quando preencher relatorio e como separar por funcao."
+        ],
+        "mistakes": [
+          "Selecionar cargos que nao foram combinados.",
+          "Tentar pular aulas ou responder sem assistir.",
+          "Usar a minutagem como substituta do video.",
+          "Nao baixar ou estudar os materiais de apoio.",
+          "Misturar relatorios e comissoes de funcoes diferentes.",
+          "Deixar de registrar lead, venda iniciada ou comissao para analise."
+        ],
+        "mission": "Antes de avancar para a proxima aula, confira se seu cadastro, cargos liberados, aba da funcao, materiais e area de relatorio estao claros. Anote uma duvida para enviar a gestao caso algo ainda esteja confuso.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Usar o app sem se perder",
+        "context": "O app e o centro do treinamento, da liberacao das aulas e do registro de atividades da equipe.",
+        "goal": "Entrar na trilha correta, cumprir aulas em sequencia e registrar atividades/comissoes com organizacao.",
+        "lens": [
+          "tutorial_app",
+          "cadastro",
+          "trilha",
+          "questionario",
+          "relatorio"
+        ]
+      }
+    },
+    "m00_ativo_app_treinamento_funciona": {
+      "stage": "Trilha do Vendedor Ativo",
+      "lessonPage": {
+        "headline": "Primeiro passo: entender o app de treinamento",
+        "subtitle": "Cadastro correto, trilha certa, aulas em sequencia, materiais, links e relatorios de comissao.",
+        "sections": [
+          {
+            "title": "Cadastro e liberacao de acesso",
+            "body": "A aula explica que o app nao e aberto para qualquer pessoa. O colaborador precisa criar conta com nome completo, email, codigo de acesso e cargos corretos. A gestao usa essas informacoes para aprovar o acesso e liberar somente as trilhas que fazem sentido para aquela funcao.",
+            "bullets": [
+              "Use o codigo recebido pela equipe.",
+              "Selecione apenas os cargos que foram combinados com a gestao.",
+              "Se escolher cargo errado, o acesso pode nao ser aprovado."
+            ]
+          },
+          {
+            "title": "Trilhas, aulas e questionarios",
+            "body": "Cada aba mostra metas, responsabilidades, aulas e materiais da funcao. O colaborador deve assistir as aulas na ordem, usar a minutagem para se localizar, ler o resumo e responder o questionario. A proxima aula so e liberada quando o video for concluido e as respostas obrigatorias estiverem corretas.",
+            "bullets": [
+              "A ordem das aulas existe para evitar confusao.",
+              "A minutagem ajuda a revisar, mas nao substitui o video.",
+              "Questionario errado bloqueia o avanco ate a correcao."
+            ]
+          },
+          {
+            "title": "Materiais, produtos e links importantes",
+            "body": "O app tambem centraliza PDFs de apoio, links de produtos, checkouts de pagamento, formulario de entrevista, canais oficiais e contato com a gestora. A ideia e evitar que os colaboradores percam links no WhatsApp e tenham tudo reunido no mesmo portal.",
+            "bullets": [
+              "Baixe os PDFs da sua area para estudar e anotar.",
+              "Use os links de produtos/checkout corretos quando for necessario.",
+              "Procure suporte pela area de links importantes quando tiver duvida."
+            ]
+          },
+          {
+            "title": "Desempenho, relatorio e comissao",
+            "body": "A gestao acompanha o progresso das aulas e questionarios. Ja os relatorios devem ser preenchidos quando houver atividade, contato, lead, venda iniciada ou comissao para analise. Quem tiver mais de uma funcao precisa registrar cada area separadamente para evitar confusao nos valores e aprovacoes.",
+            "bullets": [
+              "Nao misture comissoes de funcoes diferentes.",
+              "Registre leads e vendas individualmente.",
+              "Acompanhe o historico para saber se esta aguardando fechamento, aprovado ou nao finalizado."
+            ]
+          }
+        ],
+        "checklist": [
+          "Criei a conta com dados verdadeiros.",
+          "Selecionei apenas os cargos autorizados pela gestao.",
+          "Entendi que preciso assistir as aulas na ordem.",
+          "Entendi que o questionario correto libera a proxima aula.",
+          "Sei onde encontrar PDFs, produtos, links importantes e suporte.",
+          "Sei quando preencher relatorio e como separar por funcao."
+        ],
+        "mistakes": [
+          "Selecionar cargos que nao foram combinados.",
+          "Tentar pular aulas ou responder sem assistir.",
+          "Usar a minutagem como substituta do video.",
+          "Nao baixar ou estudar os materiais de apoio.",
+          "Misturar relatorios e comissoes de funcoes diferentes.",
+          "Deixar de registrar lead, venda iniciada ou comissao para analise."
+        ],
+        "mission": "Antes de avancar para a proxima aula, confira se seu cadastro, cargos liberados, aba da funcao, materiais e area de relatorio estao claros. Anote uma duvida para enviar a gestao caso algo ainda esteja confuso.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Usar o app sem se perder",
+        "context": "O app e o centro do treinamento, da liberacao das aulas e do registro de atividades da equipe.",
+        "goal": "Entrar na trilha correta, cumprir aulas em sequencia e registrar atividades/comissoes com organizacao.",
+        "lens": [
+          "tutorial_app",
+          "cadastro",
+          "trilha",
+          "questionario",
+          "relatorio"
+        ]
+      }
+    },
+    "m00_tecnico_app_treinamento_funciona": {
+      "stage": "Trilha do Vendedor Tecnico",
+      "lessonPage": {
+        "headline": "Primeiro passo: entender o app de treinamento",
+        "subtitle": "Cadastro correto, trilha certa, aulas em sequencia, materiais, links e relatorios de comissao.",
+        "sections": [
+          {
+            "title": "Cadastro e liberacao de acesso",
+            "body": "A aula explica que o app nao e aberto para qualquer pessoa. O colaborador precisa criar conta com nome completo, email, codigo de acesso e cargos corretos. A gestao usa essas informacoes para aprovar o acesso e liberar somente as trilhas que fazem sentido para aquela funcao.",
+            "bullets": [
+              "Use o codigo recebido pela equipe.",
+              "Selecione apenas os cargos que foram combinados com a gestao.",
+              "Se escolher cargo errado, o acesso pode nao ser aprovado."
+            ]
+          },
+          {
+            "title": "Trilhas, aulas e questionarios",
+            "body": "Cada aba mostra metas, responsabilidades, aulas e materiais da funcao. O colaborador deve assistir as aulas na ordem, usar a minutagem para se localizar, ler o resumo e responder o questionario. A proxima aula so e liberada quando o video for concluido e as respostas obrigatorias estiverem corretas.",
+            "bullets": [
+              "A ordem das aulas existe para evitar confusao.",
+              "A minutagem ajuda a revisar, mas nao substitui o video.",
+              "Questionario errado bloqueia o avanco ate a correcao."
+            ]
+          },
+          {
+            "title": "Materiais, produtos e links importantes",
+            "body": "O app tambem centraliza PDFs de apoio, links de produtos, checkouts de pagamento, formulario de entrevista, canais oficiais e contato com a gestora. A ideia e evitar que os colaboradores percam links no WhatsApp e tenham tudo reunido no mesmo portal.",
+            "bullets": [
+              "Baixe os PDFs da sua area para estudar e anotar.",
+              "Use os links de produtos/checkout corretos quando for necessario.",
+              "Procure suporte pela area de links importantes quando tiver duvida."
+            ]
+          },
+          {
+            "title": "Desempenho, relatorio e comissao",
+            "body": "A gestao acompanha o progresso das aulas e questionarios. Ja os relatorios devem ser preenchidos quando houver atividade, contato, lead, venda iniciada ou comissao para analise. Quem tiver mais de uma funcao precisa registrar cada area separadamente para evitar confusao nos valores e aprovacoes.",
+            "bullets": [
+              "Nao misture comissoes de funcoes diferentes.",
+              "Registre leads e vendas individualmente.",
+              "Acompanhe o historico para saber se esta aguardando fechamento, aprovado ou nao finalizado."
+            ]
+          }
+        ],
+        "checklist": [
+          "Criei a conta com dados verdadeiros.",
+          "Selecionei apenas os cargos autorizados pela gestao.",
+          "Entendi que preciso assistir as aulas na ordem.",
+          "Entendi que o questionario correto libera a proxima aula.",
+          "Sei onde encontrar PDFs, produtos, links importantes e suporte.",
+          "Sei quando preencher relatorio e como separar por funcao."
+        ],
+        "mistakes": [
+          "Selecionar cargos que nao foram combinados.",
+          "Tentar pular aulas ou responder sem assistir.",
+          "Usar a minutagem como substituta do video.",
+          "Nao baixar ou estudar os materiais de apoio.",
+          "Misturar relatorios e comissoes de funcoes diferentes.",
+          "Deixar de registrar lead, venda iniciada ou comissao para analise."
+        ],
+        "mission": "Antes de avancar para a proxima aula, confira se seu cadastro, cargos liberados, aba da funcao, materiais e area de relatorio estao claros. Anote uma duvida para enviar a gestao caso algo ainda esteja confuso.",
+        "materials": []
+      },
+      "practical": {
+        "title": "Usar o app sem se perder",
+        "context": "O app e o centro do treinamento, da liberacao das aulas e do registro de atividades da equipe.",
+        "goal": "Entrar na trilha correta, cumprir aulas em sequencia e registrar atividades/comissoes com organizacao.",
+        "lens": [
+          "tutorial_app",
+          "cadastro",
+          "trilha",
+          "questionario",
+          "relatorio"
         ]
       }
     }

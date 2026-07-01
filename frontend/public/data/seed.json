@@ -144,8 +144,1272 @@
       ]
     },
     {
-      "id": "m01_recrutador_funcoes_colaboradores",
+      "id": "m00_recrutador_app_treinamento_funciona",
       "order": 1,
+      "track": "recrutador",
+      "sequence_group": "recrutador",
+      "role_label": "Recrutador Ativo",
+      "title": "Como o nosso app de treinamento funciona",
+      "objective": "Entender como acessar o app, escolher corretamente a funcao, assistir as aulas na ordem certa, responder questionarios, baixar materiais, usar links importantes e preencher relatorios de atividade e comissao.",
+      "summary": "Nesta aula de abertura, a Gestora de equipes apresenta o app interno da GL Academy e explica como o colaborador deve usar a plataforma desde o cadastro. A aula mostra que o acesso depende de nome completo, email, codigo de acesso e escolha correta dos cargos, porque cada funcao libera conteudos especificos. Depois, ensina como acompanhar novidades, entrar na aba da funcao, assistir as aulas em sequencia, usar a minutagem, ler o resumo, responder o questionario corretamente para liberar a proxima aula, baixar PDFs de apoio, consultar produtos e links importantes, pedir suporte e preencher relatorios separados por funcao quando houver atividade, lead, venda iniciada ou comissao para analise da gestao.",
+      "tags": [
+        "aula_1",
+        "recrutador",
+        "tutorial_app",
+        "cadastro",
+        "trilha",
+        "questionario",
+        "relatorio"
+      ],
+      "lesson": {
+        "video_placeholder": "videos/m00_recrutador_app_treinamento_funciona.mp4",
+        "text": "Aula inicial obrigatoria sobre como usar o app de treinamento da GL Academy: cadastro, codigo de acesso, escolha correta do cargo, sequencia das aulas, questionarios, materiais, links importantes, produtos, desempenho e relatorios de atividade/comissao.",
+        "video_url": "https://youtu.be/OsaceUlb5Ww",
+        "chapters": [
+          {
+            "seconds": 0,
+            "time": "00:00",
+            "title": "Boas-vindas e objetivo do app"
+          },
+          {
+            "seconds": 70,
+            "time": "01:10",
+            "title": "Por que assistir esta aula primeiro"
+          },
+          {
+            "seconds": 148,
+            "time": "02:28",
+            "title": "Criar conta e usar codigo de acesso"
+          },
+          {
+            "seconds": 246,
+            "time": "04:06",
+            "title": "Escolher corretamente os cargos"
+          },
+          {
+            "seconds": 327,
+            "time": "05:27",
+            "title": "Perguntas de perfil e objetivo"
+          },
+          {
+            "seconds": 438,
+            "time": "07:18",
+            "title": "Novidades e avisos da equipe"
+          },
+          {
+            "seconds": 459,
+            "time": "07:39",
+            "title": "Como usar as abas de funcao"
+          },
+          {
+            "seconds": 552,
+            "time": "09:12",
+            "title": "Metas, responsabilidades e aulas"
+          },
+          {
+            "seconds": 633,
+            "time": "10:33",
+            "title": "Minutagem, resumo e questionario"
+          },
+          {
+            "seconds": 752,
+            "time": "12:32",
+            "title": "Materiais de apoio em PDF"
+          },
+          {
+            "seconds": 789,
+            "time": "13:09",
+            "title": "Acompanhamento de desempenho pela gestao"
+          },
+          {
+            "seconds": 861,
+            "time": "14:21",
+            "title": "Produtos e links de pagamento"
+          },
+          {
+            "seconds": 987,
+            "time": "16:27",
+            "title": "Links importantes e suporte"
+          },
+          {
+            "seconds": 1108,
+            "time": "18:28",
+            "title": "Relatorios e comissao"
+          },
+          {
+            "seconds": 1307,
+            "time": "21:47",
+            "title": "Registrar lead, venda ou comissao"
+          },
+          {
+            "seconds": 1454,
+            "time": "24:14",
+            "title": "Historico, transparencia e controle"
+          },
+          {
+            "seconds": 1572,
+            "time": "26:12",
+            "title": "Contatos finais e duvidas"
+          }
+        ],
+        "require_full_video": true
+      },
+      "require_all_correct": true,
+      "require_decision": false,
+      "role_focus_time": "00:00",
+      "role_focus_seconds": 0,
+      "role_focus_label": "Como a recrutadora usa o app para estudar, treinar e registrar comissao.",
+      "questions": [
+        {
+          "id": "q_m00_recrutador_app_treinamento_funciona_001",
+          "type": "multi_select",
+          "checkpoint_seconds": 246,
+          "prompt": "Quais informacoes precisam estar corretas no cadastro inicial do app?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Nome completo.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Email.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Codigo de acesso recebido pela equipe.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Cargo ou cargos que a pessoa realmente vai desempenhar.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Selecionar todos os cargos para liberar mais conteudo, mesmo sem autorizacao.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Exato. O cadastro precisa refletir a funcao real para liberar somente o treinamento correto.",
+          "feedback_incorrect": "Revise a parte do cadastro: preencher cargo errado pode impedir a aprovacao do acesso."
+        },
+        {
+          "id": "q_m00_recrutador_app_treinamento_funciona_002",
+          "type": "single_choice",
+          "checkpoint_seconds": 459,
+          "prompt": "Por que o colaborador deve escolher apenas as funcoes corretas no cadastro?",
+          "correct_option_ids": [
+            "b"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Porque o app libera todas as aulas para qualquer pessoa automaticamente.",
+              "is_correct": false
+            },
+            {
+              "id": "b",
+              "text": "Porque cada funcao libera conteudos especificos e evita confusao no treinamento.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Porque a escolha do cargo nao interfere no acesso.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Porque quanto mais cargos escolher, maior sera a comissao.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Isso mesmo. O app foi separado por funcao para manter o estudo organizado.",
+          "feedback_incorrect": "A aula reforca que cargo errado pode bloquear a aprovacao ou confundir o treinamento."
+        },
+        {
+          "id": "q_m00_recrutador_app_treinamento_funciona_003",
+          "type": "multi_select",
+          "checkpoint_seconds": 633,
+          "prompt": "Como a pessoa deve avancar nas aulas dentro da trilha?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Assistir a aula na sequencia correta.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Usar a minutagem, o resumo e o checklist como apoio.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Responder o questionario de acordo com o que foi explicado na aula.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Acertar as perguntas para liberar a proxima aula.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Pular os videos e estudar apenas pela minutagem.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Perfeito. O objetivo e aprender de verdade antes de liberar a proxima aula.",
+          "feedback_incorrect": "Revise a parte das aulas: o app exige sequencia, video e questionario correto."
+        },
+        {
+          "id": "q_m00_recrutador_app_treinamento_funciona_004",
+          "type": "multi_select",
+          "checkpoint_seconds": 987,
+          "prompt": "Onde o colaborador encontra apoio dentro do app?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Materiais de apoio em PDF.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Area de produtos e links de pagamento.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Links importantes, como formulario, canais oficiais e suporte.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Botao para falar com a gestora de equipes quando tiver duvida.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Somente em conversas antigas no WhatsApp, sem usar o app.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Certo. O app centraliza estudo, materiais, links, produtos e suporte.",
+          "feedback_incorrect": "A aula mostra que o app existe justamente para centralizar materiais, links e suporte."
+        },
+        {
+          "id": "q_m00_recrutador_app_treinamento_funciona_005",
+          "type": "multi_select",
+          "checkpoint_seconds": 1307,
+          "prompt": "Qual e a forma correta de preencher relatorios e comissoes?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Preencher quando houver atividade, contato, lead, venda iniciada ou comissao para analise.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Separar os registros por funcao quando a pessoa desempenhar mais de um cargo.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Registrar cada lead ou venda individualmente para a gestao acompanhar.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Aguardar a analise/confirmacao da gestao sobre o status da venda ou comissao.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Juntar todas as comissoes de cargos diferentes em um unico registro.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Exatamente. A organizacao por funcao protege a comissao e evita confusao.",
+          "feedback_incorrect": "Revise a parte de relatorio: registros de funcoes diferentes nao devem ser misturados."
+        }
+      ]
+    },
+    {
+      "id": "m00_recrutador_tecnico_app_treinamento_funciona",
+      "order": 1,
+      "track": "recrutador_tecnico",
+      "sequence_group": "recrutador_tecnico",
+      "role_label": "Recrutador Tecnico",
+      "title": "Como o nosso app de treinamento funciona",
+      "objective": "Entender como acessar o app, escolher corretamente a funcao, assistir as aulas na ordem certa, responder questionarios, baixar materiais, usar links importantes e preencher relatorios de atividade e comissao.",
+      "summary": "Nesta aula de abertura, a Gestora de equipes apresenta o app interno da GL Academy e explica como o colaborador deve usar a plataforma desde o cadastro. A aula mostra que o acesso depende de nome completo, email, codigo de acesso e escolha correta dos cargos, porque cada funcao libera conteudos especificos. Depois, ensina como acompanhar novidades, entrar na aba da funcao, assistir as aulas em sequencia, usar a minutagem, ler o resumo, responder o questionario corretamente para liberar a proxima aula, baixar PDFs de apoio, consultar produtos e links importantes, pedir suporte e preencher relatorios separados por funcao quando houver atividade, lead, venda iniciada ou comissao para analise da gestao.",
+      "tags": [
+        "aula_1",
+        "recrutador_tecnico",
+        "tutorial_app",
+        "cadastro",
+        "trilha",
+        "questionario",
+        "relatorio"
+      ],
+      "lesson": {
+        "video_placeholder": "videos/m00_recrutador_tecnico_app_treinamento_funciona.mp4",
+        "text": "Aula inicial obrigatoria sobre como usar o app de treinamento da GL Academy: cadastro, codigo de acesso, escolha correta do cargo, sequencia das aulas, questionarios, materiais, links importantes, produtos, desempenho e relatorios de atividade/comissao.",
+        "video_url": "https://youtu.be/OsaceUlb5Ww",
+        "chapters": [
+          {
+            "seconds": 0,
+            "time": "00:00",
+            "title": "Boas-vindas e objetivo do app"
+          },
+          {
+            "seconds": 70,
+            "time": "01:10",
+            "title": "Por que assistir esta aula primeiro"
+          },
+          {
+            "seconds": 148,
+            "time": "02:28",
+            "title": "Criar conta e usar codigo de acesso"
+          },
+          {
+            "seconds": 246,
+            "time": "04:06",
+            "title": "Escolher corretamente os cargos"
+          },
+          {
+            "seconds": 327,
+            "time": "05:27",
+            "title": "Perguntas de perfil e objetivo"
+          },
+          {
+            "seconds": 438,
+            "time": "07:18",
+            "title": "Novidades e avisos da equipe"
+          },
+          {
+            "seconds": 459,
+            "time": "07:39",
+            "title": "Como usar as abas de funcao"
+          },
+          {
+            "seconds": 552,
+            "time": "09:12",
+            "title": "Metas, responsabilidades e aulas"
+          },
+          {
+            "seconds": 633,
+            "time": "10:33",
+            "title": "Minutagem, resumo e questionario"
+          },
+          {
+            "seconds": 752,
+            "time": "12:32",
+            "title": "Materiais de apoio em PDF"
+          },
+          {
+            "seconds": 789,
+            "time": "13:09",
+            "title": "Acompanhamento de desempenho pela gestao"
+          },
+          {
+            "seconds": 861,
+            "time": "14:21",
+            "title": "Produtos e links de pagamento"
+          },
+          {
+            "seconds": 987,
+            "time": "16:27",
+            "title": "Links importantes e suporte"
+          },
+          {
+            "seconds": 1108,
+            "time": "18:28",
+            "title": "Relatorios e comissao"
+          },
+          {
+            "seconds": 1307,
+            "time": "21:47",
+            "title": "Registrar lead, venda ou comissao"
+          },
+          {
+            "seconds": 1454,
+            "time": "24:14",
+            "title": "Historico, transparencia e controle"
+          },
+          {
+            "seconds": 1572,
+            "time": "26:12",
+            "title": "Contatos finais e duvidas"
+          }
+        ],
+        "require_full_video": true
+      },
+      "require_all_correct": true,
+      "require_decision": false,
+      "role_focus_time": "00:00",
+      "role_focus_seconds": 0,
+      "role_focus_label": "Como o recrutador tecnico usa o app para estudar, acompanhar funcoes e registrar comissao.",
+      "questions": [
+        {
+          "id": "q_m00_recrutador_tecnico_app_treinamento_funciona_001",
+          "type": "multi_select",
+          "checkpoint_seconds": 246,
+          "prompt": "Quais informacoes precisam estar corretas no cadastro inicial do app?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Nome completo.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Email.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Codigo de acesso recebido pela equipe.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Cargo ou cargos que a pessoa realmente vai desempenhar.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Selecionar todos os cargos para liberar mais conteudo, mesmo sem autorizacao.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Exato. O cadastro precisa refletir a funcao real para liberar somente o treinamento correto.",
+          "feedback_incorrect": "Revise a parte do cadastro: preencher cargo errado pode impedir a aprovacao do acesso."
+        },
+        {
+          "id": "q_m00_recrutador_tecnico_app_treinamento_funciona_002",
+          "type": "single_choice",
+          "checkpoint_seconds": 459,
+          "prompt": "Por que o colaborador deve escolher apenas as funcoes corretas no cadastro?",
+          "correct_option_ids": [
+            "b"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Porque o app libera todas as aulas para qualquer pessoa automaticamente.",
+              "is_correct": false
+            },
+            {
+              "id": "b",
+              "text": "Porque cada funcao libera conteudos especificos e evita confusao no treinamento.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Porque a escolha do cargo nao interfere no acesso.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Porque quanto mais cargos escolher, maior sera a comissao.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Isso mesmo. O app foi separado por funcao para manter o estudo organizado.",
+          "feedback_incorrect": "A aula reforca que cargo errado pode bloquear a aprovacao ou confundir o treinamento."
+        },
+        {
+          "id": "q_m00_recrutador_tecnico_app_treinamento_funciona_003",
+          "type": "multi_select",
+          "checkpoint_seconds": 633,
+          "prompt": "Como a pessoa deve avancar nas aulas dentro da trilha?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Assistir a aula na sequencia correta.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Usar a minutagem, o resumo e o checklist como apoio.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Responder o questionario de acordo com o que foi explicado na aula.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Acertar as perguntas para liberar a proxima aula.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Pular os videos e estudar apenas pela minutagem.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Perfeito. O objetivo e aprender de verdade antes de liberar a proxima aula.",
+          "feedback_incorrect": "Revise a parte das aulas: o app exige sequencia, video e questionario correto."
+        },
+        {
+          "id": "q_m00_recrutador_tecnico_app_treinamento_funciona_004",
+          "type": "multi_select",
+          "checkpoint_seconds": 987,
+          "prompt": "Onde o colaborador encontra apoio dentro do app?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Materiais de apoio em PDF.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Area de produtos e links de pagamento.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Links importantes, como formulario, canais oficiais e suporte.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Botao para falar com a gestora de equipes quando tiver duvida.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Somente em conversas antigas no WhatsApp, sem usar o app.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Certo. O app centraliza estudo, materiais, links, produtos e suporte.",
+          "feedback_incorrect": "A aula mostra que o app existe justamente para centralizar materiais, links e suporte."
+        },
+        {
+          "id": "q_m00_recrutador_tecnico_app_treinamento_funciona_005",
+          "type": "multi_select",
+          "checkpoint_seconds": 1307,
+          "prompt": "Qual e a forma correta de preencher relatorios e comissoes?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Preencher quando houver atividade, contato, lead, venda iniciada ou comissao para analise.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Separar os registros por funcao quando a pessoa desempenhar mais de um cargo.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Registrar cada lead ou venda individualmente para a gestao acompanhar.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Aguardar a analise/confirmacao da gestao sobre o status da venda ou comissao.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Juntar todas as comissoes de cargos diferentes em um unico registro.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Exatamente. A organizacao por funcao protege a comissao e evita confusao.",
+          "feedback_incorrect": "Revise a parte de relatorio: registros de funcoes diferentes nao devem ser misturados."
+        }
+      ]
+    },
+    {
+      "id": "m00_ativo_app_treinamento_funciona",
+      "order": 1,
+      "track": "ativo",
+      "sequence_group": "ativo",
+      "role_label": "Vendedor Ativo",
+      "title": "Como o nosso app de treinamento funciona",
+      "objective": "Entender como acessar o app, escolher corretamente a funcao, assistir as aulas na ordem certa, responder questionarios, baixar materiais, usar links importantes e preencher relatorios de atividade e comissao.",
+      "summary": "Nesta aula de abertura, a Gestora de equipes apresenta o app interno da GL Academy e explica como o colaborador deve usar a plataforma desde o cadastro. A aula mostra que o acesso depende de nome completo, email, codigo de acesso e escolha correta dos cargos, porque cada funcao libera conteudos especificos. Depois, ensina como acompanhar novidades, entrar na aba da funcao, assistir as aulas em sequencia, usar a minutagem, ler o resumo, responder o questionario corretamente para liberar a proxima aula, baixar PDFs de apoio, consultar produtos e links importantes, pedir suporte e preencher relatorios separados por funcao quando houver atividade, lead, venda iniciada ou comissao para analise da gestao.",
+      "tags": [
+        "aula_1",
+        "vendedor_ativo",
+        "tutorial_app",
+        "cadastro",
+        "trilha",
+        "questionario",
+        "relatorio"
+      ],
+      "lesson": {
+        "video_placeholder": "videos/m00_ativo_app_treinamento_funciona.mp4",
+        "text": "Aula inicial obrigatoria sobre como usar o app de treinamento da GL Academy: cadastro, codigo de acesso, escolha correta do cargo, sequencia das aulas, questionarios, materiais, links importantes, produtos, desempenho e relatorios de atividade/comissao.",
+        "video_url": "https://youtu.be/OsaceUlb5Ww",
+        "chapters": [
+          {
+            "seconds": 0,
+            "time": "00:00",
+            "title": "Boas-vindas e objetivo do app"
+          },
+          {
+            "seconds": 70,
+            "time": "01:10",
+            "title": "Por que assistir esta aula primeiro"
+          },
+          {
+            "seconds": 148,
+            "time": "02:28",
+            "title": "Criar conta e usar codigo de acesso"
+          },
+          {
+            "seconds": 246,
+            "time": "04:06",
+            "title": "Escolher corretamente os cargos"
+          },
+          {
+            "seconds": 327,
+            "time": "05:27",
+            "title": "Perguntas de perfil e objetivo"
+          },
+          {
+            "seconds": 438,
+            "time": "07:18",
+            "title": "Novidades e avisos da equipe"
+          },
+          {
+            "seconds": 459,
+            "time": "07:39",
+            "title": "Como usar as abas de funcao"
+          },
+          {
+            "seconds": 552,
+            "time": "09:12",
+            "title": "Metas, responsabilidades e aulas"
+          },
+          {
+            "seconds": 633,
+            "time": "10:33",
+            "title": "Minutagem, resumo e questionario"
+          },
+          {
+            "seconds": 752,
+            "time": "12:32",
+            "title": "Materiais de apoio em PDF"
+          },
+          {
+            "seconds": 789,
+            "time": "13:09",
+            "title": "Acompanhamento de desempenho pela gestao"
+          },
+          {
+            "seconds": 861,
+            "time": "14:21",
+            "title": "Produtos e links de pagamento"
+          },
+          {
+            "seconds": 987,
+            "time": "16:27",
+            "title": "Links importantes e suporte"
+          },
+          {
+            "seconds": 1108,
+            "time": "18:28",
+            "title": "Relatorios e comissao"
+          },
+          {
+            "seconds": 1307,
+            "time": "21:47",
+            "title": "Registrar lead, venda ou comissao"
+          },
+          {
+            "seconds": 1454,
+            "time": "24:14",
+            "title": "Historico, transparencia e controle"
+          },
+          {
+            "seconds": 1572,
+            "time": "26:12",
+            "title": "Contatos finais e duvidas"
+          }
+        ],
+        "require_full_video": true
+      },
+      "require_all_correct": true,
+      "require_decision": false,
+      "role_focus_time": "00:00",
+      "role_focus_seconds": 0,
+      "role_focus_label": "Como o vendedor ativo usa o app para cumprir aulas, consultar links e registrar atividade.",
+      "questions": [
+        {
+          "id": "q_m00_ativo_app_treinamento_funciona_001",
+          "type": "multi_select",
+          "checkpoint_seconds": 246,
+          "prompt": "Quais informacoes precisam estar corretas no cadastro inicial do app?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Nome completo.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Email.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Codigo de acesso recebido pela equipe.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Cargo ou cargos que a pessoa realmente vai desempenhar.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Selecionar todos os cargos para liberar mais conteudo, mesmo sem autorizacao.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Exato. O cadastro precisa refletir a funcao real para liberar somente o treinamento correto.",
+          "feedback_incorrect": "Revise a parte do cadastro: preencher cargo errado pode impedir a aprovacao do acesso."
+        },
+        {
+          "id": "q_m00_ativo_app_treinamento_funciona_002",
+          "type": "single_choice",
+          "checkpoint_seconds": 459,
+          "prompt": "Por que o colaborador deve escolher apenas as funcoes corretas no cadastro?",
+          "correct_option_ids": [
+            "b"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Porque o app libera todas as aulas para qualquer pessoa automaticamente.",
+              "is_correct": false
+            },
+            {
+              "id": "b",
+              "text": "Porque cada funcao libera conteudos especificos e evita confusao no treinamento.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Porque a escolha do cargo nao interfere no acesso.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Porque quanto mais cargos escolher, maior sera a comissao.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Isso mesmo. O app foi separado por funcao para manter o estudo organizado.",
+          "feedback_incorrect": "A aula reforca que cargo errado pode bloquear a aprovacao ou confundir o treinamento."
+        },
+        {
+          "id": "q_m00_ativo_app_treinamento_funciona_003",
+          "type": "multi_select",
+          "checkpoint_seconds": 633,
+          "prompt": "Como a pessoa deve avancar nas aulas dentro da trilha?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Assistir a aula na sequencia correta.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Usar a minutagem, o resumo e o checklist como apoio.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Responder o questionario de acordo com o que foi explicado na aula.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Acertar as perguntas para liberar a proxima aula.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Pular os videos e estudar apenas pela minutagem.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Perfeito. O objetivo e aprender de verdade antes de liberar a proxima aula.",
+          "feedback_incorrect": "Revise a parte das aulas: o app exige sequencia, video e questionario correto."
+        },
+        {
+          "id": "q_m00_ativo_app_treinamento_funciona_004",
+          "type": "multi_select",
+          "checkpoint_seconds": 987,
+          "prompt": "Onde o colaborador encontra apoio dentro do app?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Materiais de apoio em PDF.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Area de produtos e links de pagamento.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Links importantes, como formulario, canais oficiais e suporte.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Botao para falar com a gestora de equipes quando tiver duvida.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Somente em conversas antigas no WhatsApp, sem usar o app.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Certo. O app centraliza estudo, materiais, links, produtos e suporte.",
+          "feedback_incorrect": "A aula mostra que o app existe justamente para centralizar materiais, links e suporte."
+        },
+        {
+          "id": "q_m00_ativo_app_treinamento_funciona_005",
+          "type": "multi_select",
+          "checkpoint_seconds": 1307,
+          "prompt": "Qual e a forma correta de preencher relatorios e comissoes?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Preencher quando houver atividade, contato, lead, venda iniciada ou comissao para analise.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Separar os registros por funcao quando a pessoa desempenhar mais de um cargo.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Registrar cada lead ou venda individualmente para a gestao acompanhar.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Aguardar a analise/confirmacao da gestao sobre o status da venda ou comissao.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Juntar todas as comissoes de cargos diferentes em um unico registro.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Exatamente. A organizacao por funcao protege a comissao e evita confusao.",
+          "feedback_incorrect": "Revise a parte de relatorio: registros de funcoes diferentes nao devem ser misturados."
+        }
+      ]
+    },
+    {
+      "id": "m00_tecnico_app_treinamento_funciona",
+      "order": 1,
+      "track": "tecnico",
+      "sequence_group": "tecnico",
+      "role_label": "Vendedor Tecnico",
+      "title": "Como o nosso app de treinamento funciona",
+      "objective": "Entender como acessar o app, escolher corretamente a funcao, assistir as aulas na ordem certa, responder questionarios, baixar materiais, usar links importantes e preencher relatorios de atividade e comissao.",
+      "summary": "Nesta aula de abertura, a Gestora de equipes apresenta o app interno da GL Academy e explica como o colaborador deve usar a plataforma desde o cadastro. A aula mostra que o acesso depende de nome completo, email, codigo de acesso e escolha correta dos cargos, porque cada funcao libera conteudos especificos. Depois, ensina como acompanhar novidades, entrar na aba da funcao, assistir as aulas em sequencia, usar a minutagem, ler o resumo, responder o questionario corretamente para liberar a proxima aula, baixar PDFs de apoio, consultar produtos e links importantes, pedir suporte e preencher relatorios separados por funcao quando houver atividade, lead, venda iniciada ou comissao para analise da gestao.",
+      "tags": [
+        "aula_1",
+        "vendedor_tecnico",
+        "tutorial_app",
+        "cadastro",
+        "trilha",
+        "questionario",
+        "relatorio"
+      ],
+      "lesson": {
+        "video_placeholder": "videos/m00_tecnico_app_treinamento_funciona.mp4",
+        "text": "Aula inicial obrigatoria sobre como usar o app de treinamento da GL Academy: cadastro, codigo de acesso, escolha correta do cargo, sequencia das aulas, questionarios, materiais, links importantes, produtos, desempenho e relatorios de atividade/comissao.",
+        "video_url": "https://youtu.be/OsaceUlb5Ww",
+        "chapters": [
+          {
+            "seconds": 0,
+            "time": "00:00",
+            "title": "Boas-vindas e objetivo do app"
+          },
+          {
+            "seconds": 70,
+            "time": "01:10",
+            "title": "Por que assistir esta aula primeiro"
+          },
+          {
+            "seconds": 148,
+            "time": "02:28",
+            "title": "Criar conta e usar codigo de acesso"
+          },
+          {
+            "seconds": 246,
+            "time": "04:06",
+            "title": "Escolher corretamente os cargos"
+          },
+          {
+            "seconds": 327,
+            "time": "05:27",
+            "title": "Perguntas de perfil e objetivo"
+          },
+          {
+            "seconds": 438,
+            "time": "07:18",
+            "title": "Novidades e avisos da equipe"
+          },
+          {
+            "seconds": 459,
+            "time": "07:39",
+            "title": "Como usar as abas de funcao"
+          },
+          {
+            "seconds": 552,
+            "time": "09:12",
+            "title": "Metas, responsabilidades e aulas"
+          },
+          {
+            "seconds": 633,
+            "time": "10:33",
+            "title": "Minutagem, resumo e questionario"
+          },
+          {
+            "seconds": 752,
+            "time": "12:32",
+            "title": "Materiais de apoio em PDF"
+          },
+          {
+            "seconds": 789,
+            "time": "13:09",
+            "title": "Acompanhamento de desempenho pela gestao"
+          },
+          {
+            "seconds": 861,
+            "time": "14:21",
+            "title": "Produtos e links de pagamento"
+          },
+          {
+            "seconds": 987,
+            "time": "16:27",
+            "title": "Links importantes e suporte"
+          },
+          {
+            "seconds": 1108,
+            "time": "18:28",
+            "title": "Relatorios e comissao"
+          },
+          {
+            "seconds": 1307,
+            "time": "21:47",
+            "title": "Registrar lead, venda ou comissao"
+          },
+          {
+            "seconds": 1454,
+            "time": "24:14",
+            "title": "Historico, transparencia e controle"
+          },
+          {
+            "seconds": 1572,
+            "time": "26:12",
+            "title": "Contatos finais e duvidas"
+          }
+        ],
+        "require_full_video": true
+      },
+      "require_all_correct": true,
+      "require_decision": false,
+      "role_focus_time": "00:00",
+      "role_focus_seconds": 0,
+      "role_focus_label": "Como o vendedor tecnico usa o app para cumprir aulas, consultar produtos e registrar atividade.",
+      "questions": [
+        {
+          "id": "q_m00_tecnico_app_treinamento_funciona_001",
+          "type": "multi_select",
+          "checkpoint_seconds": 246,
+          "prompt": "Quais informacoes precisam estar corretas no cadastro inicial do app?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Nome completo.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Email.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Codigo de acesso recebido pela equipe.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Cargo ou cargos que a pessoa realmente vai desempenhar.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Selecionar todos os cargos para liberar mais conteudo, mesmo sem autorizacao.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Exato. O cadastro precisa refletir a funcao real para liberar somente o treinamento correto.",
+          "feedback_incorrect": "Revise a parte do cadastro: preencher cargo errado pode impedir a aprovacao do acesso."
+        },
+        {
+          "id": "q_m00_tecnico_app_treinamento_funciona_002",
+          "type": "single_choice",
+          "checkpoint_seconds": 459,
+          "prompt": "Por que o colaborador deve escolher apenas as funcoes corretas no cadastro?",
+          "correct_option_ids": [
+            "b"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Porque o app libera todas as aulas para qualquer pessoa automaticamente.",
+              "is_correct": false
+            },
+            {
+              "id": "b",
+              "text": "Porque cada funcao libera conteudos especificos e evita confusao no treinamento.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Porque a escolha do cargo nao interfere no acesso.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Porque quanto mais cargos escolher, maior sera a comissao.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Isso mesmo. O app foi separado por funcao para manter o estudo organizado.",
+          "feedback_incorrect": "A aula reforca que cargo errado pode bloquear a aprovacao ou confundir o treinamento."
+        },
+        {
+          "id": "q_m00_tecnico_app_treinamento_funciona_003",
+          "type": "multi_select",
+          "checkpoint_seconds": 633,
+          "prompt": "Como a pessoa deve avancar nas aulas dentro da trilha?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Assistir a aula na sequencia correta.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Usar a minutagem, o resumo e o checklist como apoio.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Responder o questionario de acordo com o que foi explicado na aula.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Acertar as perguntas para liberar a proxima aula.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Pular os videos e estudar apenas pela minutagem.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Perfeito. O objetivo e aprender de verdade antes de liberar a proxima aula.",
+          "feedback_incorrect": "Revise a parte das aulas: o app exige sequencia, video e questionario correto."
+        },
+        {
+          "id": "q_m00_tecnico_app_treinamento_funciona_004",
+          "type": "multi_select",
+          "checkpoint_seconds": 987,
+          "prompt": "Onde o colaborador encontra apoio dentro do app?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Materiais de apoio em PDF.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Area de produtos e links de pagamento.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Links importantes, como formulario, canais oficiais e suporte.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Botao para falar com a gestora de equipes quando tiver duvida.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Somente em conversas antigas no WhatsApp, sem usar o app.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Certo. O app centraliza estudo, materiais, links, produtos e suporte.",
+          "feedback_incorrect": "A aula mostra que o app existe justamente para centralizar materiais, links e suporte."
+        },
+        {
+          "id": "q_m00_tecnico_app_treinamento_funciona_005",
+          "type": "multi_select",
+          "checkpoint_seconds": 1307,
+          "prompt": "Qual e a forma correta de preencher relatorios e comissoes?",
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "Preencher quando houver atividade, contato, lead, venda iniciada ou comissao para analise.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Separar os registros por funcao quando a pessoa desempenhar mais de um cargo.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Registrar cada lead ou venda individualmente para a gestao acompanhar.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Aguardar a analise/confirmacao da gestao sobre o status da venda ou comissao.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Juntar todas as comissoes de cargos diferentes em um unico registro.",
+              "is_correct": false
+            }
+          ],
+          "feedback_correct": "Exatamente. A organizacao por funcao protege a comissao e evita confusao.",
+          "feedback_incorrect": "Revise a parte de relatorio: registros de funcoes diferentes nao devem ser misturados."
+        }
+      ]
+    },
+    {
+      "id": "m01_recrutador_funcoes_colaboradores",
+      "order": 2,
       "track": "recrutador",
       "sequence_group": "recrutador",
       "role_label": "Recrutador",
@@ -153,7 +1417,7 @@
       "objective": "Entender a esteira comercial completa e assumir o papel do recrutador com clareza, ética e acompanhamento.",
       "summary": "Nesta primeira aula, Gestora de equipes apresenta a GL Academy, o GL Model e a integração entre recrutador, vendedor ativo e vendedor técnico. Para o recrutador, o foco está em encontrar talentos, selecionar pessoas com boa comunicação e postura, formar a equipe, acompanhar vendedores e proteger a empresa de promessas falsas.",
       "tags": [
-        "aula_1",
+        "aula_2",
         "recrutador",
         "funcoes",
         "etica",
@@ -362,7 +1626,7 @@
     },
     {
       "id": "m02_recrutador_comissao_abordagem",
-      "order": 2,
+      "order": 3,
       "track": "recrutador",
       "sequence_group": "recrutador",
       "role_label": "Recrutador",
@@ -370,7 +1634,7 @@
       "objective": "Aprofundar a seleção e abordagem de vendedores, entender as comissões e controlar o fluxo completo de cada lead.",
       "summary": "Gestora de equipes explica onde encontrar vendedores ativos, quais critérios observar, como apresentar a oportunidade sem promessas falsas, como funciona a entrevista e quais são as responsabilidades de acompanhamento do recrutador. A aula também detalha as comissões de R$ 200 para o vendedor ativo e R$ 100 para o recrutador por venda concluída, os prazos de pagamento e a necessidade de registrar cada etapa.",
       "tags": [
-        "aula_2",
+        "aula_3",
         "recrutador",
         "abordagem",
         "comissao",
@@ -604,7 +1868,7 @@
     },
     {
       "id": "m03_recrutador_papel_gestao_remuneracao",
-      "order": 3,
+      "order": 4,
       "track": "recrutador",
       "sequence_group": "recrutador",
       "role_label": "Recrutador",
@@ -612,7 +1876,7 @@
       "objective": "Selecionar com responsabilidade, gerir e treinar a equipe, controlar o CRM e entender a remuneração do recrutador.",
       "summary": "Gestora de equipes detalha o papel do recrutador na proteção da marca, na seleção de vendedores e na gestão da equipe. A aula explica reuniões gravadas, correção de dificuldades, registro no CRM, comissão de R$ 100 por venda da equipe, bônus de R$ 200 por captação direta autorizada e as consequências de promessas, spam, abandono ou dano reputacional.",
       "tags": [
-        "aula_3",
+        "aula_4",
         "recrutador",
         "gestao",
         "crm",
@@ -862,7 +2126,7 @@
     },
     {
       "id": "m04_recrutador_treinamento_vendedores_gl_model",
-      "order": 4,
+      "order": 5,
       "track": "recrutador",
       "sequence_group": "recrutador",
       "role_label": "Recrutador",
@@ -870,7 +2134,7 @@
       "objective": "Ensinar o recrutador a treinar vendedores ativos sobre o GL Model, usar o app como base de formação e acompanhar a equipe com ética.",
       "summary": "Gestora de equipes orienta os recrutadores sobre como treinar vendedores ativos para explicar o GL Model com segurança, sem promessas mágicas e sem vender o produto como robô de sinais. A aula reforça que o GL Model deve ser apresentado como um mapa de decisão para o trader, traduzindo conceitos técnicos em benefícios práticos, personalizando a demonstração pela dor do lead e mantendo transparência sobre risco, preço, suporte e onboarding. No final, Gestora de equipes explica como o app deve ser usado como fonte principal de treinamento dos vendedores ativos, quais conteúdos o recrutador precisa cumprir e como acompanhar a equipe com calls, mensagens simuladas, entrevistas e orientação contínua.",
       "tags": [
-        "aula_4",
+        "aula_5",
         "recrutador",
         "treinamento",
         "gl_model",
@@ -1126,7 +2390,7 @@
     },
     {
       "id": "m12_recrutador_triagem",
-      "order": 5,
+      "order": 6,
       "track": "recrutador",
       "sequence_group": "recrutador",
       "role_label": "Recrutador",
@@ -1134,6 +2398,7 @@
       "objective": "Conduzir a pre-entrevista de novos colaboradores, usar o formulario de participacao da GL e encaminhar apenas candidatos alinhados para a entrevista final.",
       "summary": "Nesta aula, a recrutadora aprende como encontrar um possivel colaborador, enviar o formulario de participacao da GL, analisar respostas, fazer a pre-entrevista gravada e encaminhar o candidato para a entrevista final com a gestao. A aula explica a diferenca entre perfil de vendedor ativo e vendedor tecnico, quais perguntas fazer sobre rotina, experiencia, vendas, postura digital e interesse no mercado financeiro, alem de como apresentar a funcao, a comissao, os prazos de pagamento e as regras eticas da GL Academy.",
       "tags": [
+        "aula_6",
         "recrutamento",
         "triagem",
         "entrevista",
@@ -1382,7 +2647,7 @@
     },
     {
       "id": "m01_ativo_funcoes_colaboradores",
-      "order": 1,
+      "order": 2,
       "track": "ativo",
       "sequence_group": "ativo",
       "role_label": "Vendedor Ativo",
@@ -1390,7 +2655,7 @@
       "objective": "Entender a esteira comercial completa e assumir o papel do vendedor ativo na captação, qualificação e passagem do lead.",
       "summary": "Nesta primeira aula, Gestora de equipes apresenta a GL Academy, o GL Model e a integração entre recrutador, vendedor ativo e vendedor técnico. Para o vendedor ativo, o foco está em encontrar oportunidades, abordar com cuidado, identificar dores, registrar a origem do lead e fazer um handoff organizado para o vendedor técnico.",
       "tags": [
-        "aula_1",
+        "aula_2",
         "vendedor_ativo",
         "funcoes",
         "leads",
@@ -1600,7 +2865,7 @@
     },
     {
       "id": "m20_ativo_prospeccao_fria",
-      "order": 2,
+      "order": 3,
       "track": "ativo",
       "sequence_group": "ativo",
       "role_label": "Vendedor Ativo",
@@ -1608,7 +2873,7 @@
       "objective": "Entender a função do vendedor ativo, prospectar e qualificar leads, registrar o CRM e conduzir a passagem para o vendedor técnico.",
       "summary": "Nesta aula, Gestora de equipes explica a função completa do vendedor ativo: encontrar oportunidades, aquecer e qualificar leads e preparar a passagem para o vendedor técnico. O conteúdo mostra onde prospectar, como registrar contatos encontrados por conta própria antes da abordagem e quais informações descobrir sobre experiência, plataforma e dificuldade do trader. Também são apresentados os limites éticos da comunicação: o vendedor oferece metodologia, educação e uma call técnica, mas nunca promete lucro, sinais, consistência automática ou aprovação em mesa proprietária. Por fim, a aula detalha os campos obrigatórios do CRM, a responsabilidade de agendar data e horário, a comissão de R$ 200 somente após a venda concluída e a necessidade de respeitar prazos e horários adequados de contato.",
       "tags": [
-        "aula_2",
+        "aula_3",
         "vendedor_ativo",
         "prospeccao",
         "crm",
@@ -1620,19 +2885,71 @@
         "text": "Nesta aula, Gestora de equipes explica a função completa do vendedor ativo: encontrar oportunidades, aquecer e qualificar leads e preparar a passagem para o vendedor técnico. O conteúdo mostra onde prospectar, como registrar contatos encontrados por conta própria antes da abordagem e quais informações descobrir sobre experiência, plataforma e dificuldade do trader. Também são apresentados os limites éticos da comunicação: o vendedor oferece metodologia, educação e uma call técnica, mas nunca promete lucro, sinais, consistência automática ou aprovação em mesa proprietária. Por fim, a aula detalha os campos obrigatórios do CRM, a responsabilidade de agendar data e horário, a comissão de R$ 200 somente após a venda concluída e a necessidade de respeitar prazos e horários adequados de contato.",
         "video_url": "https://youtu.be/tkZXERaHTBg",
         "chapters": [
-          {"seconds": 0, "time": "00:00", "title": "Objetivo e estrutura da aula"},
-          {"seconds": 72, "time": "01:12", "title": "Papel do vendedor ativo"},
-          {"seconds": 131, "time": "02:11", "title": "Onde prospectar leads"},
-          {"seconds": 168, "time": "02:48", "title": "Registro antes da abordagem"},
-          {"seconds": 214, "time": "03:34", "title": "Leads próprios e temas de busca"},
-          {"seconds": 255, "time": "04:15", "title": "Diagnóstico e posicionamento do GL Model"},
-          {"seconds": 320, "time": "05:20", "title": "Objeções e preparação do vendedor"},
-          {"seconds": 360, "time": "06:00", "title": "Promessas proibidas e responsabilidade"},
-          {"seconds": 465, "time": "07:45", "title": "Informações obrigatórias no CRM"},
-          {"seconds": 557, "time": "09:17", "title": "Agendamento da call técnica"},
-          {"seconds": 654, "time": "10:54", "title": "Passagem do lead e conclusão da venda"},
-          {"seconds": 670, "time": "11:10", "title": "Comissão e organização da rotina"},
-          {"seconds": 730, "time": "12:10", "title": "Inatividade e permanência na equipe"}
+          {
+            "seconds": 0,
+            "time": "00:00",
+            "title": "Objetivo e estrutura da aula"
+          },
+          {
+            "seconds": 72,
+            "time": "01:12",
+            "title": "Papel do vendedor ativo"
+          },
+          {
+            "seconds": 131,
+            "time": "02:11",
+            "title": "Onde prospectar leads"
+          },
+          {
+            "seconds": 168,
+            "time": "02:48",
+            "title": "Registro antes da abordagem"
+          },
+          {
+            "seconds": 214,
+            "time": "03:34",
+            "title": "Leads próprios e temas de busca"
+          },
+          {
+            "seconds": 255,
+            "time": "04:15",
+            "title": "Diagnóstico e posicionamento do GL Model"
+          },
+          {
+            "seconds": 320,
+            "time": "05:20",
+            "title": "Objeções e preparação do vendedor"
+          },
+          {
+            "seconds": 360,
+            "time": "06:00",
+            "title": "Promessas proibidas e responsabilidade"
+          },
+          {
+            "seconds": 465,
+            "time": "07:45",
+            "title": "Informações obrigatórias no CRM"
+          },
+          {
+            "seconds": 557,
+            "time": "09:17",
+            "title": "Agendamento da call técnica"
+          },
+          {
+            "seconds": 654,
+            "time": "10:54",
+            "title": "Passagem do lead e conclusão da venda"
+          },
+          {
+            "seconds": 670,
+            "time": "11:10",
+            "title": "Comissão e organização da rotina"
+          },
+          {
+            "seconds": 730,
+            "time": "12:10",
+            "title": "Inatividade e permanência na equipe"
+          }
         ],
         "require_full_video": true
       },
@@ -1653,11 +2970,31 @@
             "e"
           ],
           "options": [
-            {"id": "a", "text": "Encontrar, aquecer e qualificar leads.", "is_correct": true},
-            {"id": "b", "text": "Realizar sozinho toda a demonstração técnica e o fechamento.", "is_correct": false},
-            {"id": "c", "text": "Diagnosticar dor, nível e plataforma do lead.", "is_correct": true},
-            {"id": "d", "text": "Prometer consistência para despertar interesse.", "is_correct": false},
-            {"id": "e", "text": "Agendar a call e entregar contexto ao vendedor técnico.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Encontrar, aquecer e qualificar leads.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Realizar sozinho toda a demonstração técnica e o fechamento.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "Diagnosticar dor, nível e plataforma do lead.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Prometer consistência para despertar interesse.",
+              "is_correct": false
+            },
+            {
+              "id": "e",
+              "text": "Agendar a call e entregar contexto ao vendedor técnico.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Certo. O ativo cria e organiza a oportunidade para a etapa técnica.",
           "feedback_incorrect": "Revise a divisão das funções: o ativo prospecta, qualifica, agenda e faz o handoff."
@@ -1667,13 +3004,37 @@
           "type": "multi_select",
           "checkpoint_seconds": 745,
           "prompt": "Como devem ser tratados os leads encontrados pelo próprio vendedor?",
-          "correct_option_ids": ["a", "c", "d"],
+          "correct_option_ids": [
+            "a",
+            "c",
+            "d"
+          ],
           "options": [
-            {"id": "a", "text": "Informar o lead à liderança antes da abordagem.", "is_correct": true},
-            {"id": "b", "text": "Abordar primeiro e registrar apenas se houver venda.", "is_correct": false},
-            {"id": "c", "text": "Registrar a origem para evitar conflito e manter rastreabilidade.", "is_correct": true},
-            {"id": "d", "text": "Seguir o script e o fluxo oficial depois da liberação.", "is_correct": true},
-            {"id": "e", "text": "Encaminhar diretamente ao técnico sem passar pela recrutadora.", "is_correct": false}
+            {
+              "id": "a",
+              "text": "Informar o lead à liderança antes da abordagem.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Abordar primeiro e registrar apenas se houver venda.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "Registrar a origem para evitar conflito e manter rastreabilidade.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Seguir o script e o fluxo oficial depois da liberação.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Encaminhar diretamente ao técnico sem passar pela recrutadora.",
+              "is_correct": false
+            }
           ],
           "feedback_correct": "Perfeito. Lead próprio também precisa entrar no controle antes do contato.",
           "feedback_incorrect": "Sem registro prévio, a origem e os responsáveis pela venda não podem ser comprovados."
@@ -1683,13 +3044,37 @@
           "type": "multi_select",
           "checkpoint_seconds": 745,
           "prompt": "Quais promessas são proibidas na venda do GL Model?",
-          "correct_option_ids": ["a", "b", "d"],
+          "correct_option_ids": [
+            "a",
+            "b",
+            "d"
+          ],
           "options": [
-            {"id": "a", "text": "Lucro garantido.", "is_correct": true},
-            {"id": "b", "text": "Consistência automática ou sinais.", "is_correct": true},
-            {"id": "c", "text": "Explicar que existe metodologia e educação.", "is_correct": false},
-            {"id": "d", "text": "Aprovação garantida em mesa proprietária.", "is_correct": true},
-            {"id": "e", "text": "Convidar para uma call técnica gratuita.", "is_correct": false}
+            {
+              "id": "a",
+              "text": "Lucro garantido.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Consistência automática ou sinais.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Explicar que existe metodologia e educação.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Aprovação garantida em mesa proprietária.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Convidar para uma call técnica gratuita.",
+              "is_correct": false
+            }
           ],
           "feedback_correct": "Boa. O vendedor apresenta fatos e processo, nunca resultado financeiro garantido.",
           "feedback_incorrect": "Revise a parte ética: desempenho depende do trader e não pode ser prometido."
@@ -1699,13 +3084,37 @@
           "type": "multi_select",
           "checkpoint_seconds": 745,
           "prompt": "Quais regras de operação e remuneração foram explicadas?",
-          "correct_option_ids": ["a", "c", "e"],
+          "correct_option_ids": [
+            "a",
+            "c",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "O CRM deve conter origem, dor, plataforma, contexto e horário.", "is_correct": true},
-            {"id": "b", "text": "A data deve ser marcada somente pelo vendedor técnico.", "is_correct": false},
-            {"id": "c", "text": "A comissão é de R$ 200 por venda concluída.", "is_correct": true},
-            {"id": "d", "text": "A rotina flexível permite abordar clientes em qualquer horário.", "is_correct": false},
-            {"id": "e", "text": "Leads não atendidos no prazo podem ser redistribuídos.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "O CRM deve conter origem, dor, plataforma, contexto e horário.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "A data deve ser marcada somente pelo vendedor técnico.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "A comissão é de R$ 200 por venda concluída.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "A rotina flexível permite abordar clientes em qualquer horário.",
+              "is_correct": false
+            },
+            {
+              "id": "e",
+              "text": "Leads não atendidos no prazo podem ser redistribuídos.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Certo. Organização e velocidade fazem parte da função e protegem a comissão.",
           "feedback_incorrect": "Revise CRM, agendamento, comissão e responsabilidade pelos prazos."
@@ -1714,7 +3123,7 @@
     },
     {
       "id": "m21_ativo_script_diagnostico",
-      "order": 3,
+      "order": 4,
       "track": "ativo",
       "sequence_group": "ativo",
       "role_label": "Vendedor Ativo",
@@ -1722,7 +3131,7 @@
       "objective": "Dominar a mensagem inicial, explicar o produto com responsabilidade, diagnosticar o lead, fazer follow-up e entregar um CRM completo.",
       "summary": "Nesta aula prática, Gestora de equipes ensina como conduzir o lead desde a primeira mensagem até a passagem organizada para a equipe técnica. O vendedor aprende a usar o script como base, adaptar a linguagem ao perfil da pessoa e apresentar a GL Academy, o GL Model e a demonstração gratuita sem transformar a conversa em um texto longo ou uma promessa de resultado. A aula oferece uma visão dos conceitos do produto para dar segurança à abordagem, explica as perguntas de diagnóstico sobre dor e plataforma e orienta o agendamento da call. Também mostra como retomar a conversa após aproximadamente 24 horas de silêncio e como preencher o CRM com origem, responsáveis, plataforma, dor, produto, horário, observações e temperatura do lead.",
       "tags": [
-        "aula_3",
+        "aula_4",
         "vendedor_ativo",
         "abordagem",
         "script",
@@ -1736,23 +3145,91 @@
         "text": "Nesta aula prática, Gestora de equipes ensina como conduzir o lead desde a primeira mensagem até a passagem organizada para a equipe técnica. O vendedor aprende a usar o script como base, adaptar a linguagem ao perfil da pessoa e apresentar a GL Academy, o GL Model e a demonstração gratuita sem transformar a conversa em um texto longo ou uma promessa de resultado. A aula oferece uma visão dos conceitos do produto para dar segurança à abordagem, explica as perguntas de diagnóstico sobre dor e plataforma e orienta o agendamento da call. Também mostra como retomar a conversa após aproximadamente 24 horas de silêncio e como preencher o CRM com origem, responsáveis, plataforma, dor, produto, horário, observações e temperatura do lead.",
         "video_url": "https://youtu.be/KKb5evGj3I4",
         "chapters": [
-          {"seconds": 0, "time": "00:00", "title": "Script como base e necessidade de improviso"},
-          {"seconds": 86, "time": "01:26", "title": "Por que o ativo precisa conhecer o produto"},
-          {"seconds": 131, "time": "02:11", "title": "GL Academy e proposta do GL Model"},
-          {"seconds": 258, "time": "04:18", "title": "O GL Model não é solução automática"},
-          {"seconds": 297, "time": "04:57", "title": "POC, volume e zonas de mercado"},
-          {"seconds": 382, "time": "06:22", "title": "Initial Balance e famílias operacionais"},
-          {"seconds": 446, "time": "07:26", "title": "HUD, disciplina e proteção de risco"},
-          {"seconds": 566, "time": "09:26", "title": "Rotina profissional com o sistema"},
-          {"seconds": 659, "time": "10:59", "title": "Estrutura da abordagem inicial"},
-          {"seconds": 771, "time": "12:51", "title": "Diagnóstico e qualificação rápida"},
-          {"seconds": 861, "time": "14:21", "title": "Perguntas essenciais ao lead"},
-          {"seconds": 881, "time": "14:41", "title": "Convite e agendamento da call técnica"},
-          {"seconds": 948, "time": "15:48", "title": "Follow-up e gestão do silêncio"},
-          {"seconds": 1035, "time": "17:15", "title": "Passagem do CRM para a recrutadora"},
-          {"seconds": 1097, "time": "18:17", "title": "Dados obrigatórios do registro"},
-          {"seconds": 1178, "time": "19:38", "title": "Dor, produto, horário e observações"},
-          {"seconds": 1247, "time": "20:47", "title": "Classificação do lead por temperatura"}
+          {
+            "seconds": 0,
+            "time": "00:00",
+            "title": "Script como base e necessidade de improviso"
+          },
+          {
+            "seconds": 86,
+            "time": "01:26",
+            "title": "Por que o ativo precisa conhecer o produto"
+          },
+          {
+            "seconds": 131,
+            "time": "02:11",
+            "title": "GL Academy e proposta do GL Model"
+          },
+          {
+            "seconds": 258,
+            "time": "04:18",
+            "title": "O GL Model não é solução automática"
+          },
+          {
+            "seconds": 297,
+            "time": "04:57",
+            "title": "POC, volume e zonas de mercado"
+          },
+          {
+            "seconds": 382,
+            "time": "06:22",
+            "title": "Initial Balance e famílias operacionais"
+          },
+          {
+            "seconds": 446,
+            "time": "07:26",
+            "title": "HUD, disciplina e proteção de risco"
+          },
+          {
+            "seconds": 566,
+            "time": "09:26",
+            "title": "Rotina profissional com o sistema"
+          },
+          {
+            "seconds": 659,
+            "time": "10:59",
+            "title": "Estrutura da abordagem inicial"
+          },
+          {
+            "seconds": 771,
+            "time": "12:51",
+            "title": "Diagnóstico e qualificação rápida"
+          },
+          {
+            "seconds": 861,
+            "time": "14:21",
+            "title": "Perguntas essenciais ao lead"
+          },
+          {
+            "seconds": 881,
+            "time": "14:41",
+            "title": "Convite e agendamento da call técnica"
+          },
+          {
+            "seconds": 948,
+            "time": "15:48",
+            "title": "Follow-up e gestão do silêncio"
+          },
+          {
+            "seconds": 1035,
+            "time": "17:15",
+            "title": "Passagem do CRM para a recrutadora"
+          },
+          {
+            "seconds": 1097,
+            "time": "18:17",
+            "title": "Dados obrigatórios do registro"
+          },
+          {
+            "seconds": 1178,
+            "time": "19:38",
+            "title": "Dor, produto, horário e observações"
+          },
+          {
+            "seconds": 1247,
+            "time": "20:47",
+            "title": "Classificação do lead por temperatura"
+          }
         ],
         "require_full_video": true
       },
@@ -1773,11 +3250,31 @@
             "e"
           ],
           "options": [
-            {"id": "a", "text": "Como uma base que pode ser adaptada ao perfil do lead.", "is_correct": true},
-            {"id": "b", "text": "Como texto rígido que nunca pode ser alterado.", "is_correct": false},
-            {"id": "c", "text": "Apresentando brevemente empresa, metodologia e convite gratuito.", "is_correct": true},
-            {"id": "d", "text": "Com todas as informações técnicas e preços na primeira mensagem.", "is_correct": false},
-            {"id": "e", "text": "Mantendo clareza, ética e profissionalismo.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Como uma base que pode ser adaptada ao perfil do lead.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Como texto rígido que nunca pode ser alterado.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "Apresentando brevemente empresa, metodologia e convite gratuito.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Com todas as informações técnicas e preços na primeira mensagem.",
+              "is_correct": false
+            },
+            {
+              "id": "e",
+              "text": "Mantendo clareza, ética e profissionalismo.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Perfeito. O script orienta a conversa, mas o vendedor precisa ouvir e adaptar.",
           "feedback_incorrect": "Revise a abertura: mensagem direta, humana e adaptada, sem excesso de informação."
@@ -1787,13 +3284,37 @@
           "type": "multi_select",
           "checkpoint_seconds": 1350,
           "prompt": "Quais informações devem ser obtidas no diagnóstico rápido?",
-          "correct_option_ids": ["a", "c", "e"],
+          "correct_option_ids": [
+            "a",
+            "c",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Principal dificuldade do trader.", "is_correct": true},
-            {"id": "b", "text": "A senha da plataforma utilizada.", "is_correct": false},
-            {"id": "c", "text": "Se utiliza TradingView ou NinjaTrader.", "is_correct": true},
-            {"id": "d", "text": "Se aceita uma promessa de resultado.", "is_correct": false},
-            {"id": "e", "text": "Interesse e disponibilidade para a call técnica.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Principal dificuldade do trader.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "A senha da plataforma utilizada.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "Se utiliza TradingView ou NinjaTrader.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Se aceita uma promessa de resultado.",
+              "is_correct": false
+            },
+            {
+              "id": "e",
+              "text": "Interesse e disponibilidade para a call técnica.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Certo. O diagnóstico prepara uma conversa técnica mais relevante.",
           "feedback_incorrect": "Revise as duas perguntas essenciais e o objetivo da qualificação."
@@ -1803,13 +3324,37 @@
           "type": "multi_select",
           "checkpoint_seconds": 1350,
           "prompt": "Como fazer o acompanhamento quando o lead para de responder?",
-          "correct_option_ids": ["a", "c", "d"],
+          "correct_option_ids": [
+            "a",
+            "c",
+            "d"
+          ],
           "options": [
-            {"id": "a", "text": "Aguardar aproximadamente 24 horas.", "is_correct": true},
-            {"id": "b", "text": "Enviar cobranças repetidas no mesmo dia.", "is_correct": false},
-            {"id": "c", "text": "Retomar com cuidado, buscando entender a dúvida ou o momento.", "is_correct": true},
-            {"id": "d", "text": "Demonstrar interesse em ajudar, sem pressionar.", "is_correct": true},
-            {"id": "e", "text": "Apagar imediatamente o lead do CRM.", "is_correct": false}
+            {
+              "id": "a",
+              "text": "Aguardar aproximadamente 24 horas.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Enviar cobranças repetidas no mesmo dia.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "Retomar com cuidado, buscando entender a dúvida ou o momento.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Demonstrar interesse em ajudar, sem pressionar.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Apagar imediatamente o lead do CRM.",
+              "is_correct": false
+            }
           ],
           "feedback_correct": "Boa. O follow-up profissional combina tempo, contexto e respeito.",
           "feedback_incorrect": "Revise a gestão do silêncio: acompanhamento não é pressão."
@@ -1819,13 +3364,37 @@
           "type": "multi_select",
           "checkpoint_seconds": 1350,
           "prompt": "Quais dados pertencem ao CRM entregue à recrutadora?",
-          "correct_option_ids": ["a", "b", "e"],
+          "correct_option_ids": [
+            "a",
+            "b",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Nome, contato, origem, captador e recrutador.", "is_correct": true},
-            {"id": "b", "text": "Plataforma, dor, produto, data e horário.", "is_correct": true},
-            {"id": "c", "text": "Somente o primeiro nome e a intenção de compra.", "is_correct": false},
-            {"id": "d", "text": "Promessa de retorno financeiro esperada pelo lead.", "is_correct": false},
-            {"id": "e", "text": "Observações e classificação como frio, morno ou quente.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Nome, contato, origem, captador e recrutador.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Plataforma, dor, produto, data e horário.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Somente o primeiro nome e a intenção de compra.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Promessa de retorno financeiro esperada pelo lead.",
+              "is_correct": false
+            },
+            {
+              "id": "e",
+              "text": "Observações e classificação como frio, morno ou quente.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Certo. Um CRM completo permite que o técnico chegue preparado.",
           "feedback_incorrect": "Revise a parte final da aula e todos os campos do registro."
@@ -1834,7 +3403,7 @@
     },
     {
       "id": "m22_ativo_resposta_objecoes",
-      "order": 4,
+      "order": 5,
       "track": "ativo",
       "sequence_group": "ativo",
       "role_label": "Vendedor Ativo",
@@ -1842,7 +3411,7 @@
       "objective": "Aprender a responder objeções com calma, ética e estratégia, sem prometer resultado e sabendo quando levar o lead para a call técnica.",
       "summary": "Nesta aula, Gestora de equipes ensina como lidar com objeções comuns antes de o lead enxergar o valor real do GL Model. O vendedor ativo aprende a responder dúvidas sobre golpe, experiências ruins com gurus, preço, vontade de pensar, necessidade de falar com parceiro, medo de não funcionar, falta de tempo, uso pelo celular e mercado volátil. A aula reforça que toda resposta precisa acolher a dúvida, evitar promessas proibidas, mostrar prova e conduzir para o próximo passo. Quando a pergunta fica técnica demais, o vendedor ativo não deve adivinhar: deve acionar a Gestora de equipes, a recrutadora responsável ou usar a dúvida como gancho para marcar a mentoria gratuita com o vendedor técnico.",
       "tags": [
-        "aula_4",
+        "aula_5",
         "vendedor_ativo",
         "objecoes",
         "compliance",
@@ -1854,24 +3423,96 @@
         "text": "Aula sobre como responder objeções sem brigar com o lead, sem prometer lucro e sem inventar resposta técnica. O foco do vendedor ativo é acolher, diagnosticar, responder com prova e conduzir para a próxima etapa da venda.",
         "video_url": "https://youtu.be/XLKEavKkv9k",
         "chapters": [
-          {"seconds": 0, "time": "00:00", "title": "Abertura e objetivo da aula"},
-          {"seconds": 93, "time": "01:33", "title": "Cuidado com falas e promessas"},
-          {"seconds": 147, "time": "02:27", "title": "Padrão institucional da GL Academy"},
-          {"seconds": 162, "time": "02:42", "title": "Frases proibidas na venda"},
-          {"seconds": 310, "time": "05:10", "title": "Como avançar depois da objeção"},
-          {"seconds": 320, "time": "05:20", "title": "Objeção: isso é golpe?"},
-          {"seconds": 365, "time": "06:05", "title": "Objeção: já perdi dinheiro com gurus"},
-          {"seconds": 450, "time": "07:30", "title": "Objeção: está caro"},
-          {"seconds": 530, "time": "08:50", "title": "Objeção: vou pensar e aviso"},
-          {"seconds": 605, "time": "10:05", "title": "Objeção: preciso falar com meu parceiro"},
-          {"seconds": 655, "time": "10:55", "title": "Objeção: e se não funcionar?"},
-          {"seconds": 705, "time": "11:45", "title": "Objeção: não tenho tempo"},
-          {"seconds": 815, "time": "13:35", "title": "Mentoria gravada e estudo pelo app"},
-          {"seconds": 870, "time": "14:30", "title": "Celular, TradingView e NinjaTrader"},
-          {"seconds": 925, "time": "15:25", "title": "Objeção: mercado volátil"},
-          {"seconds": 1000, "time": "16:40", "title": "Limite entre ativo e técnico"},
-          {"seconds": 1045, "time": "17:25", "title": "Quando escalar dúvidas técnicas"},
-          {"seconds": 1100, "time": "18:20", "title": "PDFs, anotações e calls de ensaio"}
+          {
+            "seconds": 0,
+            "time": "00:00",
+            "title": "Abertura e objetivo da aula"
+          },
+          {
+            "seconds": 93,
+            "time": "01:33",
+            "title": "Cuidado com falas e promessas"
+          },
+          {
+            "seconds": 147,
+            "time": "02:27",
+            "title": "Padrão institucional da GL Academy"
+          },
+          {
+            "seconds": 162,
+            "time": "02:42",
+            "title": "Frases proibidas na venda"
+          },
+          {
+            "seconds": 310,
+            "time": "05:10",
+            "title": "Como avançar depois da objeção"
+          },
+          {
+            "seconds": 320,
+            "time": "05:20",
+            "title": "Objeção: isso é golpe?"
+          },
+          {
+            "seconds": 365,
+            "time": "06:05",
+            "title": "Objeção: já perdi dinheiro com gurus"
+          },
+          {
+            "seconds": 450,
+            "time": "07:30",
+            "title": "Objeção: está caro"
+          },
+          {
+            "seconds": 530,
+            "time": "08:50",
+            "title": "Objeção: vou pensar e aviso"
+          },
+          {
+            "seconds": 605,
+            "time": "10:05",
+            "title": "Objeção: preciso falar com meu parceiro"
+          },
+          {
+            "seconds": 655,
+            "time": "10:55",
+            "title": "Objeção: e se não funcionar?"
+          },
+          {
+            "seconds": 705,
+            "time": "11:45",
+            "title": "Objeção: não tenho tempo"
+          },
+          {
+            "seconds": 815,
+            "time": "13:35",
+            "title": "Mentoria gravada e estudo pelo app"
+          },
+          {
+            "seconds": 870,
+            "time": "14:30",
+            "title": "Celular, TradingView e NinjaTrader"
+          },
+          {
+            "seconds": 925,
+            "time": "15:25",
+            "title": "Objeção: mercado volátil"
+          },
+          {
+            "seconds": 1000,
+            "time": "16:40",
+            "title": "Limite entre ativo e técnico"
+          },
+          {
+            "seconds": 1045,
+            "time": "17:25",
+            "title": "Quando escalar dúvidas técnicas"
+          },
+          {
+            "seconds": 1100,
+            "time": "18:20",
+            "title": "PDFs, anotações e calls de ensaio"
+          }
         ],
         "require_full_video": true
       },
@@ -1886,13 +3527,37 @@
           "type": "multi_select",
           "checkpoint_seconds": 180,
           "prompt": "Qual é a postura correta quando o lead traz uma objeção ou uma resposta inesperada?",
-          "correct_option_ids": ["a", "c", "d"],
+          "correct_option_ids": [
+            "a",
+            "c",
+            "d"
+          ],
           "options": [
-            {"id": "a", "text": "Acolher a dúvida e responder com calma, sem transformar a conversa em briga.", "is_correct": true},
-            {"id": "b", "text": "Responder qualquer coisa rapidamente para não perder o ritmo da venda.", "is_correct": false},
-            {"id": "c", "text": "Se não souber responder, chamar a Gestora de equipes ou a recrutadora responsável.", "is_correct": true},
-            {"id": "d", "text": "Usar a objeção para entender a dor e conduzir para o próximo passo.", "is_correct": true},
-            {"id": "e", "text": "Tratar silêncio ou grosseria como motivo para atacar o lead.", "is_correct": false}
+            {
+              "id": "a",
+              "text": "Acolher a dúvida e responder com calma, sem transformar a conversa em briga.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Responder qualquer coisa rapidamente para não perder o ritmo da venda.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "Se não souber responder, chamar a Gestora de equipes ou a recrutadora responsável.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Usar a objeção para entender a dor e conduzir para o próximo passo.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Tratar silêncio ou grosseria como motivo para atacar o lead.",
+              "is_correct": false
+            }
           ],
           "feedback_correct": "Perfeito. Objeção bem conduzida vira diagnóstico, confiança e próximo passo.",
           "feedback_incorrect": "Revise a abertura da aula: quando não souber, peça apoio em vez de inventar."
@@ -1902,13 +3567,38 @@
           "type": "multi_select",
           "checkpoint_seconds": 330,
           "prompt": "Quais frases ou promessas são perigosas na venda do GL Model?",
-          "correct_option_ids": ["a", "b", "c", "e"],
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "O sistema funciona para qualquer pessoa.", "is_correct": true},
-            {"id": "b", "text": "Você vai recuperar o investimento rápido.", "is_correct": true},
-            {"id": "c", "text": "O indicador mostra exatamente onde entrar.", "is_correct": true},
-            {"id": "d", "text": "O produto exige estudo, método, disciplina e respeito ao protocolo.", "is_correct": false},
-            {"id": "e", "text": "É só seguir que dá certo, sem risco ou com garantia de consistência.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "O sistema funciona para qualquer pessoa.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Você vai recuperar o investimento rápido.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "O indicador mostra exatamente onde entrar.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "O produto exige estudo, método, disciplina e respeito ao protocolo.",
+              "is_correct": false
+            },
+            {
+              "id": "e",
+              "text": "É só seguir que dá certo, sem risco ou com garantia de consistência.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Certo. A venda precisa ser forte, mas sem promessa que gere expectativa falsa ou risco para a empresa.",
           "feedback_incorrect": "Atenção às promessas proibidas: não venda resultado, venda processo, tecnologia e suporte."
@@ -1918,13 +3608,38 @@
           "type": "multi_select",
           "checkpoint_seconds": 460,
           "prompt": "Como responder objeções de desconfiança, como 'isso é golpe?' ou 'já perdi dinheiro com gurus'?",
-          "correct_option_ids": ["a", "b", "d", "e"],
+          "correct_option_ids": [
+            "a",
+            "b",
+            "d",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Validar a desconfiança como algo saudável nesse mercado.", "is_correct": true},
-            {"id": "b", "text": "Mostrar provas: CNPJ, canais oficiais, comunidade, materiais e página de pagamento validada.", "is_correct": true},
-            {"id": "c", "text": "Responder com ironia para mostrar que o lead está exagerando.", "is_correct": false},
-            {"id": "d", "text": "Explicar que a GL Academy evita promessas de dinheiro fácil.", "is_correct": true},
-            {"id": "e", "text": "Perguntar o que mais decepcionou antes: promessa exagerada, falta de suporte ou ferramenta difícil.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Validar a desconfiança como algo saudável nesse mercado.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Mostrar provas: CNPJ, canais oficiais, comunidade, materiais e página de pagamento validada.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Responder com ironia para mostrar que o lead está exagerando.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Explicar que a GL Academy evita promessas de dinheiro fácil.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Perguntar o que mais decepcionou antes: promessa exagerada, falta de suporte ou ferramenta difícil.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Boa. Prova e escuta reduzem desconfiança sem confronto.",
           "feedback_incorrect": "Revise as objeções de confiança: acolha, prove e pergunte, sem discutir."
@@ -1934,13 +3649,38 @@
           "type": "multi_select",
           "checkpoint_seconds": 760,
           "prompt": "Como conduzir objeções de preço, tempo, 'vou pensar' ou 'preciso falar com meu parceiro'?",
-          "correct_option_ids": ["a", "c", "d", "e"],
+          "correct_option_ids": [
+            "a",
+            "c",
+            "d",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Comparar preço com função, estrutura, sistema, mentoria e suporte.", "is_correct": true},
-            {"id": "b", "text": "Encerrar a conversa assim que o lead disser que vai pensar.", "is_correct": false},
-            {"id": "c", "text": "Perguntar qual ponto ficou em aberto: técnico, financeiro ou de decisão.", "is_correct": true},
-            {"id": "d", "text": "Oferecer um resumo simples para o lead explicar ao parceiro.", "is_correct": true},
-            {"id": "e", "text": "Mostrar que existem caminhos de estudo, como a mentoria no app, sem forçar o bolso do cliente.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Comparar preço com função, estrutura, sistema, mentoria e suporte.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Encerrar a conversa assim que o lead disser que vai pensar.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "Perguntar qual ponto ficou em aberto: técnico, financeiro ou de decisão.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Oferecer um resumo simples para o lead explicar ao parceiro.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Mostrar que existem caminhos de estudo, como a mentoria no app, sem forçar o bolso do cliente.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Exato. O vendedor ativo conduz sem pressão e mostra cuidado com o momento do lead.",
           "feedback_incorrect": "Revise preço, tempo e 'vou pensar': o objetivo é abrir a dúvida real e manter a conversa viva."
@@ -1950,13 +3690,38 @@
           "type": "multi_select",
           "checkpoint_seconds": 1060,
           "prompt": "Quando o vendedor ativo deve escalar a conversa para a Gestora de equipes, recrutadora ou vendedor técnico?",
-          "correct_option_ids": ["a", "b", "d", "e"],
+          "correct_option_ids": [
+            "a",
+            "b",
+            "d",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Quando a dúvida for técnica demais para responder com segurança.", "is_correct": true},
-            {"id": "b", "text": "Quando o lead perguntar sobre detalhes profundos de cálculo, orderflow, integração, licença ou ativos específicos.", "is_correct": true},
-            {"id": "c", "text": "Quando quiser inventar uma resposta para parecer mais preparado.", "is_correct": false},
-            {"id": "d", "text": "Quando for melhor mostrar a resposta no gráfico ao vivo durante a mentoria gratuita.", "is_correct": true},
-            {"id": "e", "text": "Quando precisar transformar uma dúvida técnica em gancho para agendar a call.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Quando a dúvida for técnica demais para responder com segurança.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Quando o lead perguntar sobre detalhes profundos de cálculo, orderflow, integração, licença ou ativos específicos.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Quando quiser inventar uma resposta para parecer mais preparado.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Quando for melhor mostrar a resposta no gráfico ao vivo durante a mentoria gratuita.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Quando precisar transformar uma dúvida técnica em gancho para agendar a call.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Perfeito. O ativo não precisa adivinhar: ele protege a venda levando a dúvida para quem pode demonstrar.",
           "feedback_incorrect": "Revise o limite entre ativo e técnico: dúvida técnica profunda deve virar call ou apoio da gestão."
@@ -1965,7 +3730,7 @@
     },
     {
       "id": "m23_ativo_renda_extra_videos_gl",
-      "order": 5,
+      "order": 6,
       "track": "ativo",
       "sequence_group": "ativo",
       "role_label": "Vendedor Ativo",
@@ -1973,7 +3738,7 @@
       "objective": "Aprender como o vendedor ativo pode usar videos oficiais da GL Academy para criar cortes, shorts e conteudos autorizados, gerando renda extra sem deixar a captacao de leads de lado.",
       "summary": "Nesta aula, Gestora de equipes explica que a funcao principal do vendedor ativo continua sendo procurar leads, chamar contatos e gerar curiosidade para a call tecnica. Como oportunidade adicional, o vendedor ativo pode criar canais e postar edicoes, cortes e shorts a partir dos videos oficiais da GL Academy. A aula apresenta o canal oficial, explica que todo conteudo precisa ser revisado antes da postagem, mostra as regras de pagamento por videos e shorts que baterem meta de visualizacao e reforca que a divulgacao deve parecer natural, sem spam e sem expor a marca de forma amadora.",
       "tags": [
-        "aula_5",
+        "aula_6",
         "vendedor_ativo",
         "renda_extra",
         "youtube",
@@ -1984,21 +3749,81 @@
         "text": "Aula sobre como ter renda extra criando videos, cortes e shorts para divulgar a GL Academy. Canal oficial para estudar e buscar referencias: https://www.youtube.com/@giovanelazaro. Para o vendedor ativo, a regra e usar videos ja publicados no canal oficial da GL, criar edites de qualidade, enviar para a gestao revisar antes de postar e seguir a legenda orientada pela equipe.",
         "video_url": "https://youtu.be/ni1BepMszoc",
         "chapters": [
-          {"seconds": 0, "time": "00:00", "title": "Objetivo da aula"},
-          {"seconds": 35, "time": "00:35", "title": "Funcao principal do vendedor ativo"},
-          {"seconds": 73, "time": "01:13", "title": "Canal oficial da GL Academy"},
-          {"seconds": 139, "time": "02:19", "title": "Videos e shorts como renda extra"},
-          {"seconds": 194, "time": "03:14", "title": "Revisao e legenda antes da postagem"},
-          {"seconds": 315, "time": "05:15", "title": "Exemplo de escala de ganhos"},
-          {"seconds": 365, "time": "06:05", "title": "Exemplo de video sobre GL Risk Auto e GamePad"},
-          {"seconds": 484, "time": "08:04", "title": "Sistema, atalho e gerenciamento de risco"},
-          {"seconds": 570, "time": "09:30", "title": "TradingView e NinjaTrader"},
-          {"seconds": 710, "time": "11:50", "title": "Diferenciais do Ninja e order flow"},
-          {"seconds": 867, "time": "14:27", "title": "Demonstracao pratica pelo controle"},
-          {"seconds": 1110, "time": "18:30", "title": "Break even, alvo e risco automatico"},
-          {"seconds": 1430, "time": "23:50", "title": "Parte dos vendedores tecnicos"},
-          {"seconds": 1532, "time": "25:32", "title": "Cortes das calls tecnicas"},
-          {"seconds": 1687, "time": "28:07", "title": "Resumo do processo"}
+          {
+            "seconds": 0,
+            "time": "00:00",
+            "title": "Objetivo da aula"
+          },
+          {
+            "seconds": 35,
+            "time": "00:35",
+            "title": "Funcao principal do vendedor ativo"
+          },
+          {
+            "seconds": 73,
+            "time": "01:13",
+            "title": "Canal oficial da GL Academy"
+          },
+          {
+            "seconds": 139,
+            "time": "02:19",
+            "title": "Videos e shorts como renda extra"
+          },
+          {
+            "seconds": 194,
+            "time": "03:14",
+            "title": "Revisao e legenda antes da postagem"
+          },
+          {
+            "seconds": 315,
+            "time": "05:15",
+            "title": "Exemplo de escala de ganhos"
+          },
+          {
+            "seconds": 365,
+            "time": "06:05",
+            "title": "Exemplo de video sobre GL Risk Auto e GamePad"
+          },
+          {
+            "seconds": 484,
+            "time": "08:04",
+            "title": "Sistema, atalho e gerenciamento de risco"
+          },
+          {
+            "seconds": 570,
+            "time": "09:30",
+            "title": "TradingView e NinjaTrader"
+          },
+          {
+            "seconds": 710,
+            "time": "11:50",
+            "title": "Diferenciais do Ninja e order flow"
+          },
+          {
+            "seconds": 867,
+            "time": "14:27",
+            "title": "Demonstracao pratica pelo controle"
+          },
+          {
+            "seconds": 1110,
+            "time": "18:30",
+            "title": "Break even, alvo e risco automatico"
+          },
+          {
+            "seconds": 1430,
+            "time": "23:50",
+            "title": "Parte dos vendedores tecnicos"
+          },
+          {
+            "seconds": 1532,
+            "time": "25:32",
+            "title": "Cortes das calls tecnicas"
+          },
+          {
+            "seconds": 1687,
+            "time": "28:07",
+            "title": "Resumo do processo"
+          }
         ],
         "require_full_video": true
       },
@@ -2013,13 +3838,37 @@
           "type": "multi_select",
           "checkpoint_seconds": 150,
           "prompt": "Qual e a ideia correta da renda extra para vendedores ativos?",
-          "correct_option_ids": ["a", "c", "d"],
+          "correct_option_ids": [
+            "a",
+            "c",
+            "d"
+          ],
           "options": [
-            {"id": "a", "text": "A funcao principal do ativo continua sendo captar leads e gerar curiosidade para a call tecnica.", "is_correct": true},
-            {"id": "b", "text": "O ativo pode abandonar a captacao de leads e trabalhar apenas com cortes.", "is_correct": false},
-            {"id": "c", "text": "O ativo pode usar videos oficiais da GL Academy para criar cortes, shorts e edicoes.", "is_correct": true},
-            {"id": "d", "text": "O canal oficial da GL Academy deve ser usado como fonte de estudo e conteudo.", "is_correct": true},
-            {"id": "e", "text": "Qualquer video de terceiros pode ser usado como se fosse material oficial da GL.", "is_correct": false}
+            {
+              "id": "a",
+              "text": "A funcao principal do ativo continua sendo captar leads e gerar curiosidade para a call tecnica.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "O ativo pode abandonar a captacao de leads e trabalhar apenas com cortes.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "O ativo pode usar videos oficiais da GL Academy para criar cortes, shorts e edicoes.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "O canal oficial da GL Academy deve ser usado como fonte de estudo e conteudo.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Qualquer video de terceiros pode ser usado como se fosse material oficial da GL.",
+              "is_correct": false
+            }
           ],
           "feedback_correct": "Perfeito. A renda extra soma com a funcao principal do ativo, nao substitui a captacao.",
           "feedback_incorrect": "Revise o inicio da aula: o ativo segue responsavel por leads; os cortes sao uma oportunidade adicional."
@@ -2029,13 +3878,37 @@
           "type": "multi_select",
           "checkpoint_seconds": 300,
           "prompt": "Quais metas de conteudo geram pagamento extra?",
-          "correct_option_ids": ["a", "b", "d"],
+          "correct_option_ids": [
+            "a",
+            "b",
+            "d"
+          ],
           "options": [
-            {"id": "a", "text": "Video com mais de 5 minutos e mais de 500 visualizacoes gera R$ 25.", "is_correct": true},
-            {"id": "b", "text": "Short com mais de 30 segundos e mais de 1.000 visualizacoes gera R$ 25.", "is_correct": true},
-            {"id": "c", "text": "Qualquer postagem, mesmo sem visualizacao, gera pagamento automatico.", "is_correct": false},
-            {"id": "d", "text": "Quanto mais conteudos aprovados baterem meta, maior pode ser a renda extra.", "is_correct": true},
-            {"id": "e", "text": "O pagamento depende apenas de postar, sem precisar respeitar qualidade ou regra.", "is_correct": false}
+            {
+              "id": "a",
+              "text": "Video com mais de 5 minutos e mais de 500 visualizacoes gera R$ 25.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Short com mais de 30 segundos e mais de 1.000 visualizacoes gera R$ 25.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Qualquer postagem, mesmo sem visualizacao, gera pagamento automatico.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Quanto mais conteudos aprovados baterem meta, maior pode ser a renda extra.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "O pagamento depende apenas de postar, sem precisar respeitar qualidade ou regra.",
+              "is_correct": false
+            }
           ],
           "feedback_correct": "Certo. A regra combina formato, duracao minima e visualizacoes.",
           "feedback_incorrect": "Revise as metas: video longo e short tem regras diferentes, e ambos precisam bater visualizacao."
@@ -2045,13 +3918,38 @@
           "type": "multi_select",
           "checkpoint_seconds": 260,
           "prompt": "Antes de postar um corte ou short, o vendedor ativo deve fazer o que?",
-          "correct_option_ids": ["a", "b", "c", "e"],
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Assistir ao video original e entender o contexto antes de editar.", "is_correct": true},
-            {"id": "b", "text": "Criar um edit de qualidade e enviar para a gestao revisar.", "is_correct": true},
-            {"id": "c", "text": "Aguardar a orientacao da legenda ou direcao de postagem.", "is_correct": true},
-            {"id": "d", "text": "Postar imediatamente sem revisao para ganhar velocidade.", "is_correct": false},
-            {"id": "e", "text": "Divulgar de forma natural, sem parecer spam ou propaganda amadora.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Assistir ao video original e entender o contexto antes de editar.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Criar um edit de qualidade e enviar para a gestao revisar.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Aguardar a orientacao da legenda ou direcao de postagem.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Postar imediatamente sem revisao para ganhar velocidade.",
+              "is_correct": false
+            },
+            {
+              "id": "e",
+              "text": "Divulgar de forma natural, sem parecer spam ou propaganda amadora.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Boa. A revisao protege a marca e aumenta a chance de o conteudo performar.",
           "feedback_incorrect": "Revise a parte da revisao: antes de postar, o conteudo precisa passar pela gestao."
@@ -2061,13 +3959,38 @@
           "type": "multi_select",
           "checkpoint_seconds": 1660,
           "prompt": "Qual e o objetivo estrategico de espalhar bons cortes da GL Academy?",
-          "correct_option_ids": ["a", "c", "d", "e"],
+          "correct_option_ids": [
+            "a",
+            "c",
+            "d",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Fazer a GL aparecer naturalmente quando pessoas pesquisarem temas de mercado financeiro.", "is_correct": true},
-            {"id": "b", "text": "Prometer lucro rapido para viralizar mais facil.", "is_correct": false},
-            {"id": "c", "text": "Aumentar autoridade e visibilidade da empresa.", "is_correct": true},
-            {"id": "d", "text": "Atrair bons leads e bons colaboradores.", "is_correct": true},
-            {"id": "e", "text": "Divulgar a grandeza do GL Model sem transformar a comunicacao em spam.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Fazer a GL aparecer naturalmente quando pessoas pesquisarem temas de mercado financeiro.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Prometer lucro rapido para viralizar mais facil.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "Aumentar autoridade e visibilidade da empresa.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Atrair bons leads e bons colaboradores.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Divulgar a grandeza do GL Model sem transformar a comunicacao em spam.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Perfeito. Bons cortes constroem autoridade e abrem portas para leads e equipe.",
           "feedback_incorrect": "Revise o objetivo da aula: divulgacao boa gera presenca e autoridade, sem promessa e sem spam."
@@ -2076,7 +3999,7 @@
     },
     {
       "id": "m01_tecnico_funcoes_colaboradores",
-      "order": 1,
+      "order": 2,
       "track": "tecnico",
       "sequence_group": "tecnico",
       "role_label": "Vendedor Tecnico",
@@ -2084,7 +4007,7 @@
       "objective": "Entender a esteira comercial completa e assumir o papel do vendedor técnico na demonstração, no fechamento e no registro da venda.",
       "summary": "Nesta primeira aula, Gestora de equipes apresenta a GL Academy, o GL Model e a integração entre recrutador, vendedor ativo e vendedor técnico. Para o vendedor técnico, o foco está em receber o contexto do lead, conduzir uma call consultiva, demonstrar o produto ao vivo, usar links oficiais e confirmar o pagamento com organização.",
       "tags": [
-        "aula_1",
+        "aula_2",
         "vendedor_tecnico",
         "funcoes",
         "call_consultiva",
@@ -2294,7 +4217,7 @@
     },
     {
       "id": "m02_tecnico_call_consultiva_gl_model",
-      "order": 2,
+      "order": 3,
       "track": "tecnico",
       "sequence_group": "tecnico",
       "role_label": "Vendedor Tecnico",
@@ -2302,7 +4225,7 @@
       "objective": "Aprender a conduzir a mentoria gratuita do vendedor tecnico com diagnostico, demonstracao segura, prova etica, tratamento de objecoes e fechamento organizado.",
       "summary": "Nesta aula, o vendedor tecnico entende como receber o lead, confirmar disponibilidade para a call, abrir a conversa criando conexao, diagnosticar a dor do trader e demonstrar o GL Model com seguranca. A aula reforca que a venda tecnica nao depende de promessa de lucro, mas de dominio, clareza, prova etica e capacidade de conectar a dor do lead ao produto certo. Tambem apresenta as diferencas entre TradingView e NinjaTrader, o uso do GL Model para leitura macro, zonas, fluxo, invalidacao e alvo, as quatro familias operacionais, formas de responder objecoes e a estrutura de comissionamento.",
       "tags": [
-        "aula_2",
+        "aula_3",
         "vendedor_tecnico",
         "call_consultiva",
         "gl_model",
@@ -2600,7 +4523,7 @@
     },
     {
       "id": "m03_tecnico_demonstracao_ao_vivo_gl_model",
-      "order": 3,
+      "order": 4,
       "track": "tecnico",
       "sequence_group": "tecnico",
       "role_label": "Vendedor Tecnico",
@@ -2608,7 +4531,7 @@
       "objective": "Observar uma demonstração real do GL Model com um cliente, entendendo como conectar, explicar, demonstrar valor técnico e conduzir a decisão sem promessas.",
       "summary": "A aula mostra uma call real conduzida por Giovane com um lead, começando com alinhamento e confidencialidade e avançando para uma demonstração prática do GL Model. O vendedor técnico observa como explicar o produto como leitura quantitativa e mapa de decisão, demonstrar nuvens macro/micro, entradas em regiões institucionais, proteção por stop, uso de alertas, leitura de leilão, falha de leilão, breakout e diferenças entre TradingView e NinjaTrader. A aula reforça postura consultiva: conectar com a dor do cliente, ensinar sem prometer lucro, traduzir recursos técnicos em benefício prático e fechar com transparência.",
       "tags": [
-        "aula_3",
+        "aula_4",
         "vendedor_tecnico",
         "demonstracao",
         "gl_model",
@@ -2937,7 +4860,7 @@
     },
     {
       "id": "m31_tecnico_objecoes",
-      "order": 4,
+      "order": 5,
       "track": "tecnico",
       "sequence_group": "tecnico",
       "role_label": "Vendedor Tecnico",
@@ -2945,7 +4868,7 @@
       "objective": "Responder objeções com acolhimento, prova, valor e próximo passo, mantendo compliance e sabendo transformar dúvidas técnicas em demonstração consultiva.",
       "summary": "Nesta aula, Gestora de equipes ensina como responder objeções comuns sem brigar com o lead e sem fazer promessas proibidas. A aula reforça que o padrão da GL Academy é vender clareza, prova, responsabilidade e processo, nunca lucro garantido, sinais automáticos ou resultado sem risco. Para o vendedor técnico, o foco é usar as objeções para aprofundar diagnóstico, mostrar prova, explicar limites do GL Model, diferenciar TradingView e NinjaTrader quando necessário e conduzir dúvidas técnicas para a demonstração no gráfico ao vivo.",
       "tags": [
-        "aula_4",
+        "aula_5",
         "vendedor_tecnico",
         "objecoes",
         "compliance",
@@ -2957,24 +4880,96 @@
         "text": "Aula sobre resposta de objeções para vendedores técnicos. O foco é acolher, clarificar e responder com prova, valor e próximo passo, sem prometer resultado e usando a demonstração técnica quando a dúvida exige gráfico ao vivo.",
         "video_url": "https://youtu.be/XLKEavKkv9k",
         "chapters": [
-          {"seconds": 0, "time": "00:00", "title": "Abertura e objetivo da aula"},
-          {"seconds": 93, "time": "01:33", "title": "Cuidado com falas e promessas"},
-          {"seconds": 147, "time": "02:27", "title": "Padrão institucional da GL Academy"},
-          {"seconds": 162, "time": "02:42", "title": "Frases proibidas na venda"},
-          {"seconds": 310, "time": "05:10", "title": "Como avançar depois da objeção"},
-          {"seconds": 320, "time": "05:20", "title": "Objeção: isso é golpe?"},
-          {"seconds": 365, "time": "06:05", "title": "Objeção: já perdi dinheiro com gurus"},
-          {"seconds": 450, "time": "07:30", "title": "Objeção: está caro"},
-          {"seconds": 530, "time": "08:50", "title": "Objeção: vou pensar e aviso"},
-          {"seconds": 605, "time": "10:05", "title": "Objeção: preciso falar com meu parceiro"},
-          {"seconds": 655, "time": "10:55", "title": "Objeção: e se não funcionar?"},
-          {"seconds": 705, "time": "11:45", "title": "Objeção: não tenho tempo"},
-          {"seconds": 815, "time": "13:35", "title": "Mentoria gravada e estudo pelo app"},
-          {"seconds": 870, "time": "14:30", "title": "Celular, TradingView e NinjaTrader"},
-          {"seconds": 925, "time": "15:25", "title": "Objeção: mercado volátil"},
-          {"seconds": 1000, "time": "16:40", "title": "Limite entre ativo e técnico"},
-          {"seconds": 1045, "time": "17:25", "title": "Quando escalar dúvidas técnicas"},
-          {"seconds": 1100, "time": "18:20", "title": "PDFs, anotações e calls de ensaio"}
+          {
+            "seconds": 0,
+            "time": "00:00",
+            "title": "Abertura e objetivo da aula"
+          },
+          {
+            "seconds": 93,
+            "time": "01:33",
+            "title": "Cuidado com falas e promessas"
+          },
+          {
+            "seconds": 147,
+            "time": "02:27",
+            "title": "Padrão institucional da GL Academy"
+          },
+          {
+            "seconds": 162,
+            "time": "02:42",
+            "title": "Frases proibidas na venda"
+          },
+          {
+            "seconds": 310,
+            "time": "05:10",
+            "title": "Como avançar depois da objeção"
+          },
+          {
+            "seconds": 320,
+            "time": "05:20",
+            "title": "Objeção: isso é golpe?"
+          },
+          {
+            "seconds": 365,
+            "time": "06:05",
+            "title": "Objeção: já perdi dinheiro com gurus"
+          },
+          {
+            "seconds": 450,
+            "time": "07:30",
+            "title": "Objeção: está caro"
+          },
+          {
+            "seconds": 530,
+            "time": "08:50",
+            "title": "Objeção: vou pensar e aviso"
+          },
+          {
+            "seconds": 605,
+            "time": "10:05",
+            "title": "Objeção: preciso falar com meu parceiro"
+          },
+          {
+            "seconds": 655,
+            "time": "10:55",
+            "title": "Objeção: e se não funcionar?"
+          },
+          {
+            "seconds": 705,
+            "time": "11:45",
+            "title": "Objeção: não tenho tempo"
+          },
+          {
+            "seconds": 815,
+            "time": "13:35",
+            "title": "Mentoria gravada e estudo pelo app"
+          },
+          {
+            "seconds": 870,
+            "time": "14:30",
+            "title": "Celular, TradingView e NinjaTrader"
+          },
+          {
+            "seconds": 925,
+            "time": "15:25",
+            "title": "Objeção: mercado volátil"
+          },
+          {
+            "seconds": 1000,
+            "time": "16:40",
+            "title": "Limite entre ativo e técnico"
+          },
+          {
+            "seconds": 1045,
+            "time": "17:25",
+            "title": "Quando escalar dúvidas técnicas"
+          },
+          {
+            "seconds": 1100,
+            "time": "18:20",
+            "title": "PDFs, anotações e calls de ensaio"
+          }
         ],
         "require_full_video": true
       },
@@ -3029,13 +5024,38 @@
           "type": "multi_select",
           "checkpoint_seconds": 330,
           "prompt": "Quais promessas o vendedor técnico deve evitar na venda do GL Model?",
-          "correct_option_ids": ["a", "b", "c", "e"],
+          "correct_option_ids": [
+            "a",
+            "b",
+            "c",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Dizer que o indicador mostra exatamente onde entrar.", "is_correct": true},
-            {"id": "b", "text": "Prometer recuperação rápida do investimento.", "is_correct": true},
-            {"id": "c", "text": "Falar que é sem risco ou que existe garantia de consistência.", "is_correct": true},
-            {"id": "d", "text": "Explicar que o resultado depende de estudo, disciplina e protocolo.", "is_correct": false},
-            {"id": "e", "text": "Dizer que é só seguir que dá certo.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Dizer que o indicador mostra exatamente onde entrar.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Prometer recuperação rápida do investimento.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Falar que é sem risco ou que existe garantia de consistência.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Explicar que o resultado depende de estudo, disciplina e protocolo.",
+              "is_correct": false
+            },
+            {
+              "id": "e",
+              "text": "Dizer que é só seguir que dá certo.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Certo. A venda técnica precisa ser responsável e sem promessa financeira.",
           "feedback_incorrect": "Atenção ao compliance: venda processo e clareza, nunca resultado garantido."
@@ -3045,13 +5065,38 @@
           "type": "multi_select",
           "checkpoint_seconds": 560,
           "prompt": "Como responder objeções de confiança e experiências ruins anteriores?",
-          "correct_option_ids": ["a", "b", "d", "e"],
+          "correct_option_ids": [
+            "a",
+            "b",
+            "d",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Reconhecer que desconfiança é saudável no mercado financeiro.", "is_correct": true},
-            {"id": "b", "text": "Apresentar canais oficiais, CNPJ, comunidade, materiais e pagamento validado.", "is_correct": true},
-            {"id": "c", "text": "Criticar o lead por ter acreditado em gurus antes.", "is_correct": false},
-            {"id": "d", "text": "Reforçar que a GL Academy não vende indicador mágico nem dinheiro fácil.", "is_correct": true},
-            {"id": "e", "text": "Perguntar se a frustração anterior foi promessa exagerada, falta de suporte ou ferramenta difícil.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Reconhecer que desconfiança é saudável no mercado financeiro.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Apresentar canais oficiais, CNPJ, comunidade, materiais e pagamento validado.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Criticar o lead por ter acreditado em gurus antes.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Reforçar que a GL Academy não vende indicador mágico nem dinheiro fácil.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Perguntar se a frustração anterior foi promessa exagerada, falta de suporte ou ferramenta difícil.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Boa. Confiança nasce de prova, escuta e postura profissional.",
           "feedback_incorrect": "Revise as objeções de golpe e gurus: acolha a desconfiança e prove seriedade."
@@ -3061,13 +5106,38 @@
           "type": "multi_select",
           "checkpoint_seconds": 820,
           "prompt": "Como tratar objeções de preço, tempo, parceiro e medo de não funcionar?",
-          "correct_option_ids": ["a", "b", "d", "e"],
+          "correct_option_ids": [
+            "a",
+            "b",
+            "d",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Comparar preço com função, acesso ao sistema, mentoria e estrutura.", "is_correct": true},
-            {"id": "b", "text": "Perguntar qual dúvida ficou aberta: técnica, investimento ou decisão.", "is_correct": true},
-            {"id": "c", "text": "Prometer que vai funcionar para qualquer pessoa independentemente de estudo.", "is_correct": false},
-            {"id": "d", "text": "Explicar que o GL Model organiza informações, mas resultado depende de disciplina e protocolo.", "is_correct": true},
-            {"id": "e", "text": "Usar a mentoria gravada e o app como prova de suporte ao estudo.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Comparar preço com função, acesso ao sistema, mentoria e estrutura.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Perguntar qual dúvida ficou aberta: técnica, investimento ou decisão.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Prometer que vai funcionar para qualquer pessoa independentemente de estudo.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Explicar que o GL Model organiza informações, mas resultado depende de disciplina e protocolo.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Usar a mentoria gravada e o app como prova de suporte ao estudo.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Exato. A resposta boa protege o cliente, a venda e a empresa.",
           "feedback_incorrect": "Revise preço, tempo e funcionamento: reduza risco percebido sem prometer resultado."
@@ -3077,13 +5147,38 @@
           "type": "multi_select",
           "checkpoint_seconds": 1060,
           "prompt": "Quando a dúvida deve virar demonstração técnica no gráfico ao vivo?",
-          "correct_option_ids": ["a", "c", "d", "e"],
+          "correct_option_ids": [
+            "a",
+            "c",
+            "d",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Quando envolve cálculo do indicador, orderflow, integração, licença ou ativos específicos.", "is_correct": true},
-            {"id": "b", "text": "Quando o vendedor quer evitar responder qualquer pergunta simples.", "is_correct": false},
-            {"id": "c", "text": "Quando a prova fica mais clara mostrando o gráfico ao vivo.", "is_correct": true},
-            {"id": "d", "text": "Quando a dúvida técnica pode ser usada para reforçar a mentoria gratuita.", "is_correct": true},
-            {"id": "e", "text": "Quando responder sem demonstrar poderia gerar confusão ou promessa indevida.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Quando envolve cálculo do indicador, orderflow, integração, licença ou ativos específicos.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Quando o vendedor quer evitar responder qualquer pergunta simples.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "Quando a prova fica mais clara mostrando o gráfico ao vivo.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Quando a dúvida técnica pode ser usada para reforçar a mentoria gratuita.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Quando responder sem demonstrar poderia gerar confusão ou promessa indevida.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Perfeito. O vendedor técnico usa a demonstração para provar valor com clareza.",
           "feedback_incorrect": "Revise a separação entre dúvida simples e dúvida técnica que pede gráfico ao vivo."
@@ -3092,7 +5187,7 @@
     },
     {
       "id": "m33_tecnico_renda_extra_videos_gl",
-      "order": 5,
+      "order": 6,
       "track": "tecnico",
       "sequence_group": "tecnico",
       "role_label": "Vendedor Tecnico",
@@ -3100,7 +5195,7 @@
       "objective": "Aprender como o vendedor tecnico pode transformar trechos autorizados das proprias calls gravadas em conteudos, shorts e videos que divulgam o GL Model sem expor o cliente.",
       "summary": "Nesta aula, Gestora de equipes explica a oportunidade de renda extra com conteudos da GL Academy. Para o vendedor tecnico, o foco e aproveitar as calls tecnicas gravadas: selecionar trechos em que aparece apenas o grafico ou a explicacao, preservar totalmente a imagem e os dados do cliente, manter a mentoria gratuita como algo exclusivo e criar cortes que respondam duvidas reais sobre o GL Model. A aula tambem reforca as regras de pagamento por visualizacao, a necessidade de revisar os cortes com a gestao e o objetivo de aumentar a autoridade da GL Academy no YouTube.",
       "tags": [
-        "aula_5",
+        "aula_6",
         "vendedor_tecnico",
         "renda_extra",
         "youtube",
@@ -3111,21 +5206,81 @@
         "text": "Aula sobre como ter renda extra criando videos, cortes e shorts para divulgar a GL Academy. Canal oficial para estudar e buscar referencias: https://www.youtube.com/@giovanelazaro. Para o vendedor tecnico, a regra e aproveitar trechos das proprias calls gravadas, sem expor o cliente e sem postar a mentoria gratuita inteira, criando cortes que mostram explicacoes, duvidas e provas do GL Model.",
         "video_url": "https://youtu.be/ni1BepMszoc",
         "chapters": [
-          {"seconds": 0, "time": "00:00", "title": "Objetivo da aula"},
-          {"seconds": 35, "time": "00:35", "title": "Funcao principal do vendedor ativo"},
-          {"seconds": 73, "time": "01:13", "title": "Canal oficial da GL Academy"},
-          {"seconds": 139, "time": "02:19", "title": "Videos e shorts como renda extra"},
-          {"seconds": 194, "time": "03:14", "title": "Revisao e legenda antes da postagem"},
-          {"seconds": 315, "time": "05:15", "title": "Exemplo de escala de ganhos"},
-          {"seconds": 365, "time": "06:05", "title": "Exemplo de video sobre GL Risk Auto e GamePad"},
-          {"seconds": 484, "time": "08:04", "title": "Sistema, atalho e gerenciamento de risco"},
-          {"seconds": 570, "time": "09:30", "title": "TradingView e NinjaTrader"},
-          {"seconds": 710, "time": "11:50", "title": "Diferenciais do Ninja e order flow"},
-          {"seconds": 867, "time": "14:27", "title": "Demonstracao pratica pelo controle"},
-          {"seconds": 1110, "time": "18:30", "title": "Break even, alvo e risco automatico"},
-          {"seconds": 1430, "time": "23:50", "title": "Parte dos vendedores tecnicos"},
-          {"seconds": 1532, "time": "25:32", "title": "Cortes das calls tecnicas"},
-          {"seconds": 1687, "time": "28:07", "title": "Resumo do processo"}
+          {
+            "seconds": 0,
+            "time": "00:00",
+            "title": "Objetivo da aula"
+          },
+          {
+            "seconds": 35,
+            "time": "00:35",
+            "title": "Funcao principal do vendedor ativo"
+          },
+          {
+            "seconds": 73,
+            "time": "01:13",
+            "title": "Canal oficial da GL Academy"
+          },
+          {
+            "seconds": 139,
+            "time": "02:19",
+            "title": "Videos e shorts como renda extra"
+          },
+          {
+            "seconds": 194,
+            "time": "03:14",
+            "title": "Revisao e legenda antes da postagem"
+          },
+          {
+            "seconds": 315,
+            "time": "05:15",
+            "title": "Exemplo de escala de ganhos"
+          },
+          {
+            "seconds": 365,
+            "time": "06:05",
+            "title": "Exemplo de video sobre GL Risk Auto e GamePad"
+          },
+          {
+            "seconds": 484,
+            "time": "08:04",
+            "title": "Sistema, atalho e gerenciamento de risco"
+          },
+          {
+            "seconds": 570,
+            "time": "09:30",
+            "title": "TradingView e NinjaTrader"
+          },
+          {
+            "seconds": 710,
+            "time": "11:50",
+            "title": "Diferenciais do Ninja e order flow"
+          },
+          {
+            "seconds": 867,
+            "time": "14:27",
+            "title": "Demonstracao pratica pelo controle"
+          },
+          {
+            "seconds": 1110,
+            "time": "18:30",
+            "title": "Break even, alvo e risco automatico"
+          },
+          {
+            "seconds": 1430,
+            "time": "23:50",
+            "title": "Parte dos vendedores tecnicos"
+          },
+          {
+            "seconds": 1532,
+            "time": "25:32",
+            "title": "Cortes das calls tecnicas"
+          },
+          {
+            "seconds": 1687,
+            "time": "28:07",
+            "title": "Resumo do processo"
+          }
         ],
         "require_full_video": true
       },
@@ -3140,13 +5295,37 @@
           "type": "multi_select",
           "checkpoint_seconds": 1460,
           "prompt": "Qual e a principal diferenca da renda extra para o vendedor tecnico?",
-          "correct_option_ids": ["a", "c", "d"],
+          "correct_option_ids": [
+            "a",
+            "c",
+            "d"
+          ],
           "options": [
-            {"id": "a", "text": "O tecnico pode usar trechos das proprias calls tecnicas gravadas.", "is_correct": true},
-            {"id": "b", "text": "O tecnico deve postar a call inteira para mostrar tudo ao publico.", "is_correct": false},
-            {"id": "c", "text": "O tecnico pode transformar boas explicacoes e respostas de duvidas em cortes.", "is_correct": true},
-            {"id": "d", "text": "A call gravada vira fonte de conteudo recorrente, porque cada lead traz duvidas diferentes.", "is_correct": true},
-            {"id": "e", "text": "O tecnico nao precisa revisar nem cuidar da privacidade se o conteudo for bom.", "is_correct": false}
+            {
+              "id": "a",
+              "text": "O tecnico pode usar trechos das proprias calls tecnicas gravadas.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "O tecnico deve postar a call inteira para mostrar tudo ao publico.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "O tecnico pode transformar boas explicacoes e respostas de duvidas em cortes.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "A call gravada vira fonte de conteudo recorrente, porque cada lead traz duvidas diferentes.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "O tecnico nao precisa revisar nem cuidar da privacidade se o conteudo for bom.",
+              "is_correct": false
+            }
           ],
           "feedback_correct": "Certo. A call tecnica e uma fonte forte de conteudo, desde que seja editada com cuidado.",
           "feedback_incorrect": "Revise a parte dos tecnicos: o conteudo vem das calls, mas com privacidade e criterio."
@@ -3156,13 +5335,38 @@
           "type": "multi_select",
           "checkpoint_seconds": 1510,
           "prompt": "Quais cuidados sao obrigatorios ao usar uma call tecnica como conteudo?",
-          "correct_option_ids": ["a", "b", "d", "e"],
+          "correct_option_ids": [
+            "a",
+            "b",
+            "d",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Nao expor imagem, nome, dados, voz sensivel ou informacoes do cliente.", "is_correct": true},
-            {"id": "b", "text": "Preferir trechos em que aparece o grafico, a tela ou a explicacao do tecnico.", "is_correct": true},
-            {"id": "c", "text": "Publicar a mentoria gratuita completa para gerar mais visualizacao.", "is_correct": false},
-            {"id": "d", "text": "Manter a mentoria gratuita como algo exclusivo para leads e clientes.", "is_correct": true},
-            {"id": "e", "text": "Enviar o corte para revisao antes de postar.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Nao expor imagem, nome, dados, voz sensivel ou informacoes do cliente.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Preferir trechos em que aparece o grafico, a tela ou a explicacao do tecnico.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Publicar a mentoria gratuita completa para gerar mais visualizacao.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Manter a mentoria gratuita como algo exclusivo para leads e clientes.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Enviar o corte para revisao antes de postar.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Perfeito. Conteudo bom nao pode comprometer privacidade nem tirar a exclusividade da call.",
           "feedback_incorrect": "Revise os limites: nao poste a call inteira e nunca exponha o cliente."
@@ -3172,13 +5376,38 @@
           "type": "multi_select",
           "checkpoint_seconds": 1650,
           "prompt": "Por que cortes feitos a partir de duvidas dos leads podem funcionar bem?",
-          "correct_option_ids": ["a", "c", "d", "e"],
+          "correct_option_ids": [
+            "a",
+            "c",
+            "d",
+            "e"
+          ],
           "options": [
-            {"id": "a", "text": "Porque a duvida de um lead pode ser a mesma de outra pessoa pesquisando no YouTube.", "is_correct": true},
-            {"id": "b", "text": "Porque permite prometer resultado para quem assistir.", "is_correct": false},
-            {"id": "c", "text": "Porque mostra que a GL tem equipe, metodo, suporte e conhecimento tecnico.", "is_correct": true},
-            {"id": "d", "text": "Porque aumenta a confianca na empresa e no GL Model.", "is_correct": true},
-            {"id": "e", "text": "Porque cria conteudo infinito a partir de calls diferentes.", "is_correct": true}
+            {
+              "id": "a",
+              "text": "Porque a duvida de um lead pode ser a mesma de outra pessoa pesquisando no YouTube.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Porque permite prometer resultado para quem assistir.",
+              "is_correct": false
+            },
+            {
+              "id": "c",
+              "text": "Porque mostra que a GL tem equipe, metodo, suporte e conhecimento tecnico.",
+              "is_correct": true
+            },
+            {
+              "id": "d",
+              "text": "Porque aumenta a confianca na empresa e no GL Model.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "Porque cria conteudo infinito a partir de calls diferentes.",
+              "is_correct": true
+            }
           ],
           "feedback_correct": "Boa. Duvidas reais viram conteudo forte quando sao respondidas com clareza e etica.",
           "feedback_incorrect": "Revise o objetivo: cortes de call mostram autoridade e resolvem duvidas, sem promessa."
@@ -3188,13 +5417,37 @@
           "type": "multi_select",
           "checkpoint_seconds": 1680,
           "prompt": "Quais metas de conteudo geram pagamento extra?",
-          "correct_option_ids": ["a", "b", "d"],
+          "correct_option_ids": [
+            "a",
+            "b",
+            "d"
+          ],
           "options": [
-            {"id": "a", "text": "Video com mais de 5 minutos e mais de 500 visualizacoes gera R$ 25.", "is_correct": true},
-            {"id": "b", "text": "Short com mais de 30 segundos e mais de 1.000 visualizacoes gera R$ 25.", "is_correct": true},
-            {"id": "c", "text": "Qualquer trecho de call, mesmo sem visualizacao, gera pagamento automatico.", "is_correct": false},
-            {"id": "d", "text": "Quanto mais cortes aprovados baterem meta, maior pode ser a renda extra.", "is_correct": true},
-            {"id": "e", "text": "A regra de pagamento dispensa revisao da gestao.", "is_correct": false}
+            {
+              "id": "a",
+              "text": "Video com mais de 5 minutos e mais de 500 visualizacoes gera R$ 25.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Short com mais de 30 segundos e mais de 1.000 visualizacoes gera R$ 25.",
+              "is_correct": true
+            },
+            {
+              "id": "c",
+              "text": "Qualquer trecho de call, mesmo sem visualizacao, gera pagamento automatico.",
+              "is_correct": false
+            },
+            {
+              "id": "d",
+              "text": "Quanto mais cortes aprovados baterem meta, maior pode ser a renda extra.",
+              "is_correct": true
+            },
+            {
+              "id": "e",
+              "text": "A regra de pagamento dispensa revisao da gestao.",
+              "is_correct": false
+            }
           ],
           "feedback_correct": "Certo. A renda extra depende de formato, duracao, visualizacao e aprovacao.",
           "feedback_incorrect": "Revise a regra de pagamento: cada formato tem meta minima e precisa seguir o processo."
