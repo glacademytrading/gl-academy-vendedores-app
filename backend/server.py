@@ -198,31 +198,18 @@ def _access_code_public(doc: dict) -> dict:
 
 async def _resolve_access_code(payload_code: Optional[str]) -> Optional[dict]:
     code = _normalize_access_code(payload_code)
-    required = os.environ.get("REGISTRATION_ACCESS_CODE", "").strip()
-    access_code_count = await db.access_codes.count_documents({})
-
-    if code:
-        doc = await db.access_codes.find_one({"code": code}, {"_id": 0})
-        if doc:
-            public = _access_code_public(doc)
-            if not public["usable"]:
-                raise HTTPException(status_code=403, detail="Codigo de acesso expirado, inativo ou sem usos disponiveis.")
-            return doc
-
-        if required and code == _normalize_access_code(required):
-            return {
-                "id": None,
-                "code": code,
-                "label": "Codigo legado Render",
-                "code_type": "turma",
-                "auto_approve": False,
-                "entitlement": "",
-                "legacy": True,
-            }
-
-    if required or access_code_count > 0:
-        raise HTTPException(status_code=403, detail="Codigo de acesso invalido. Peca o codigo da turma ao mentor.")
-    return None
+    required = "VIVERDEGLACADEMY"
+    if code == required:
+        return {
+            "id": None,
+            "code": code,
+            "label": "Codigo da equipe GL Academy",
+            "code_type": "equipe",
+            "auto_approve": False,
+            "entitlement": "",
+            "legacy": True,
+        }
+    raise HTTPException(status_code=403, detail="Codigo de acesso invalido. Peca o codigo da equipe a gestao.")
 
 
 def _has_entitlement(user: dict, entitlement: str) -> bool:
@@ -496,22 +483,22 @@ def _knowledge_preview(page: dict) -> dict:
 
 NEWS_UPDATES = [
     {
-        "id": "news-prod-ready",
-        "tag": "Produto",
-        "title": "GL Model Academy entrou em fase de entrega Web/PC",
-        "body": "A base atual ja inclui login, recuperacao de senha, termos, privacidade, trilha, diagnostico de quiz e painel mentor.",
-        "created_at": "2026-05-24T23:30:00-03:00",
-        "action_url": "/trilha",
-    },
-    {
-        "id": "news-risk-workshop",
-        "tag": "GL Risk Auto",
-        "title": "GL Risk Auto Workshop em preparacao",
-        "body": "O modulo de risco avancado passa a ter trilha premium, pagina de workshop e ofertas separadas para mentoria, Gamepad e combo.",
-        "created_at": "2026-05-25T00:10:00-03:00",
-        "action_url": "/workshop-gl-risk-auto",
+        "id": "news-welcome-2026-07-02",
+        "tag": "Bem-vindos",
+        "title": "Bem-vindos ao app da equipe GL Academy",
+        "body": "Sejam bem-vindos ao ambiente interno da equipe. Aqui voces acompanham os comunicados oficiais, acessam as trilhas da sua funcao e enviam seus relatorios para aprovacao.",
+        "created_at": "2026-07-02T09:00:00-03:00",
+        "action_url": "",
     },
 ]
+
+LEGACY_NEWS_IDS = {
+    "news-prod-ready",
+    "news-risk-workshop",
+    "news-kickoff-sales",
+    "news-record-commission",
+    "news-market-payroll",
+}
 
 
 MARKET_REPORTS = [
@@ -632,7 +619,7 @@ async def _broadcast_push(title: str, body: str, url: str = "/novidades", user_i
 @api.post("/auth/register")
 async def register(payload: UserRegister, request: Request, response: Response):
     email = payload.email.lower().strip()
-    allowed_team_roles = {"recrutador", "ativo", "tecnico"}
+    allowed_team_roles = {"recrutador", "recrutador_tecnico", "ativo", "tecnico"}
     team_roles = list(dict.fromkeys(role for role in payload.team_roles if role in allowed_team_roles))
     if not team_roles and payload.team_role in allowed_team_roles:
         team_roles = [payload.team_role]
@@ -853,8 +840,9 @@ async def password_reset_confirm(payload: PasswordResetConfirm, request: Request
 async def notifications_config(request: Request):
     await get_current_user(request, db)
     public_key = os.environ.get("VAPID_PUBLIC_KEY", "").strip()
+    private_key = os.environ.get("VAPID_PRIVATE_KEY", "").strip()
     return {
-        "enabled": bool(public_key and webpush),
+        "enabled": bool(public_key and private_key and webpush),
         "vapid_public_key": public_key,
     }
 
@@ -890,7 +878,7 @@ async def notifications_test(request: Request):
 @api.post("/user/onboarding")
 async def save_onboarding(payload: OnboardingData, request: Request):
     user = await get_current_user(request, db)
-    allowed_team_roles = {"recrutador", "ativo", "tecnico"}
+    allowed_team_roles = {"recrutador", "recrutador_tecnico", "ativo", "tecnico"}
     onboarding = payload.model_dump()
     onboarding["roles"] = list(dict.fromkeys(role for role in onboarding.get("roles", []) if role in allowed_team_roles))
     if not onboarding["roles"] and onboarding.get("role") in allowed_team_roles:
@@ -1108,6 +1096,7 @@ async def challenges_list(request: Request):
 async def news_list(request: Request):
     await get_current_user(request, db)
     docs = await db.news_updates.find({}, {"_id": 0}).sort("created_at", -1).to_list(100)
+    docs = [doc for doc in docs if doc.get("id") not in LEGACY_NEWS_IDS]
     return docs or NEWS_UPDATES
 
 
@@ -1677,7 +1666,7 @@ def _student_learning_progress(
 ) -> dict:
     onboarding = user.get("onboarding") or {}
     roles = onboarding.get("roles") or [onboarding.get("role")]
-    assigned_tracks = list(dict.fromkeys(role for role in roles if role in {"recrutador", "ativo", "tecnico"}))
+    assigned_tracks = list(dict.fromkeys(role for role in roles if role in {"recrutador", "recrutador_tecnico", "ativo", "tecnico"}))
     lesson_by_module = {item.get("module_id"): item for item in lesson_progress}
     tracks = []
     all_rows = []
@@ -1787,11 +1776,59 @@ async def admin_commissions(request: Request):
     }
 
 
-@api.post("/admin/commissions/{commission_id}/approve")
-async def admin_approve_commission(
+def _admin_commission_update(payload: CommissionAdminAction, admin: dict, decision: str, now: str) -> Dict[str, Any]:
+    update: Dict[str, Any] = {
+        "admin_reason": (payload.reason or "").strip(),
+        "reviewed_at": now,
+        "reviewed_by": admin.get("email"),
+        "updated_at": now,
+    }
+    for key in ["sale_date", "payment_date", "product_name", "technical_seller_name", "loss_reason"]:
+        value = getattr(payload, key, None)
+        if value is not None:
+            update[key] = str(value).strip()
+    for key in ["sale_value"]:
+        value = getattr(payload, key, None)
+        if value is not None:
+            update[key] = value
+
+    normalized = (decision or payload.decision or "").strip().lower()
+    if normalized in {"approve", "approved", "sale_completed", "completed"}:
+        update.update({
+            "approval_status": "approved",
+            "workflow_status": "sale_completed",
+            "sale_outcome": "completed",
+            "approved_at": now,
+            "approved_by": admin.get("email"),
+        })
+    elif normalized in {"not_completed", "sale_not_completed", "not_eligible"}:
+        update.update({
+            "approval_status": "not_eligible",
+            "workflow_status": "sale_not_completed",
+            "sale_outcome": "not_completed",
+            "commission_value": 0,
+        })
+        if not update.get("loss_reason") and update.get("admin_reason"):
+            update["loss_reason"] = update["admin_reason"]
+    elif normalized in {"reject", "rejected"}:
+        update.update({
+            "approval_status": "rejected",
+            "commission_value": 0,
+            "rejected_at": now,
+            "rejected_by": admin.get("email"),
+        })
+    elif payload.workflow_status:
+        update["workflow_status"] = payload.workflow_status.strip()
+    if payload.sale_outcome:
+        update["sale_outcome"] = payload.sale_outcome.strip()
+    return update
+
+
+async def _apply_commission_admin_action(
     commission_id: str,
     payload: CommissionAdminAction,
     request: Request,
+    decision: str,
 ):
     admin = await require_admin(request, db)
     now = utc_now_iso()
@@ -1799,21 +1836,40 @@ async def admin_approve_commission(
     if not commission:
         raise HTTPException(status_code=404, detail="Solicitacao de comissao nao encontrada.")
     chain_id = commission.get("chain_id")
-    target_filter = (
-        {"chain_id": chain_id, "approval_status": "pending"}
-        if chain_id
-        else {"id": commission_id}
-    )
-    result = await db.commission_requests.update_many(
-        target_filter,
-        {"$set": {
-            "approval_status": "approved",
-            "approved_at": now,
-            "approved_by": admin.get("email"),
-            "admin_reason": (payload.reason or "").strip(),
-        }},
-    )
+    target_filter = {"chain_id": chain_id} if chain_id else {"id": commission_id}
+    update = _admin_commission_update(payload, admin, decision, now)
+    await db.commission_requests.update_many(target_filter, {"$set": update})
+    normalized_decision = (decision or payload.decision or "").strip().lower()
+    zero_commission = normalized_decision in {"not_completed", "sale_not_completed", "not_eligible", "reject", "rejected"}
+    if payload.commission_value is not None and not zero_commission:
+        await db.commission_requests.update_one(
+            {"id": commission_id},
+            {"$set": {
+                "commission_value": payload.commission_value,
+                "reviewed_at": now,
+                "reviewed_by": admin.get("email"),
+                "updated_at": now,
+            }},
+        )
     return await db.commission_requests.find_one({"id": commission_id}, {"_id": 0})
+
+
+@api.post("/admin/commissions/{commission_id}/review")
+async def admin_review_commission(
+    commission_id: str,
+    payload: CommissionAdminAction,
+    request: Request,
+):
+    return await _apply_commission_admin_action(commission_id, payload, request, payload.decision or "save")
+
+
+@api.post("/admin/commissions/{commission_id}/approve")
+async def admin_approve_commission(
+    commission_id: str,
+    payload: CommissionAdminAction,
+    request: Request,
+):
+    return await _apply_commission_admin_action(commission_id, payload, request, "approve")
 
 
 @api.post("/admin/commissions/{commission_id}/reject")
@@ -1822,27 +1878,7 @@ async def admin_reject_commission(
     payload: CommissionAdminAction,
     request: Request,
 ):
-    admin = await require_admin(request, db)
-    now = utc_now_iso()
-    commission = await db.commission_requests.find_one({"id": commission_id}, {"_id": 0})
-    if not commission:
-        raise HTTPException(status_code=404, detail="Solicitacao de comissao nao encontrada.")
-    chain_id = commission.get("chain_id")
-    target_filter = (
-        {"chain_id": chain_id, "approval_status": "pending"}
-        if chain_id
-        else {"id": commission_id}
-    )
-    result = await db.commission_requests.update_many(
-        target_filter,
-        {"$set": {
-            "approval_status": "rejected",
-            "rejected_at": now,
-            "rejected_by": admin.get("email"),
-            "admin_reason": (payload.reason or "").strip(),
-        }},
-    )
-    return await db.commission_requests.find_one({"id": commission_id}, {"_id": 0})
+    return await _apply_commission_admin_action(commission_id, payload, request, "reject")
 
 
 @api.post("/admin/access-codes")
@@ -1965,7 +2001,7 @@ async def admin_access_events(request: Request):
 async def admin_students(request: Request):
     await require_admin(request, db)
     users = await db.users.find({"role": "student"}, {"_id": 0, "password_hash": 0}).to_list(2000)
-    modules = await db.modules.find({"track": {"$in": ["recrutador", "ativo", "tecnico"]}}, {"_id": 0}).to_list(200)
+    modules = await db.modules.find({"track": {"$in": ["recrutador", "recrutador_tecnico", "ativo", "tecnico"]}}, {"_id": 0}).to_list(200)
     result = []
     for u in users:
         metrics = await _compute_user_metrics(u["id"])
@@ -1999,7 +2035,7 @@ async def admin_student_detail(user_id: str, request: Request):
         raise HTTPException(status_code=404, detail="Aluno não encontrado")
     metrics = await _compute_user_metrics(user_id)
     journal_count = await db.journal_entries.count_documents({"user_id": user_id})
-    modules = await db.modules.find({"track": {"$in": ["recrutador", "ativo", "tecnico"]}}, {"_id": 0}).to_list(200)
+    modules = await db.modules.find({"track": {"$in": ["recrutador", "recrutador_tecnico", "ativo", "tecnico"]}}, {"_id": 0}).to_list(200)
     attempts = await db.attempts.find({"user_id": user_id, "scope": "module"}, {"_id": 0}).to_list(5000)
     lesson_progress = await db.lesson_progress.find({"user_id": user_id}, {"_id": 0}).to_list(500)
     learning = _student_learning_progress(u, modules, attempts, lesson_progress)

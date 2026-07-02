@@ -246,3 +246,13 @@ class CommissionCreate(BaseModel):
 
 class CommissionAdminAction(BaseModel):
     reason: Optional[str] = Field(default="", max_length=500)
+    decision: Optional[str] = Field(default="", max_length=40)
+    commission_value: Optional[float] = Field(default=None, ge=0)
+    sale_value: Optional[float] = Field(default=None, ge=0)
+    sale_date: Optional[str] = ""
+    payment_date: Optional[str] = ""
+    product_name: Optional[str] = Field(default=None, max_length=160)
+    technical_seller_name: Optional[str] = Field(default=None, max_length=120)
+    sale_outcome: Optional[str] = Field(default=None, max_length=40)
+    workflow_status: Optional[str] = Field(default=None, max_length=60)
+    loss_reason: Optional[str] = Field(default=None, max_length=500)
