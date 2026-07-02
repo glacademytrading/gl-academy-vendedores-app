@@ -5,8 +5,19 @@ const ENABLE_ADMIN_DEMO =
   runtimeConfig.ENABLE_ADMIN_DEMO === true || process.env.REACT_APP_ENABLE_ADMIN_DEMO === "true";
 const DEMO_ADMIN_EMAIL = String(runtimeConfig.DEMO_ADMIN_EMAIL || "").toLowerCase().trim();
 const DEMO_ADMIN_PASSWORD = String(runtimeConfig.DEMO_ADMIN_PASSWORD || "");
-const DEMO_STUDENT_EMAIL = String(runtimeConfig.DEMO_STUDENT_EMAIL || "").toLowerCase().trim();
+const DEMO_STUDENT_EMAIL = String(runtimeConfig.DEMO_STUDENT_EMAIL || "colaborador@glacademytrading.com").toLowerCase().trim();
 const DEMO_STUDENT_PASSWORD = String(runtimeConfig.DEMO_STUDENT_PASSWORD || "");
+const LIMITED_SELLER_EMAIL = "vendedor.ativo@glacademytrading.com";
+const REQUIRED_ACCESS_CODE = String(
+  runtimeConfig.REGISTRATION_ACCESS_CODE || process.env.REACT_APP_REGISTRATION_ACCESS_CODE || "VIVERDEGLACADEMY"
+).toUpperCase();
+
+function normalizeDemoEmail(value) {
+  const email = String(value || "").toLowerCase().trim();
+  if (email === "colaborador@demo.local") return DEMO_STUDENT_EMAIL;
+  if (email === "vendedor.ativo@demo.local") return LIMITED_SELLER_EMAIL;
+  return email;
+}
 
 function storageGet(key, fallback) {
   try {
@@ -31,6 +42,139 @@ function nowIso() {
 
 function newId(prefix = "demo") {
   return `${prefix}-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function normalizeSharedValue(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, " ");
+}
+
+function moduleSharedKey(module) {
+  const explicit = module?.shared_lesson_key || module?.equivalence_key;
+  if (explicit) return `shared:${normalizeSharedValue(explicit)}`;
+  const videoUrl = String(module?.lesson?.video_url || "").trim().toLowerCase();
+  if (videoUrl) return `video:${videoUrl}`;
+  return `module:${module?.id || ""}`;
+}
+
+function optionTextById(question) {
+  return Object.fromEntries(
+    (question?.options || []).map((option) => [
+      option.id,
+      normalizeSharedValue(option.text || option.label || option.body),
+    ])
+  );
+}
+
+function questionSharedKey(question) {
+  const explicit = question?.shared_question_key || question?.equivalence_key;
+  if (explicit) return `shared:${normalizeSharedValue(explicit)}`;
+  const prompt = normalizeSharedValue(question?.prompt || question?.title || question?.body);
+  if (!prompt) return `question:${question?.id || ""}`;
+  const options = optionTextById(question);
+  const correctTexts = (question?.correct_option_ids || [])
+    .map((optionId) => options[optionId] || normalizeSharedValue(optionId))
+    .sort();
+  return `prompt:${prompt}|correct:${correctTexts.join("|")}`;
+}
+
+function equivalentModules(module, allModules = []) {
+  const key = moduleSharedKey(module);
+  const matches = (allModules.length ? allModules : [module]).filter((candidate) => moduleSharedKey(candidate) === key);
+  return matches.length ? matches : [module];
+}
+
+function equivalentModuleIds(module, allModules = []) {
+  return new Set(equivalentModules(module, allModules).map((candidate) => candidate?.id).filter(Boolean));
+}
+
+function equivalentQuestionRefs(module, question, allModules = []) {
+  const key = questionSharedKey(question);
+  const refs = [];
+  const seen = new Set();
+  for (const candidate of equivalentModules(module, allModules)) {
+    for (const candidateQuestion of candidate?.questions || []) {
+      if (questionSharedKey(candidateQuestion) !== key) continue;
+      const refKey = `${candidate.id}:${candidateQuestion.id}`;
+      if (seen.has(refKey)) continue;
+      seen.add(refKey);
+      refs.push({ module: candidate, question: candidateQuestion });
+    }
+  }
+  return refs.length ? refs : [{ module, question }];
+}
+
+function attemptSortValue(attempt) {
+  return `${attempt?.created_at || ""}:${String(attempt?.attempt_number || 0).padStart(4, "0")}`;
+}
+
+function mapOptionIdsBetweenQuestions(optionIds, sourceQuestion, targetQuestion) {
+  if (sourceQuestion?.id === targetQuestion?.id) return optionIds || [];
+  const sourceOptions = optionTextById(sourceQuestion);
+  const targetByText = Object.fromEntries(
+    Object.entries(optionTextById(targetQuestion))
+      .filter(([, text]) => text)
+      .map(([optionId, text]) => [text, optionId])
+  );
+  return (optionIds || []).map((optionId) => targetByText[sourceOptions[optionId]] || optionId);
+}
+
+function projectAttemptForQuestion(attempt, sourceQuestion, targetModule, targetQuestion) {
+  const selected = mapOptionIdsBetweenQuestions(attempt.selected_option_ids || [], sourceQuestion, targetQuestion);
+  return {
+    ...attempt,
+    source_module_id: attempt.module_id,
+    source_question_id: attempt.question_id,
+    module_id: targetModule.id,
+    question_id: targetQuestion.id,
+    selected_option_ids: selected,
+    correct_option_ids: targetQuestion.correct_option_ids || [],
+    feedback: attempt.is_correct ? targetQuestion.feedback_correct : targetQuestion.feedback_incorrect,
+    ...attemptDiagnostics(targetQuestion, selected),
+  };
+}
+
+function adminCommissionUpdate(payload = {}, admin = {}, decision = "save") {
+  const now = nowIso();
+  const update = {
+    admin_reason: String(payload.reason || "").trim(),
+    reviewed_at: now,
+    reviewed_by: admin.email || "",
+    updated_at: now,
+  };
+  ["sale_date", "payment_date", "product_name", "technical_seller_name", "loss_reason"].forEach((key) => {
+    if (payload[key] !== undefined && payload[key] !== null) update[key] = String(payload[key]).trim();
+  });
+  if (payload.sale_value !== undefined && payload.sale_value !== null) {
+    update.sale_value = Number(payload.sale_value || 0);
+  }
+  const normalized = String(decision || payload.decision || "").trim().toLowerCase();
+  if (["approve", "approved", "sale_completed", "completed"].includes(normalized)) {
+    update.approval_status = "approved";
+    update.workflow_status = "sale_completed";
+    update.sale_outcome = "completed";
+    update.approved_at = now;
+    update.approved_by = admin.email || "";
+  } else if (["not_completed", "sale_not_completed", "not_eligible"].includes(normalized)) {
+    update.approval_status = "not_eligible";
+    update.workflow_status = "sale_not_completed";
+    update.sale_outcome = "not_completed";
+    update.commission_value = 0;
+    if (!update.loss_reason && update.admin_reason) update.loss_reason = update.admin_reason;
+  } else if (["reject", "rejected"].includes(normalized)) {
+    update.approval_status = "rejected";
+    update.commission_value = 0;
+    update.rejected_at = now;
+    update.rejected_by = admin.email || "";
+  } else if (payload.workflow_status) {
+    update.workflow_status = String(payload.workflow_status).trim();
+  }
+  if (payload.sale_outcome) update.sale_outcome = String(payload.sale_outcome).trim();
+  return update;
 }
 
 async function loadJson(name) {
@@ -139,10 +283,29 @@ function seedUsers() {
     has_onboarded: true,
     onboarding: {
       role: "recrutador",
-      roles: ["recrutador", "ativo", "tecnico"],
+      roles: ["recrutador", "recrutador_tecnico", "ativo", "tecnico"],
       experience: "Conta de demonstração",
       goal: "Validar o treinamento",
       challenge: "Conferir o avanço das trilhas",
+    },
+    created_at: nowIso(),
+  }, true);
+
+  ensureUser({
+    id: "demo-vendedor-ativo",
+    email: LIMITED_SELLER_EMAIL,
+    password: "senha-demo-123",
+    name: "Vendedor Ativo Demo",
+    role: "student",
+    account_status: "active",
+    entitlements: [],
+    has_onboarded: true,
+    onboarding: {
+      role: "ativo",
+      roles: ["ativo"],
+      experience: "Conta de demonstração limitada",
+      goal: "Visualizar abas bloqueadas por cargo",
+      challenge: "Conferir permissões da trilha",
     },
     created_at: nowIso(),
   }, true);
@@ -163,26 +326,30 @@ function requireUser() {
   return user;
 }
 
-function withProgress(modules, userId) {
+function withProgress(modules, userId, allModules = modules) {
   const attempts = storageGet("attempts", []).filter((a) => a.user_id === userId);
   const lessonProgress = storageGet("lesson_progress", []).filter((lp) => lp.user_id === userId);
   return modules.map((module) => {
-    const qIds = (module.questions || []).map((q) => q.id);
+    const questions = module.questions || [];
     const requireAllCorrect = !!module.require_all_correct;
     let resolved = 0;
-    for (const qid of qIds) {
-      const qAttempts = attempts.filter((a) => a.module_id === module.id && a.question_id === qid && a.scope === "module");
+    for (const question of questions) {
+      const refs = new Set(equivalentQuestionRefs(module, question, allModules).map((ref) => `${ref.module.id}:${ref.question.id}`));
+      const qAttempts = attempts.filter((a) => refs.has(`${a.module_id}:${a.question_id}`) && a.scope === "module");
       if (!qAttempts.length) continue;
-      const last = qAttempts[qAttempts.length - 1];
+      const orderedAttempts = [...qAttempts].sort((a, b) => attemptSortValue(a).localeCompare(attemptSortValue(b)));
+      const last = orderedAttempts[orderedAttempts.length - 1];
       if (last.is_correct || (!requireAllCorrect && qAttempts.length >= 3)) resolved += 1;
     }
+    const lessonIds = equivalentModuleIds(module, allModules);
+    const lessonDone = lessonProgress.some((lp) => lessonIds.has(lp.module_id));
     return {
       ...module,
       progress: {
-        total_questions: qIds.length,
+        total_questions: questions.length,
         resolved,
-        percent: qIds.length ? Math.round((resolved / qIds.length) * 100) : (lessonProgress.some((lp) => lp.module_id === module.id) ? 100 : 0),
-        lesson_done: lessonProgress.some((lp) => lp.module_id === module.id),
+        percent: questions.length ? Math.round((resolved / questions.length) * 100) : (lessonDone ? 100 : 0),
+        lesson_done: lessonDone,
       },
     };
   });
@@ -190,7 +357,7 @@ function withProgress(modules, userId) {
 
 function studentLearningProgress(student, modules) {
   const roles = student?.onboarding?.roles || [student?.onboarding?.role];
-  const assignedTracks = [...new Set(roles.filter((role) => ["recrutador", "ativo", "tecnico"].includes(role)))];
+  const assignedTracks = [...new Set(roles.filter((role) => ["recrutador", "recrutador_tecnico", "ativo", "tecnico"].includes(role)))];
   const attempts = storageGet("attempts", []).filter((attempt) => attempt.user_id === student.id && attempt.scope === "module");
   const lessons = storageGet("lesson_progress", []).filter((item) => item.user_id === student.id);
   const lessonByModule = new Map(lessons.map((item) => [item.module_id, item]));
@@ -200,26 +367,31 @@ function studentLearningProgress(student, modules) {
       .filter((module) => module.track === track)
       .sort((a, b) => (a.order || 0) - (b.order || 0));
     const rows = trackModules.map((module) => {
-      const questionIds = (module.questions || []).map((question) => question.id);
-      const questionsCorrect = questionIds.filter((questionId) => {
+      const questions = module.questions || [];
+      const questionsCorrect = questions.filter((question) => {
+        const refs = new Set(equivalentQuestionRefs(module, question, modules).map((ref) => `${ref.module.id}:${ref.question.id}`));
         const questionAttempts = attempts.filter(
-          (attempt) => attempt.module_id === module.id && attempt.question_id === questionId
+          (attempt) => refs.has(`${attempt.module_id}:${attempt.question_id}`)
         );
         if (!questionAttempts.length) return false;
-        return questionAttempts[questionAttempts.length - 1].is_correct;
+        const orderedAttempts = [...questionAttempts].sort((a, b) => attemptSortValue(a).localeCompare(attemptSortValue(b)));
+        const last = orderedAttempts[orderedAttempts.length - 1];
+        return last?.is_correct;
       }).length;
       const watched = !!module.progress?.lesson_done;
       const completed = moduleComplete(module);
+      const lessonIds = equivalentModuleIds(module, modules);
+      const videoProgress = lessons.find((item) => lessonIds.has(item.module_id));
       return {
         id: module.id,
         order: module.order,
         title: module.title,
         track,
         video_completed: watched,
-        video_completed_at: lessonByModule.get(module.id)?.completed_at || null,
+        video_completed_at: videoProgress?.completed_at || lessonByModule.get(module.id)?.completed_at || null,
         questions_correct: questionsCorrect,
-        total_questions: questionIds.length,
-        quiz_percent: questionIds.length ? Math.round((questionsCorrect / questionIds.length) * 100) : (watched ? 100 : 0),
+        total_questions: questions.length,
+        quiz_percent: questions.length ? Math.round((questionsCorrect / questions.length) * 100) : (watched ? 100 : 0),
         completed,
         status: completed ? "completed" : watched ? "quiz_pending" : "video_pending",
       };
@@ -281,7 +453,7 @@ function moduleSequenceStatus(user, module, allModules) {
   const index = ordered.findIndex((m) => m.id === module.id);
   const previous = index > 0 ? ordered[index - 1] : null;
   if (!previous || previous.locked) return { allowed: true };
-  const previousWithProgress = withProgress([previous], user.id)[0];
+  const previousWithProgress = withProgress([previous], user.id, allModules)[0];
   if (moduleComplete(previousWithProgress)) return { allowed: true };
   return {
     allowed: false,
@@ -294,24 +466,15 @@ function moduleSequenceStatus(user, module, allModules) {
 async function progressUnlockStatus(user, module, allModules) {
   const requirements = module?.unlock_requirements || {};
   if (!requirements.completed_module_ids?.length && !requirements.min_overall_accuracy) return { allowed: true };
-  const lessonProgress = storageGet("lesson_progress", []).filter((lp) => lp.user_id === user.id);
-  const lessonDone = new Set(lessonProgress.map((lp) => lp.module_id));
-  const latest = latestAttempts(user.id);
   const missing = [];
   for (const moduleId of requirements.completed_module_ids || []) {
     const requiredModule = allModules.find((m) => m.id === moduleId);
-    const questionIds = (requiredModule?.questions || []).map((q) => q.id);
-    if (!lessonDone.has(moduleId)) {
+    if (!requiredModule) {
       missing.push(moduleId);
       continue;
     }
-    for (const questionId of questionIds) {
-      const attempt = latest.find((a) => a.module_id === moduleId && a.question_id === questionId && a.scope === "module");
-      if (!attempt?.is_correct) {
-        missing.push(moduleId);
-        break;
-      }
-    }
+    const requiredWithProgress = withProgress([requiredModule], user.id, allModules)[0];
+    if (!moduleComplete(requiredWithProgress)) missing.push(moduleId);
   }
   const metrics = await performanceFor(user.id);
   const minAccuracy = requirements.min_overall_accuracy;
@@ -691,12 +854,40 @@ async function handleGet(url, config = {}) {
   }
   if (url === "/content/learning-drills") return dataResponse(content.learningDrills || []);
   if (url === "/content/challenges") return dataResponse(seed.challenges || []);
+  if (url === "/notifications/config") {
+    return dataResponse({
+      enabled: !!runtimeConfig.VAPID_PUBLIC_KEY,
+      vapid_public_key: runtimeConfig.VAPID_PUBLIC_KEY || "",
+      local_only: true,
+    });
+  }
   if (url === "/content/badges") {
     const perf = await performanceFor(user.id);
     return dataResponse(perf.badges);
   }
   if (url.startsWith("/attempts/by-question/")) {
     const questionId = decodeURIComponent(url.split("/").pop());
+    if (params.module_id && (params.scope || "module") === "module") {
+      const targetModule = modules.find((module) => module.id === params.module_id);
+      const targetQuestion = (targetModule?.questions || []).find((question) => question.id === questionId);
+      if (targetModule && targetQuestion) {
+        const refs = equivalentQuestionRefs(targetModule, targetQuestion, modules);
+        const refKeys = new Set(refs.map((ref) => `${ref.module.id}:${ref.question.id}`));
+        const questionByRef = new Map(refs.map((ref) => [`${ref.module.id}:${ref.question.id}`, ref.question]));
+        const attempts = storageGet("attempts", [])
+          .filter((a) => a.user_id === user.id && a.scope === "module" && refKeys.has(`${a.module_id}:${a.question_id}`))
+          .sort((a, b) => attemptSortValue(a).localeCompare(attemptSortValue(b)))
+          .map((attempt) =>
+            projectAttemptForQuestion(
+              attempt,
+              questionByRef.get(`${attempt.module_id}:${attempt.question_id}`) || targetQuestion,
+              targetModule,
+              targetQuestion
+            )
+          );
+        return dataResponse(attempts);
+      }
+    }
     const attempts = storageGet("attempts", []).filter(
       (a) =>
         a.user_id === user.id &&
@@ -812,7 +1003,8 @@ async function handlePost(url, payload = {}) {
   const { modules } = await getContent();
 
   if (url === "/auth/login") {
-    const email = String(payload.email || "").toLowerCase().trim();
+    const email = normalizeDemoEmail(payload.email);
+    const password = String(payload.password || "").trim();
     const users = seedUsers();
     const user = users.find((u) => u.email === email);
     if (!user) {
@@ -823,7 +1015,7 @@ async function handlePost(url, payload = {}) {
         },
       };
     }
-    if (user.password && user.password !== payload.password) {
+    if (user.password && user.password !== password) {
       throw { response: { status: 401, data: { detail: "Senha demo incorreta." } } };
     }
     if (user.role !== "admin" && user.account_status !== "active") {
@@ -834,9 +1026,13 @@ async function handlePost(url, payload = {}) {
   }
   if (url === "/auth/register") {
     const email = String(payload.email || "").toLowerCase().trim();
+    const accessCode = String(payload.access_code || "").trim().toUpperCase();
+    if (accessCode !== REQUIRED_ACCESS_CODE) {
+      throw { response: { status: 403, data: { detail: "Codigo de acesso invalido. Peca o codigo da equipe a gestao." } } };
+    }
     const users = seedUsers();
     if (users.some((u) => u.email === email)) throw { response: { status: 409, data: { detail: "E-mail ja cadastrado" } } };
-    const allowedRoles = ["recrutador", "ativo", "tecnico"];
+    const allowedRoles = ["recrutador", "recrutador_tecnico", "ativo", "tecnico"];
     const requestedRoles = Array.isArray(payload.team_roles) ? payload.team_roles : [payload.team_role];
     const selectedRoles = [...new Set(requestedRoles.filter((role) => allowedRoles.includes(role)))];
     const selectedRole = selectedRoles[0] || "";
@@ -872,6 +1068,31 @@ async function handlePost(url, payload = {}) {
   if (url === "/auth/logout") return dataResponse({ ok: true });
 
   const user = requireUser();
+  if (url === "/notifications/subscribe") {
+    const subscriptions = storageGet("push_subscriptions", []).filter(
+      (item) => !(item.user_id === user.id && item.endpoint === payload.endpoint)
+    );
+    subscriptions.push({
+      ...payload,
+      id: newId("push"),
+      user_id: user.id,
+      created_at: nowIso(),
+      local_only: true,
+    });
+    storageSet("push_subscriptions", subscriptions);
+    return dataResponse({ ok: true, saved: true, local_only: true });
+  }
+  if (url === "/notifications/test") {
+    return dataResponse({
+      ok: true,
+      sent: 1,
+      local_only: true,
+      title: "GL Academy",
+      body: "Teste de alerta recebido neste dispositivo.",
+      url: "/novidades",
+    });
+  }
+
   if (url === "/user/onboarding") {
     const users = seedUsers().map((u) =>
       u.id === user.id
@@ -904,10 +1125,16 @@ async function handlePost(url, payload = {}) {
       const status = await progressUnlockStatus(user, module, modules);
       if (!status.allowed) throw { response: { status: 403, data: { detail: "Aprofundamento bloqueado por evolucao. Conclua os requisitos antes de marcar como estudado." } } };
     }
-    const docs = storageGet("lesson_progress", []).filter((lp) => !(lp.user_id === user.id && lp.module_id === moduleId));
-    docs.push({ user_id: user.id, module_id: moduleId, completed_at: nowIso() });
+    const syncedModuleIds = module ? [...equivalentModuleIds(module, modules)] : [moduleId];
+    const completedAt = nowIso();
+    const docs = storageGet("lesson_progress", []).filter(
+      (lp) => !(lp.user_id === user.id && syncedModuleIds.includes(lp.module_id))
+    );
+    for (const syncedModuleId of syncedModuleIds) {
+      docs.push({ user_id: user.id, module_id: syncedModuleId, completed_at: completedAt });
+    }
     storageSet("lesson_progress", docs);
-    return dataResponse({ ok: true });
+    return dataResponse({ ok: true, synced_module_ids: syncedModuleIds });
   }
   if (url === "/attempts") {
     const found = findQuestion(modules, payload.question_id);
@@ -927,15 +1154,23 @@ async function handlePost(url, payload = {}) {
       throw { response: { status: 403, data: { detail: "Aprofundamento bloqueado por evolucao. Conclua os requisitos antes de responder." } } };
     }
     if (found.module?.lesson?.require_full_video) {
+      const lessonIds = equivalentModuleIds(found.module, modules);
       const watched = storageGet("lesson_progress", []).some(
-        (lp) => lp.user_id === user.id && lp.module_id === found.module.id
+        (lp) => lp.user_id === user.id && lessonIds.has(lp.module_id)
       );
       if (!watched) {
         throw { response: { status: 403, data: { detail: "Assista ao video completo antes de responder o questionario." } } };
       }
     }
     const attempts = storageGet("attempts", []);
-    const previous = attempts.filter((a) => a.user_id === user.id && a.question_id === payload.question_id && a.module_id === payload.module_id && a.scope === payload.scope);
+    const refs = payload.scope === "module" || !payload.scope
+      ? new Set(equivalentQuestionRefs(found.module, found.question, modules).map((ref) => `${ref.module.id}:${ref.question.id}`))
+      : null;
+    const previous = attempts.filter((a) => (
+      a.user_id === user.id &&
+      a.scope === (payload.scope || "module") &&
+      (refs ? refs.has(`${a.module_id}:${a.question_id}`) : (a.question_id === payload.question_id && a.module_id === payload.module_id))
+    ));
     if (previous.length >= 3 && !found.module.require_all_correct) {
       throw { response: { status: 400, data: { detail: "Limite de tentativas atingido" } } };
     }
@@ -1049,24 +1284,24 @@ async function handlePost(url, payload = {}) {
     storageSet("users", users);
     return dataResponse(publicUser(users.find((item) => item.id === id)));
   }
-  if (url.match(/^\/admin\/commissions\/.+\/(approve|reject)$/)) {
+  if (url.match(/^\/admin\/commissions\/.+\/(review|approve|reject)$/)) {
     if (user.role !== "admin") throw { response: { status: 403, data: { detail: "Acesso admin necessario." } } };
     const parts = url.split("/");
     const id = parts[3];
     const action = parts[4];
-    const status = action === "approve" ? "approved" : "rejected";
     const stored = storageGet("commissions", []);
     const selected = stored.find((item) => item.id === id);
+    const decision = action === "review" ? payload.decision || "save" : action;
+    const zeroCommission = ["not_completed", "sale_not_completed", "not_eligible", "reject", "rejected"].includes(String(decision).trim().toLowerCase());
+    const chainUpdate = adminCommissionUpdate(payload, user, decision);
     const requests = stored.map((item) =>
-      (selected?.chain_id
-        ? item.chain_id === selected.chain_id && item.approval_status === "pending"
-        : item.id === id)
+      (selected?.chain_id ? item.chain_id === selected.chain_id : item.id === id)
         ? {
             ...item,
-            approval_status: status,
-            approved_at: action === "approve" ? nowIso() : item.approved_at,
-            approved_by: action === "approve" ? user.email : item.approved_by,
-            admin_reason: payload.reason || "",
+            ...chainUpdate,
+            ...(item.id === id && !zeroCommission && payload.commission_value !== undefined && payload.commission_value !== null
+              ? { commission_value: Number(payload.commission_value || 0) }
+              : {}),
           }
         : item
     );

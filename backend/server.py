@@ -11,6 +11,7 @@ import hashlib
 import secrets
 import smtplib
 import json
+import unicodedata
 from email.message import EmailMessage
 from datetime import datetime, timezone
 from typing import List, Optional, Dict, Any
@@ -233,22 +234,122 @@ def _module_release_locked(user: dict, module: dict) -> bool:
     return not bool((module.get("lesson") or {}).get("video_url"))
 
 
-def _module_progress_from_attempts(module: dict, attempts: list, lesson_progress: list) -> dict:
-    q_ids = [q["id"] for q in module.get("questions", [])]
-    m_attempts = [a for a in attempts if a["module_id"] == module["id"] and a["scope"] == "module"]
+def _normalize_shared_value(value: Any) -> str:
+    text = unicodedata.normalize("NFKD", str(value or ""))
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
+    return " ".join(text.lower().split())
+
+
+def _module_shared_key(module: dict) -> str:
+    explicit = module.get("shared_lesson_key") or module.get("equivalence_key")
+    if explicit:
+        return f"shared:{_normalize_shared_value(explicit)}"
+    video_url = ((module.get("lesson") or {}).get("video_url") or "").strip().lower()
+    if video_url:
+        return f"video:{video_url}"
+    return f"module:{module.get('id')}"
+
+
+def _option_text_by_id(question: dict) -> dict:
+    return {
+        option.get("id"): _normalize_shared_value(option.get("text") or option.get("label") or option.get("body"))
+        for option in question.get("options", [])
+    }
+
+
+def _question_shared_key(question: dict) -> str:
+    explicit = question.get("shared_question_key") or question.get("equivalence_key")
+    if explicit:
+        return f"shared:{_normalize_shared_value(explicit)}"
+    prompt = _normalize_shared_value(question.get("prompt") or question.get("title") or question.get("body"))
+    if not prompt:
+        return f"question:{question.get('id')}"
+    options = _option_text_by_id(question)
+    correct_texts = sorted(options.get(option_id, _normalize_shared_value(option_id)) for option_id in question.get("correct_option_ids", []))
+    return f"prompt:{prompt}|correct:{'|'.join(correct_texts)}"
+
+
+def _equivalent_modules(module: dict, all_modules: Optional[list] = None) -> list:
+    modules = all_modules or [module]
+    key = _module_shared_key(module)
+    matches = [candidate for candidate in modules if _module_shared_key(candidate) == key]
+    return matches or [module]
+
+
+def _equivalent_module_ids(module: dict, all_modules: Optional[list] = None) -> set:
+    return {candidate.get("id") for candidate in _equivalent_modules(module, all_modules) if candidate.get("id")}
+
+
+def _equivalent_question_refs(module: dict, question: dict, all_modules: Optional[list] = None) -> list:
+    question_key = _question_shared_key(question)
+    refs = []
+    seen = set()
+    for candidate in _equivalent_modules(module, all_modules):
+        for candidate_question in candidate.get("questions", []):
+            if _question_shared_key(candidate_question) != question_key:
+                continue
+            key = (candidate.get("id"), candidate_question.get("id"))
+            if key in seen:
+                continue
+            seen.add(key)
+            refs.append((candidate, candidate_question))
+    return refs or [(module, question)]
+
+
+def _attempt_sort_key(attempt: dict) -> tuple:
+    return (str(attempt.get("created_at") or ""), int(attempt.get("attempt_number") or 0))
+
+
+def _map_option_ids_between_questions(option_ids: list, source_question: dict, target_question: dict) -> list:
+    if source_question.get("id") == target_question.get("id"):
+        return option_ids
+    source_options = _option_text_by_id(source_question)
+    target_options = {text: option_id for option_id, text in _option_text_by_id(target_question).items() if text}
+    mapped = []
+    for option_id in option_ids or []:
+        mapped.append(target_options.get(source_options.get(option_id), option_id))
+    return mapped
+
+
+def _project_attempt_for_question(attempt: dict, source_question: dict, target_module: dict, target_question: dict) -> dict:
+    projected = dict(attempt)
+    selected = _map_option_ids_between_questions(projected.get("selected_option_ids", []), source_question, target_question)
+    projected["source_module_id"] = attempt.get("module_id")
+    projected["source_question_id"] = attempt.get("question_id")
+    projected["module_id"] = target_module.get("id")
+    projected["question_id"] = target_question.get("id")
+    projected["selected_option_ids"] = selected
+    projected["correct_option_ids"] = target_question.get("correct_option_ids", [])
+    projected["feedback"] = target_question.get("feedback_correct") if projected.get("is_correct") else target_question.get("feedback_incorrect")
+    projected.update(_attempt_diagnostics(target_question, selected))
+    return projected
+
+
+def _module_progress_from_attempts(module: dict, attempts: list, lesson_progress: list, all_modules: Optional[list] = None) -> dict:
+    questions = module.get("questions", [])
     require_all_correct = bool(module.get("require_all_correct"))
     resolved = 0
-    for qid in q_ids:
-        q_atts = [a for a in m_attempts if a["question_id"] == qid]
+    for question in questions:
+        refs = {
+            (candidate.get("id"), candidate_question.get("id"))
+            for candidate, candidate_question in _equivalent_question_refs(module, question, all_modules)
+        }
+        q_atts = [
+            a
+            for a in attempts
+            if a.get("scope") == "module"
+            and (a.get("module_id"), a.get("question_id")) in refs
+        ]
         if not q_atts:
             continue
-        last = max(q_atts, key=lambda a: a.get("attempt_number", 0))
-        if last["is_correct"] or (not require_all_correct and len(q_atts) >= 3):
+        last = max(q_atts, key=_attempt_sort_key)
+        if last.get("is_correct") or (not require_all_correct and len(q_atts) >= 3):
             resolved += 1
-    lesson_done = any(lp["module_id"] == module["id"] for lp in lesson_progress)
-    percent = round((resolved / len(q_ids)) * 100) if q_ids else (100 if lesson_done else 0)
+    equivalent_ids = _equivalent_module_ids(module, all_modules)
+    lesson_done = any(lp.get("module_id") in equivalent_ids for lp in lesson_progress)
+    percent = round((resolved / len(questions)) * 100) if questions else (100 if lesson_done else 0)
     return {
-        "total_questions": len(q_ids),
+        "total_questions": len(questions),
         "resolved": resolved,
         "percent": percent,
         "lesson_done": lesson_done,
@@ -276,7 +377,8 @@ async def _module_sequence_status(user: dict, module: dict) -> dict:
         return {"allowed": True}
     attempts = await db.attempts.find({"user_id": user["id"]}, {"_id": 0}).to_list(2000)
     lesson_progress = await db.lesson_progress.find({"user_id": user["id"]}, {"_id": 0}).to_list(200)
-    progress = _module_progress_from_attempts(previous, attempts, lesson_progress)
+    all_modules = await db.modules.find({}, {"_id": 0}).to_list(200)
+    progress = _module_progress_from_attempts(previous, attempts, lesson_progress, all_modules)
     if _module_completed(progress):
         return {"allowed": True}
     return {
@@ -294,31 +396,20 @@ async def _module_unlock_status(user: dict, module: dict) -> dict:
 
     required_modules = requirements.get("completed_module_ids") or []
     min_accuracy = requirements.get("min_overall_accuracy")
-    lesson_progress = await db.lesson_progress.find({"user_id": user["id"]}, {"_id": 0}).to_list(500)
-    lesson_done = {lp.get("module_id") for lp in lesson_progress}
     attempts = await db.attempts.find({"user_id": user["id"], "scope": "module"}, {"_id": 0}).to_list(5000)
-    modules = await db.modules.find({"id": {"$in": required_modules}}, {"_id": 0}).to_list(100)
-    module_by_id = {m["id"]: m for m in modules}
+    lesson_progress = await db.lesson_progress.find({"user_id": user["id"]}, {"_id": 0}).to_list(500)
+    all_modules = await db.modules.find({}, {"_id": 0}).to_list(200)
+    module_by_id = {m["id"]: m for m in all_modules}
 
     missing = []
     for module_id in required_modules:
         required_module = module_by_id.get(module_id)
-        question_ids = [q["id"] for q in (required_module or {}).get("questions", [])]
-        if module_id not in lesson_done:
+        if not required_module:
             missing.append(module_id)
             continue
-        for question_id in question_ids:
-            q_attempts = [
-                a for a in attempts
-                if a.get("module_id") == module_id and a.get("question_id") == question_id
-            ]
-            if not q_attempts:
-                missing.append(module_id)
-                break
-            last = max(q_attempts, key=lambda a: a.get("attempt_number", 0))
-            if not last.get("is_correct"):
-                missing.append(module_id)
-                break
+        progress = _module_progress_from_attempts(required_module, attempts, lesson_progress, all_modules)
+        if not _module_completed(progress):
+            missing.append(module_id)
 
     metrics = await _compute_user_metrics(user["id"])
     current_accuracy = metrics.get("overall_accuracy", 0)
@@ -955,7 +1046,7 @@ async def list_modules(request: Request):
         locked_for_user = not _module_allowed(user, m)
         unlock_status = await _module_unlock_status(user, m)
         progress_locked_for_user = not unlock_status.get("allowed", True)
-        m["progress"] = _module_progress_from_attempts(m, attempts, lesson_progress)
+        m["progress"] = _module_progress_from_attempts(m, attempts, lesson_progress, modules)
         completion_by_id[m["id"]] = _module_completed(m["progress"])
         sequence_group = m.get("sequence_group") or m.get("track") or ""
         previous_candidates = [
@@ -994,7 +1085,8 @@ async def get_module(module_id: str, request: Request):
         raise HTTPException(status_code=404, detail="Módulo não encontrado")
     attempts = await db.attempts.find({"user_id": user["id"]}, {"_id": 0}).to_list(2000)
     lesson_progress = await db.lesson_progress.find({"user_id": user["id"]}, {"_id": 0}).to_list(200)
-    m["progress"] = _module_progress_from_attempts(m, attempts, lesson_progress)
+    all_modules = await db.modules.find({}, {"_id": 0}).to_list(200)
+    m["progress"] = _module_progress_from_attempts(m, attempts, lesson_progress, all_modules)
     if _module_release_locked(user, m):
         return _module_preview(m, "release")
     if not _module_allowed(user, m):
@@ -1024,12 +1116,16 @@ async def mark_lesson_done(module_id: str, request: Request):
         unlock_status = await _module_unlock_status(user, module)
         if not unlock_status.get("allowed", True):
             raise HTTPException(status_code=403, detail="Aprofundamento bloqueado por evolucao. Conclua os requisitos antes de marcar como estudado.")
-    await db.lesson_progress.update_one(
-        {"user_id": user["id"], "module_id": module_id},
-        {"$set": {"user_id": user["id"], "module_id": module_id, "completed_at": utc_now_iso()}},
-        upsert=True,
-    )
-    return {"ok": True}
+    all_modules = await db.modules.find({}, {"_id": 0}).to_list(200)
+    module_ids = sorted(_equivalent_module_ids(module, all_modules)) if module else [module_id]
+    completed_at = utc_now_iso()
+    for synced_module_id in module_ids:
+        await db.lesson_progress.update_one(
+            {"user_id": user["id"], "module_id": synced_module_id},
+            {"$set": {"user_id": user["id"], "module_id": synced_module_id, "completed_at": completed_at}},
+            upsert=True,
+        )
+    return {"ok": True, "synced_module_ids": module_ids}
 
 
 @api.get("/content/journey-stages")
@@ -1155,6 +1251,35 @@ async def attempts_by_question(
     scope: Optional[str] = None,
 ):
     user = await get_current_user(request, db)
+    if module_id and (scope or "module") == "module":
+        module = await db.modules.find_one({"id": module_id}, {"_id": 0})
+        question = next((q for q in (module or {}).get("questions", []) if q.get("id") == question_id), None)
+        if module and question:
+            all_modules = await db.modules.find({}, {"_id": 0}).to_list(200)
+            refs = _equivalent_question_refs(module, question, all_modules)
+            pairs = [{"module_id": candidate.get("id"), "question_id": candidate_question.get("id")} for candidate, candidate_question in refs]
+            docs = await db.attempts.find(
+                {
+                    "user_id": user["id"],
+                    "scope": "module",
+                    "$or": pairs,
+                },
+                {"_id": 0},
+            ).to_list(100)
+            source_by_pair = {
+                (candidate.get("id"), candidate_question.get("id")): candidate_question
+                for candidate, candidate_question in refs
+            }
+            projected = [
+                _project_attempt_for_question(
+                    doc,
+                    source_by_pair.get((doc.get("module_id"), doc.get("question_id")), question),
+                    module,
+                    question,
+                )
+                for doc in docs
+            ]
+            return sorted(projected, key=_attempt_sort_key)
     q = {"user_id": user["id"], "question_id": question_id}
     if module_id:
         q["module_id"] = module_id
@@ -1181,8 +1306,12 @@ async def create_attempt(payload: AttemptCreate, request: Request):
     unlock_status = await _module_unlock_status(user, module)
     if not unlock_status.get("allowed", True):
         raise HTTPException(status_code=403, detail="Aprofundamento bloqueado por evolucao. Conclua os requisitos antes de responder.")
+    all_modules = await db.modules.find({}, {"_id": 0}).to_list(200)
     if (module.get("lesson") or {}).get("require_full_video"):
-        watched = await db.lesson_progress.find_one({"user_id": user["id"], "module_id": module["id"]})
+        watched = await db.lesson_progress.find_one({
+            "user_id": user["id"],
+            "module_id": {"$in": sorted(_equivalent_module_ids(module, all_modules))},
+        })
         if not watched:
             raise HTTPException(status_code=403, detail="Assista ao video completo antes de responder o questionario.")
     question = None
@@ -1192,7 +1321,7 @@ async def create_attempt(payload: AttemptCreate, request: Request):
             break
     if not question:
         # search all modules (some knowledge/challenge questions may live elsewhere)
-        all_mods = await db.modules.find({}, {"_id": 0}).to_list(50)
+        all_mods = all_modules
         for m in all_mods:
             for q in m.get("questions", []):
                 if q["id"] == payload.question_id:
@@ -1204,13 +1333,23 @@ async def create_attempt(payload: AttemptCreate, request: Request):
     if not question:
         raise HTTPException(status_code=404, detail="Questão não encontrada")
 
-    # count previous attempts for THIS scope+question+module
-    prev = await db.attempts.count_documents({
+    # count previous attempts for this question, including equivalent lessons/questions
+    previous_query = {
         "user_id": user["id"],
-        "question_id": payload.question_id,
-        "module_id": payload.module_id,
         "scope": payload.scope,
-    })
+    }
+    if payload.scope == "module":
+        refs = _equivalent_question_refs(module, question, all_modules)
+        previous_query["$or"] = [
+            {"module_id": candidate.get("id"), "question_id": candidate_question.get("id")}
+            for candidate, candidate_question in refs
+        ]
+    else:
+        previous_query.update({
+            "question_id": payload.question_id,
+            "module_id": payload.module_id,
+        })
+    prev = await db.attempts.count_documents(previous_query)
     if prev >= 3 and not module.get("require_all_correct"):
         raise HTTPException(status_code=400, detail="Limite de tentativas atingido")
 
@@ -1678,19 +1817,24 @@ def _student_learning_progress(
         )
         rows = []
         for module in track_modules:
-            progress = _module_progress_from_attempts(module, attempts, lesson_progress)
-            question_ids = [question.get("id") for question in module.get("questions", [])]
+            progress = _module_progress_from_attempts(module, attempts, lesson_progress, modules)
+            questions = module.get("questions", [])
+            equivalent_ids = _equivalent_module_ids(module, modules)
+            video_progress = next((lesson_by_module.get(module_id) for module_id in equivalent_ids if lesson_by_module.get(module_id)), None)
             correct_questions = 0
-            for question_id in question_ids:
+            for question in questions:
+                refs = {
+                    (candidate.get("id"), candidate_question.get("id"))
+                    for candidate, candidate_question in _equivalent_question_refs(module, question, modules)
+                }
                 question_attempts = [
                     attempt
                     for attempt in attempts
-                    if attempt.get("module_id") == module.get("id")
-                    and attempt.get("question_id") == question_id
+                    if (attempt.get("module_id"), attempt.get("question_id")) in refs
                     and attempt.get("scope") == "module"
                 ]
                 if question_attempts:
-                    last = max(question_attempts, key=lambda attempt: attempt.get("attempt_number", 0))
+                    last = max(question_attempts, key=_attempt_sort_key)
                     if last.get("is_correct"):
                         correct_questions += 1
             watched = bool(progress.get("lesson_done"))
@@ -1701,10 +1845,10 @@ def _student_learning_progress(
                 "title": module.get("title"),
                 "track": track,
                 "video_completed": watched,
-                "video_completed_at": (lesson_by_module.get(module.get("id")) or {}).get("completed_at"),
+                "video_completed_at": (video_progress or {}).get("completed_at"),
                 "questions_correct": correct_questions,
-                "total_questions": len(question_ids),
-                "quiz_percent": round((correct_questions / len(question_ids)) * 100) if question_ids else (100 if watched else 0),
+                "total_questions": len(questions),
+                "quiz_percent": round((correct_questions / len(questions)) * 100) if questions else (100 if watched else 0),
                 "completed": completed,
                 "status": "completed" if completed else ("quiz_pending" if watched else "video_pending"),
             }
